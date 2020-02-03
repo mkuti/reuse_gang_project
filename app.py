@@ -14,6 +14,8 @@ MONGO_URI = os.environ["MONGODB_URI"]
 app.config["MONGODB_NAME"] = "reuse-gang"
 app.config["MONGO_URI"] = MONGO_URI
 
+mongo = PyMongo(app)  # create an instance of Pymongo with app object being pushed as argument
+
 
 @app.route('/')
 def test():
