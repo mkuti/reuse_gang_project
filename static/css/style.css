@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700');
+ 
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    line-height: 1.15;
+}
+
+/* navbar */
+.flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* logo */
+
+#logo {
+    font-family: 'Cabin Sketch', cursive;
+    color: black;
+    font-size: 5em;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
