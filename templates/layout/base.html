@@ -27,7 +27,12 @@
 <!-- Navbar -->
 {% include 'layout/nav.html' %}
     
+{% for item in items %}
 
+{{item.item_name}}
+{{item.item_description}}
+
+{% endfor %}
 
 <!-- Footer -->
 {% include 'layout/footer.html' %}
