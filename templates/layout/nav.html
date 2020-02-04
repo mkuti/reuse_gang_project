@@ -1,22 +1,29 @@
 {% block navbar %}
 
 <!-- navbar and logo -->
-	<nav class="navbar">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-transparent">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 		<a href="" class='navar-brand' id="logo">
-            <img src="{{url_for('static', filename='../static/images/logo.png')}}" alt="logo">
+			<img src="{{url_for('static', filename='../static/images/logo.png')}}" alt="logo">
         </a>
-			
-			<div class="row bg-green" id="banner">
-				<div class="d-none text-right">
-					<a class="headers text-uppercase text-decoration-none game-btn" id="reset"></a>
-				</div>
-				<div class="col-12">
-					<h2 class="headers text-center text-uppercase" id="attention"></h1>
-				</div>
-				<div class="d-none">
-					<a class="headers text-uppercase text-decoration-none game-btn" id="mode"></a>
-				</div>
-			</div>
-	</nav>
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Account</a>
+				</li>
+                <li class="nav-item">
+					<a class="nav-link" href="#">Contact</a>
+				</li>
+			</ul>
+	</div>
+</nav>
 
 {% endblock %}

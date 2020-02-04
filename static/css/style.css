@@ -1,20 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap');
  
 * {
     box-sizing: border-box;
 }
-
+/* scroll-behavior to add smooth scrolling */
 html {
     margin: 0;
     padding: 0;
     line-height: 1.15;
+    scroll-behavior: smooth;
 }
 
-/* navbar */
-.flex-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+body {
+    background-color: #EBEBEB;
 }
 
 /* logo */
