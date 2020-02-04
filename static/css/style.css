@@ -20,10 +20,12 @@ html {
 /* logo */
 
 #logo {
-    font-family: 'Cabin Sketch', cursive;
-    color: black;
-    font-size: 5em;
     padding: 0;
     margin: 0;
     text-decoration: none;
+}
+
+#logo img {
+    width: 100px;
+    height: 100px;
 }
