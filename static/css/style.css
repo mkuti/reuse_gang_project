@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue:400|Montserrat:300,400,500,600,700,800|Nanum+Pen+Script:400');
  
 * {
     box-sizing: border-box;
@@ -13,6 +13,9 @@ html {
 
 body {
     background-color: #EBEBEB;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
 }
 
 /* logo */
@@ -26,4 +29,13 @@ body {
 #logo img {
     width: 100px;
     height: 100px;
+}
+
+/* nav */
+
+.nav-item {
+    color:   /* to add color after setting background image */
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: 'Nanum Pen Script', sans-serif;
 }
