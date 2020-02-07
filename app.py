@@ -11,6 +11,7 @@ app = Flask(__name__)  # create instance of flask
 
 # add configuration to Flask app
 MONGO_URI = os.environ["MONGODB_URI"]
+SECRET_KEY = os.environ["SECRET_KEY"]
 app.config["MONGODB_NAME"] = "reuse-gang"
 app.config["MONGO_URI"] = MONGO_URI
 
