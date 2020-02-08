@@ -44,7 +44,8 @@ body {
     font-family: 'Nanum Pen Script', sans-serif;
 }
 
-.navbar-text {
+.navbar-light .navbar-text {
+    color: #0F0F14;
     font-size: 1.25rem;
 }
 
@@ -60,10 +61,11 @@ body {
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #57576B;
+    color: #0F0F14;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
+    background-color: #0F0F14;
     color: #EBEBEB;
 }
 
