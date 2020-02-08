@@ -94,6 +94,12 @@ body {
     background: rgba(0, 0, 0, 0.2);
 }
 
+/* cards */ 
+.card-item {
+    border: 1px solid #153415;
+    width: 18rem;
+}
+
 /* media queries */
 
 @media (min-width: 768px){

@@ -19,9 +19,9 @@ mongo = PyMongo(app)  # create an instance of Pymongo with app object being push
 
 
 @app.route('/')
-@app.route('/test_mongo')
-def test():
-    return render_template('/layout/base.html', items=mongo.db.items.find())
+@app.route('/display_items')
+def display_items():
+    return render_template('/pages/home.html', items=mongo.db.items.find())
 
 
 if __name__ == "__main__":
