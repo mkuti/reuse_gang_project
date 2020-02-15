@@ -85,7 +85,11 @@ body {
     position: relative;
 }
 
-/* cards */ 
+/* cards */
+.card-body {
+    flex-grow: 2;
+}
+
 .card-item {
     border: 1px solid #153415;
     width: 18rem;
