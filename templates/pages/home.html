@@ -4,6 +4,7 @@
 <section class='container-fluid mx-auto'>
 	<div class="row">
         {% for item in items %}
+        {% for user in users %}
 		<div class="col-12 col-sm-6 col-md-4 col-lg-3">
 			<div class="card">
 				<div class="card-body">
@@ -11,7 +12,9 @@
                         <div class="col-6">
                             <h5 class="card-title text-uppercase">{{item.item_name}}</h5>
 					        <h6 class="card-subtitle mb-3">Category</h6>
-                            <h6 class="card-subtitle mb-2">Location</h6>
+                            {% if item.username == user.user_name %}
+                            <h6 class="card-subtitle mb-2">{{user.user_location}}</h6>
+                            {% endif %}
                         </div>
                         <div class="col-6">
                             <img src="{{item.item_img}}" class="card-img-top" alt="...">
@@ -23,6 +26,7 @@
 				</div>
 			</div>
 		</div>
+        {% endfor %}
         {% endfor %}
 	</div>
 </section>
