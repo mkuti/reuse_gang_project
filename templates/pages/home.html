@@ -3,12 +3,13 @@
 
 <section class='container-fluid mx-auto'>
 	<div class="row">
+        {% for item in items %}
 		<div class="col-12 col-sm-6 col-md-4 col-lg-3">
 			<div class="card">
 				<div class="card-body">
                     <div class="row">
                         <div class="col-6">
-                            <h5 class="card-title text-uppercase">Item Name</h5>
+                            <h5 class="card-title text-uppercase">{{item.item_name}}</h5>
 					        <h6 class="card-subtitle mb-2">Category</h6>
                             <h6 class="card-subtitle mb-2">Location</h6>
                         </div>
@@ -16,12 +17,13 @@
                             <img src="" class="card-img-top" alt="...">
                         </div>
                     </div>
-					<p class="card-text">This is the description of the item to explain its color, usage state, any damages or repair needed...</p>
+					<p class="card-text">{{item.item_description}}</p>
 					<a href="#" class="card-link">Email</a>
 					<h6 class="card-subtitle mb-2">UserName</h6>
 				</div>
 			</div>
 		</div>
+        {% endfor %}
 	</div>
 </section>
 
