@@ -25,6 +25,12 @@ body {
     background-color: transparent;
 }
 
+.bg_light {
+    background-color: #EFEFDD;
+}
+
+.bg-darkgreen 
+
 /* logo */
 
 #logo {
@@ -36,7 +42,6 @@ body {
 #logo img {
     width: 100px;
     height: 100px;
-    background-color: #EFEFDD;
 }
 
 /* nav */
@@ -58,7 +63,6 @@ body {
 }
 
 .navbar-toggler-icon {
-    background-color: #EFEFDD;
     font-size: 40px;
     padding: 5px;
     border-radius: 5px;
@@ -101,6 +105,10 @@ body {
 .card-item {
     border: 1px solid #153415;
     width: 18rem;
+}
+
+.btn {
+
 }
 
 /* media queries */
