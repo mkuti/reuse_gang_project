@@ -121,6 +121,12 @@ div a {
     width: 18rem;
 }
 
+/* login */
+
+#login {
+    padding: 1.25rem;
+}
+
 /* media queries */
 
 @media (min-width: 768px){

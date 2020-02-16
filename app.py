@@ -24,7 +24,7 @@ def home():
 
 @app.route('/login')
 def login():
-    return render_template('/pages/login.html')
+    return render_template('/components/login.html')
 
 
 if __name__ == "__main__":
