@@ -42,6 +42,10 @@ div a {
     color: #EFEFDD;
 }
 
+.green_text {
+    color: #005732;
+}
+
 /* logo */
 
 #logo {
@@ -69,7 +73,6 @@ div a {
 }
 
 .navbar-light .navbar-text {
-    color: #005732;
     font-size: 1.25rem;
 }
 
