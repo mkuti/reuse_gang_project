@@ -1,0 +1,26 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+<section class="container-fluid">
+	<div class="row">
+		<div class="col-6 mx-auto mt-5">
+			<form method="POST">
+				<div class="form-group">
+					<input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Enter email">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+					<input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm Password">
+                </div>
+				<button type="submit" class="btn bg-darkgreen light_text">Submit</button>
+
+                <a class="btn bg-darkgreen light_text align-items-end" href="">New User</a>
+
+			</form>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

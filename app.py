@@ -22,9 +22,9 @@ mongo = PyMongo(app)  # create an instance of Pymongo with app object being push
 def home():
     return render_template('/pages/home.html', items=mongo.db.items.find(), users=mongo.db.users.find())
 
-@app.route('/filtered_items')
-def filtered_items():
-    return render_template('/pages/filtered_items.html')
+@app.route('/login')
+def login():
+    return render_template('/pages/login.html')
 
 
 if __name__ == "__main__":

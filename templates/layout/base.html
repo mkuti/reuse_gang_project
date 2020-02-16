@@ -31,7 +31,14 @@
 {% include 'components/banner_img.html' %}
 
 <!-- Search bar -->
-{% include 'components/search.html' %}
+{% if active != "login" %}
+{% include "components/searchbar.html" %}
+{% endif %}
+
+<!-- Add Item -->
+{% if 'username' in session %}
+{% include 'components/addbutton.html' %}
+{% endif %}
 
 <!-- Main content -->
 {% block content %} {% endblock %}

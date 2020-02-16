@@ -17,10 +17,11 @@
 				<a class="nav-link nav-font" href="#">About</a>
 			</li>
 			<li class="nav-item mr-3">
-				<a class="nav-link nav-font" href="#">Account</a>
-			</li>
-			<li class="nav-item mr-3">
-				<a class="nav-link nav-font" href="#">Contact</a>
+				{% if 'username' not in session %}
+                <a class="nav-link nav-font" href="{{url_for('login')}}">Login</a>
+                {% else %}
+                <a class="nav-link nav-font" href="#">Account</a>
+                {% endif %}
 			</li>
 		</ul>
 		<span class="navbar-text mt-2 mr-3 nav-font d-none d-md-block">
