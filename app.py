@@ -17,15 +17,14 @@ app.config["MONGO_URI"] = MONGO_URI
 
 mongo = PyMongo(app)  # create an instance of Pymongo with app object being pushed as argument
 
-
 @app.route('/')
 @app.route('/home')
 def home():
     return render_template('/pages/home.html', items=mongo.db.items.find(), users=mongo.db.users.find())
 
-@app.route('/searched_items')
-def searched_items():
-    return render_template('/pages/searched_items.html')
+@app.route('/filtered_items')
+def filtered_items():
+    return render_template('/pages/filtered_items.html')
 
 
 if __name__ == "__main__":
