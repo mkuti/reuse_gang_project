@@ -26,6 +26,10 @@ def home():
 def login():
     return render_template('/components/login.html')
 
+@app.route('/register')
+def register():
+    return render_template('/components/register.html')
+
 
 if __name__ == "__main__":
     app.run(host=os.getenv("IP", "0.0.0.0"),
