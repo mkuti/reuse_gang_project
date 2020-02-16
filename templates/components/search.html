@@ -3,15 +3,15 @@
 <section class="container-fluid">
     <div class="row text-center">
         <div class="col-6 dropdown my-3">
-            <button class="btn dropdown-toggle bg-darkgreen light_text" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Search Items
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Kids</a>
-                <a class="dropdown-item" href="#">Outdoor</a>
-                <a class="dropdown-item" href="#">Household</a>
-                <a class="dropdown-item" href="#">Other</a>
-            </div>
+            <form method="POST" action="/filtered_items">
+                    <select multiple name="categories" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <option value="Low-Carb">Kids</option>
+                              <option value="Fat-Free">Outdoor</option>
+                              <option value="Gluten-Free">Household</option>
+                              <option value="High-Protein">Other</option>
+                    </select>
+                        <button class="btn dropdown-toggle bg-darkgreen light_text" type="submit" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search Items</button>
+            </form>
         </div>
         <div class="col-6 my-3">
             <i class="fas fa-user-check"></i>
