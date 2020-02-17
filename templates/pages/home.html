@@ -1,6 +1,25 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
+<section class="container-fluid">
+    <div class="row text-center">
+        <div class="col-6 dropdown my-3">
+            <form method="POST" action="/filtered_items">
+                    <select multiple name="categories" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <option value="Low-Carb">Kids</option>
+                              <option value="Fat-Free">Outdoor</option>
+                              <option value="Gluten-Free">Household</option>
+                              <option value="High-Protein">Other</option>
+                    </select>
+                        <button class="btn dropdown-toggle bg-darkgreen light_text" type="submit" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search Items</button>
+            </form>
+        </div>
+        <div class="col-6 my-3">
+            <a href="{{url_for('add_item')}} " class="btn bg-darkgreen light_text">Add Item</a>
+        </div>
+    </div>
+</section>
+        
 <section class='container-fluid mx-auto'>
 	<div class="row">
         {% for item in items %}
@@ -30,5 +49,7 @@
         {% endfor %}
 	</div>
 </section>
+
+
 
 {% endblock %}
