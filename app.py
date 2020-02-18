@@ -47,7 +47,7 @@ def add_item():
 def create_item():
     items = mongo.db.items
     items.insert_one(request.form.to_dict())
-    return render_template('/pages/home.html')
+    return redirect('/pages/home.html')
 
 
 if __name__ == "__main__":

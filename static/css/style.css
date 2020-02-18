@@ -24,6 +24,11 @@ body {
     margin: 0;
 }
 
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 div a {
     text-decoration: none;
     color: inherit;
@@ -83,7 +88,6 @@ div a {
 
 .navbar-toggler-icon {
     font-size: 40px;
-    padding: 5px;
     border-radius: 5px;
 }
 
@@ -100,11 +104,13 @@ div a {
 }
 
 /* banner image */
+.img-container {
+    max-height: 50vh;
+}
+
 .banner-image {
     background: url(../images/wine.jpg);
-    max-height: 50vh;
-    background-size: 100% 100%;
-    width: 100vw;
+    background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     padding-top: 8rem;
