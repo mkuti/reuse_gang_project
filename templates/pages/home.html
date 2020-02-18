@@ -6,16 +6,16 @@
         <div class="col-6 dropdown my-3">
             <form method="POST" action="/filtered_items">
                     <select multiple name="categories" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <option value="Low-Carb">Kids</option>
-                              <option value="Fat-Free">Outdoor</option>
-                              <option value="Gluten-Free">Household</option>
-                              <option value="High-Protein">Other</option>
+                              <option value="kids">Kids</option>
+                              <option value="outdoor">Outdoor</option>
+                              <option value="household">Household</option>
+                              <option value="other">Other</option>
                     </select>
-                        <button class="btn dropdown-toggle bg-darkgreen light_text" type="submit" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search Items</button>
+                    <button class="btn dropdown-toggle bg-darkgreen light_text" type="submit" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search Items</button>
             </form>
         </div>
         <div class="col-6 my-3">
-            <a href="{{url_for('add_item')}} " class="btn bg-darkgreen light_text">Add Item</a>
+            <a href="{{url_for('add_item')}}" class="btn bg-darkgreen light_text">Add Item</a>
         </div>
     </div>
 </section>
@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-6">
                             <h5 class="card-title text-uppercase">{{item.item_name}}</h5>
-					        <h6 class="card-subtitle mb-3">Category</h6>
+					        <h6 class="card-subtitle mb-3">{{item.item_category}}</h6>
                             {% for user in users %}
                             {% if item.username == user.user_name %}
                             <h6 class="card-subtitle mb-2">{{user.user_location}}</h6>

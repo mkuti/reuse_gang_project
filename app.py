@@ -33,9 +33,21 @@ def login():
     return render_template('/components/login.html')
 
 
-@app.route('/register', methods=["POST"])
+@app.route('/register')
 def register():
     return render_template('/components/register.html')
+
+
+@app.route('/add_item')
+def add_item():
+    return render_template('/pages/add_item.html')
+
+
+@app.route('/create_item', methods=["POST"])
+def create_item():
+    items = mongo.db.items
+    items.insert_one(request.form.to_dict())
+    return render_template('/pages/home.html')
 
 
 if __name__ == "__main__":

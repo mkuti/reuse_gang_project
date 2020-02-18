@@ -3,22 +3,69 @@
 
 <section class="container-fluid">
 	<div class="row">
-		<div class="col-4 mx-auto mt-5 card">
-            <h3 class='green_text mb-5'>Well done for taking the first step of our exchange!</h3>
-            <h5 class='green_text mb-5'>Fill the fields below so we can then advertise your items for other users. Make sure to add a brief description about the item's appearance and state so other users know what to expect. </h3>
-			<form method="POST" action="/add_item">
+		<div class="col-11 col-lg-9 mx-auto mt-5 card">
+            <h3 class='green_text mb-3'>Well done for taking the first step of our exchange!</h3>
+            <h5 class='green_text'>Fill the fields below so we can then advertise your items for other users.</h5>
+            <h5 class='green_text mb-5'>Make sure to add a brief description about the item's appearance and state so other users know what to expect.</h5>
+			<form method="POST" action="{{url_for('create_item')}}">
 				<div class="form-group mb-5">
-					<input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Enter your email address">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="item_name">Item Name</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control" id="item_name" name="item_name" aria-describedby="name">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-5">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="category">Item Category</label>
+                        </div>
+                        <div class="col-9">
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="item_category" id="inlineRadio1" value="kids">
+								<label class="form-check-label" for="inlineRadio1">Kids</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="item_category" id="inlineRadio2" value="Outdoor">
+								<label class="form-check-label" for="inlineRadio2">Outdoor</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="item_category" id="inlineRadio3" value="Household">
+								<label class="form-check-label" for="inlineRadio3">Household</label>
+							</div>
+                            <div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="item_category" id="inlineRadio3" value="Other">
+								<label class="form-check-label" for="inlineRadio3">Other</label>
+							</div>
+                        </div>
+                    </div>
 				</div>
-				<div class="form-group mb-5">
-					<input type="password" class="form-control" id="password1" name="password1" placeholder="Password">
+				<div class="form-group">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="description">Item Description</label>
+                        </div>
+                        <div class="col-9">
+                            <textarea class="form-control" id="textarea" name="item_description" rows="auto"></textarea>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
-					<input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm your Password">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="image">URL for your item's image</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control" id="item_img" name="item_img" aria-describedby="image">
+                        </div>
+                    </div>
                 </div>
                 <div class="row justify-content-between">
-                    <div class="col-12 text-center">
-                        <button type="submit" class="btn bg-darkgreen light_text mt-5 text-uppercase">Join</button>
+                    <div class="col-12 text-center mb-3">
+                        <button type="submit" class="btn bg-darkgreen light_text mt-5 text-uppercase">Add</button>
                     </div>
                 </div>
 			</form>
