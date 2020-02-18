@@ -56,6 +56,10 @@ div a {
     color: #005732;
 }
 
+.lgreen_text {
+    color: #47A349;
+}
+
 /* logo */
 
 #logo {
@@ -84,6 +88,7 @@ div a {
 
 .navbar-light .navbar-text {
     font-size: 1.25rem;
+    color: #005732;
 }
 
 .navbar-toggler-icon {
