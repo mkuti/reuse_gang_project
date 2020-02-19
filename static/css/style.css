@@ -137,6 +137,10 @@ div a {
     width: 18rem;
 }
 
+#item-img {
+    height: 10px;
+}
+
 /* login */
 
 #login {

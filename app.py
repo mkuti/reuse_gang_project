@@ -1,5 +1,6 @@
 import os, json
-from flask import Flask, render_template, redirect, request, url_for, jsonify
+from flask import Flask, render_template, redirect, request, url_for, jsonify, flash, session
+from flask_session import Session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -10,10 +11,12 @@ if path.exists("env.py"):
     import env
 
 app = Flask(__name__)  # create instance of flask
+sess = Session()  # create session object
 
 # add configuration to Flask app
 MONGO_URI = os.environ["MONGODB_URI"]
 SECRET_KEY = os.environ["SECRET_KEY"]
+sess.init_app(app)
 app.config["MONGODB_NAME"] = "reuse-gang"
 app.config["MONGO_URI"] = MONGO_URI
 
@@ -47,7 +50,14 @@ def add_item():
 def create_item():
     items = mongo.db.items
     items.insert_one(request.form.to_dict())
+    
     return redirect('/pages/home.html')
+
+
+@app.route('/find_items', methods=["POST", "GET"])
+def find_items():
+    items = mongo.db.items
+    search_items = request.form.get("item_category")
 
 
 if __name__ == "__main__":

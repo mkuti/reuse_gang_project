@@ -4,14 +4,18 @@
 <section class="container-fluid">
     <div class="row text-center">
         <div class="col-6 dropdown my-3">
-            <form method="POST" action="/filtered_items">
-                    <select multiple name="categories" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <option value="kids">Kids</option>
-                              <option value="outdoor">Outdoor</option>
-                              <option value="household">Household</option>
-                              <option value="other">Other</option>
+            <form method="POST" action="/find_items">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Search Items</label>
+                    </div>
+                    <select class="custom-select" id="search_category" name="item_category">
+                        <option selected>Choose...</option>
+                        {% for item in items %}
+                        <option value="1">{{item.item_category}}</option>
+                        {% endfor %}
                     </select>
-                    <button class="btn dropdown-toggle bg-darkgreen light_text" type="submit" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search Items</button>
+                </div>
             </form>
         </div>
         <div class="col-6 my-3">
