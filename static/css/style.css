@@ -130,6 +130,7 @@ div a {
 /* cards */
 .card-body {
     flex-grow: 2;
+    height: 250px;
 }
 
 .card-item {
@@ -137,8 +138,9 @@ div a {
     width: 18rem;
 }
 
-#item-img {
-    height: 10px;
+.card-img-top {
+    height: 100px;
+    width: 100px;
 }
 
 /* login */
