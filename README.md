@@ -33,7 +33,7 @@ A free and user-friendly platform where exchange happens
         * [1.Existing Features](#1-existing-features)
         * [2.Features Left to Implement](#2-features-left-to-implement)
     * [Skeleton plane: Presentation and navigation](#skeleton-plane-presentation-and-navigation)
-        * [1. Wireframes](#1wireframes)
+        * [1. Wireframes](#1-wireframes)
     * [Surface: Design](#surface-design)
         * [1. Color Scheme](#1-color-scheme)
         * [2. Font](#2-font)
@@ -115,6 +115,8 @@ A local town or community where people can exchange easily their items. The proj
 - A platform where the free item can be taken by another person that needs it
 - A very simple and user-friendly platform where exchange happens effectively and that does not turn away people
 
+[Back to Top](#table-of-contents) 
+
 ### 4. What are the goals and needs of the user?
 
 - A user wants to either give away a used but now unwanted item
@@ -160,6 +162,8 @@ A local town or community where people can exchange easily their items. The proj
 - Item owner contact details only showing to user if logged in.
 - Can view all items posted by same user.
 
+[Back to Top](#table-of-contents) 
+
 #### What are the pros of what they are doing?
 - User login system
 - I like the idea of only showing contact details of item owner when other users are logged in, for privacy reasons.
@@ -203,6 +207,8 @@ Using database with clear collections and categories
 - Flask will be used to add information on html using templating language 
 - the data will be recorded and rendered using MongoDB, noSQL database.
 
+[Back to Top](#table-of-contents) 
+
 #### User expectations
 1. List of available items showing before even logging in
 2. Taken items to be removed from the list
@@ -220,6 +226,8 @@ Using database with clear collections and categories
 - Quick and easy to search and view available items before signing up
 - Quick and easy to log in, add an item, edit it, delete it
 - Nice and clear UX design
+
+[Back to Top](#table-of-contents) 
 
 #### Importance and feasibility table:
 TODO: will import table
@@ -274,6 +282,8 @@ b) User page: separated to avoid too much information on the same page and mixin
 
 c) Third page about concept, zero-waste organisation, rules of the group, non-liability disclaimer
 
+[Back to Top](#table-of-contents) 
+
 ### 2. Consistency of elements and relationships?
 Regular use of pop up modals so user does not have to go from one page to another and get lost in the navigation
 
@@ -303,6 +313,8 @@ Regular use of pop up modals so user does not have to go from one page to anothe
 Data model with two collections where User Name creates relationship between collections
 
 TODO: will import table
+
+[Back to Top](#table-of-contents) 
 	
 ## Skeleton plane: Presentation and navigation? 
 ### 1. Wireframes
@@ -323,12 +335,16 @@ The skeleton plane:
 - And based on those priorities, where do we position the content?
 - How do we navigate to those higher and lower priorities?
 
+[Back to Top](#table-of-contents) 
+
 ## Surface plane: How does it look like?
 - What colors?
 - What typography are we going to put in place?
 - What images? What design elements?
 - What animations, if any? What transitions?
 - What other effects are going to be in place?
+
+[Back to Top](#table-of-contents) 
 
 ## Design
 ### 1. Color scheme
@@ -416,6 +432,8 @@ I also tested the game on Safari via an iMac with a very big screen and an iPod 
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB)
 - [Lunapic](https://www2.lunapic.com/editor/) - to make the logo transparent
 
+[Back to Top](#table-of-contents) 
+
 # Media and Content origin
 - Taglines: [BrandonGaille](https://brandongaille.com/list-45-catchy-recycling-slogans-and-great-taglines/)
 - Photos:
@@ -427,6 +445,8 @@ I also tested the game on Safari via an iMac with a very big screen and an iPod 
 - Photo by Alaa Hassan from FreeImages
 
 #### Other Resources:
+
+[Back to Top](#table-of-contents) 
 
 # Deployment
 I have been using the Integrated development environment (IDE) [GitPod](gitpod.io) to develop this milestone project.
@@ -459,6 +479,8 @@ When I submitted this Milestone project, I confirmed that the Development Branch
 5. Change the current working directory to the desired file location
 6. Type git clone, and then paste the URL you copied in Step 2 when git clone: [https://github.com/YOUR-USERNAME/YOUR-REPOSITORY ](https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
 7. Press Enter > Your local clone will be created.
+
+[Back to Top](#table-of-contents) 
 
 ### Credits
 
