@@ -6,19 +6,22 @@
 		<div class="col-12 col-sm-10 col-md-6 col-lg-4">
 			<div class="card my-2">
 				<div class="card-body">
-                    <div class="row">
+                    <div class="row text-left">
                         <div class="col-6">
-                            <h5 class="card-title text-uppercase">{{item.item_name}}</h5>
-					        <h6 class="card-subtitle mb-3">{{item.item_category}}</h6>
+                            <h4 class="card-title text-uppercase mb-4">{{item.item_name}}</h5>
+					        <h6 class="card-subtitle mb-4">{{item.item_category}}</h6>
                             <h6 class="card-subtitle mb-2">User location</h6>
                         </div>
                         <div class="col-6">
                             <img src="{{item.item_img}}" class="card-img-top" alt="...">
                         </div>
                     </div>
-					<p class="card-text">{{item.item_description}}</p>
-                    <a href="#" class="card-link">Email</a>
-                    <span class="card-subtitle mt-0">Username</span>
+					<p class="card-text text-left">{{item.item_description}}</p>
+                    <div class="row text-left">
+                        <a href="#" class="card-link">Email...</a>
+                        <span class="card-subtitle mt-0">Username</span>
+                    </div>
+                    
 				</div>
 			</div>
 		</div>

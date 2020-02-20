@@ -28,7 +28,7 @@ mongo = PyMongo(app)
 @app.route('/home')
 def home():
     return render_template('/pages/home.html', items=mongo.db.items.find(),
-                           users=mongo.db.users.find())
+                           users=mongo.db.users.find(), title="Re-Use Gang")
 
 
 @app.route('/login')
