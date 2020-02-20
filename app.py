@@ -50,7 +50,6 @@ def add_item():
 def create_item():
     items = mongo.db.items
     items.insert_one(request.form.to_dict())
-    
     return redirect('/pages/home.html')
 
 
@@ -59,8 +58,9 @@ def find_items():
     items = mongo.db.items
     category = request.form["item_category"]
     filtered_items = items.find({'item_category': category})
-    return render_template('/pages/filtered_items.html', filtered_items = filtered_items)
-    print(filtered_items)
+    return render_template('/pages/filtered_items.html', 
+                           filtered_items=filtered_items)
+
 
 if __name__ == "__main__":
     app.run(host=os.getenv("IP", "0.0.0.0"),
