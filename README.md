@@ -27,13 +27,13 @@ A free and user-friendly platform where exchange happens
         * [5. What are the goals and needs of the business?](#5-what-are-the-goals-and-needs-of-the-business)
         * [6. Research](#6-research)
         * [7. Planning](#7-planning)
-        * [User Stories](#user-stories)
+        * [8. User Stories](#8-user-stories)
     * [Scope plane: How?](#scope-plane-how)
     * [Structure plane: Organisation and functionality](#structure-plane-organisation-and-functionality)
         * [1.Existing Features](#1-existing-features)
         * [2.Features Left to Implement](#2-features-left-to-implement)
     * [Skeleton plane: Presentation and navigation](#skeleton-plane-presentation-and-navigation)
-        * [Wireframes](#wireframes)
+        * [1. Wireframes](#1wireframes)
     * [Surface: Design](#surface-design)
         * [1. Color Scheme](#1-color-scheme)
         * [2. Font](#2-font)
@@ -180,7 +180,7 @@ A local town or community where people can exchange easily their items. The proj
 
 [Back to Top](#table-of-contents) 
 
-## 7. Planning
+### 7. Planning
 
 #### What relevant content should we deliver that fits our demographic?
 - Quick description of the idea/concept
@@ -225,6 +225,7 @@ Using database with clear collections and categories
 TODO: will import table
 
 TODO:Will add user stories here
+### 8. User stories
 ##### As a general user, I am expecting:
 * 
 
