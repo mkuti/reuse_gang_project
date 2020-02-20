@@ -23,18 +23,23 @@
 <title>Re-Use Gang</title>
 </head>
 
+
+<body>
+
 <!-- Navbar -->
 {% include 'layout/nav.html' %}
     
 <!-- Banner image -->
-{% include 'components/banner_img.html' %}
+{% include 'components/bannerimage.html' %}
+
+<!-- Search bar -->
+{% include 'components/searchbar.html' %}
 
 <!-- Main content -->
 {% block content %} {% endblock %}
 
 <!-- Footer -->
 {% include 'layout/footer.html' %}
-<body>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>

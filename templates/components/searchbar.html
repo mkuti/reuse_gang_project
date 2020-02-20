@@ -1,0 +1,25 @@
+{% block searchbar %}
+
+<section class="container-fluid">
+    <div class="row text-center">
+        <div class="col-6 dropdown my-3">
+            <form method="POST" action="/find_items">
+                <div class="input-group mb-3">
+                    <select class="custom-select" id="search_category" name="item_category">
+                        <option selected>Choose...</option>
+                        <option value="kids">Kids</option>
+                        <option value="outdoor">Outdoor</option>
+                        <option value="household">Household</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <button type="submit" class="btn bg-darkgreen light_text">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-6 my-3">
+            <a href="{{url_for('add_item')}}" class="btn bg-darkgreen light_text">Add Item</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

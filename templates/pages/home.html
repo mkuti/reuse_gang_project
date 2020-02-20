@@ -1,28 +1,5 @@
 {% extends "layout/base.html" %}
 {% block content %}
-
-<section class="container-fluid">
-    <div class="row text-center">
-        <div class="col-6 dropdown my-3">
-            <form method="POST" action="/find_items">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Search Items</label>
-                    </div>
-                    <select class="custom-select" id="search_category" name="item_category">
-                        <option selected>Choose...</option>
-                        {% for item in items %}
-                        <option value="1">{{item.item_category}}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </form>
-        </div>
-        <div class="col-6 my-3">
-            <a href="{{url_for('add_item')}}" class="btn bg-darkgreen light_text">Add Item</a>
-        </div>
-    </div>
-</section>
         
 <section class='container-fluid mx-auto'>
 	<div class="row text-center">
