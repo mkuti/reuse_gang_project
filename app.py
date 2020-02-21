@@ -28,7 +28,7 @@ mongo = PyMongo(app)
 @app.route('/home')
 def home():
     return render_template('/pages/home.html', items=mongo.db.items.find(),
-                           users=mongo.db.users.find())
+                           users=mongo.db.users.find(), title="Re-Use Gang")
 
 
 @app.route('/login')
@@ -50,14 +50,16 @@ def add_item():
 def create_item():
     items = mongo.db.items
     items.insert_one(request.form.to_dict())
-    
     return redirect('/pages/home.html')
 
 
 @app.route('/find_items', methods=["POST", "GET"])
 def find_items():
     items = mongo.db.items
-    search_items = request.form.get("item_category")
+    category = request.form["item_category"]
+    filtered_items = items.find({'item_category': category})
+    return render_template('/pages/filtered_items.html', 
+                           filtered_items=filtered_items)
 
 
 if __name__ == "__main__":
