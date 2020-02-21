@@ -43,7 +43,7 @@ def register():
 
 @app.route('/add_item')
 def add_item():
-    return render_template('/pages/add_item.html')
+    return render_template('/pages/additem.html')
 
 
 @app.route('/create_item', methods=["POST"])
