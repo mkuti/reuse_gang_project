@@ -127,6 +127,8 @@ div a {
 }
 
 .attention {
+    background-color: #153415;
+    opacity: 0.7;
     color:#EFEFDD;
     font-family: 'Indie Flower', sans-serif;
     font-size: 2.5rem;
