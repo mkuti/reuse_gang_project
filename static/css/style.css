@@ -15,7 +15,6 @@ html {
 body {
     background-color: #EFEFDD;
     font-family: "Indie Flower", sans-serif;
-    font-weight: 300;
     font-size: 1rem;
 }
 
@@ -164,6 +163,15 @@ div a {
     padding: 0 18px;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+
+.card-link {
+    text-decoration: underline;
+    color: #47A349;
+}
+
+.card-link:hover{
+    color:#153415; 
 }
 
 /* login */
