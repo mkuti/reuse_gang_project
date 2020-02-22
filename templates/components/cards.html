@@ -16,9 +16,13 @@
                             <img src="{{item.item_img}}" class="card-img-top" alt="...">
                         </div>
                     </div>
-
-					<p class="card-text text-left">{{item.item_description}}</p>
-                    <div class="row text-left">
+                    <div class="row my-3">
+                    <a type='button' class='card-collapse light_text px-0 mx-0'>
+                        <h6 class='card-header text-left'>Find more information about this item...</h6>
+                    </a>
+                    <p class="card-text collapsed-content text-left px-0 mx-0">{{item.item_description}}</p>
+                    </div>
+                    <div class="row text-left my-3">
                         <a href="#" class="card-link">Email...</a>
                         <span class="card-subtitle mt-0">Username</span>
                     </div>

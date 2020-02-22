@@ -48,6 +48,10 @@ div a {
     background-color: #005732;
 }
 
+.bg-othergreen {
+    background-color: #005732;
+}
+
 .light_text {
     color: #EFEFDD;
 }
@@ -130,7 +134,6 @@ div a {
 /* cards */
 .card-body {
     flex-grow: 2;
-    height: 250px;
 }
 
 .card-item {
@@ -141,6 +144,22 @@ div a {
 .card-img-top {
     height: 100px;
     width: 100px;
+}
+
+.card-collapse {
+    cursor: pointer;
+    border: none;
+}
+
+.card-collapse:hover {
+    background-color: #47A349
+}
+
+.collapsed-content {
+    display: none;
+    padding: 0 18px;
+    overflow: hidden;
+    background-color: #f1f1f1;
 }
 
 /* login */
