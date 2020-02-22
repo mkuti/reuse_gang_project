@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue:400|Montserrat:300,400,500,600,700,800|Nanum+Pen+Script:400');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue:400|Indie+Flower:400|Nanum+Pen+Script:400');
  
 * {
     box-sizing: border-box;
@@ -14,7 +14,7 @@ html {
 
 body {
     background-color: #EFEFDD;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Indie Flower", sans-serif;
     font-weight: 300;
     font-size: 1rem;
 }
@@ -83,6 +83,7 @@ div a {
     padding: 0;
     text-align: center;
     overflow: auto;
+    opacity: 0.7;
 }
 
 .nav-font {
@@ -126,8 +127,8 @@ div a {
 }
 
 .attention {
-    color: #EFEFDD;
-    font-family: 'Nanum Pen Script', sans-serif;
+    color:#EFEFDD;
+    font-family: 'Indie Flower', sans-serif;
     font-size: 2.5rem;
 }
 
@@ -169,5 +170,11 @@ div a {
 @media (min-width: 768px){
     .bg-nav {
     background-color: #EFEFDD;
-}
+    }
+    .banner-image {
+        opacity: 1;
+    }
+    .attention {
+    color: #EFEFDD;
+    }
 }
