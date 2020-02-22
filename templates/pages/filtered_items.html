@@ -5,24 +5,32 @@
 {% include 'components/searchbar.html' %}
 
 <section class='container-fluid mx-auto'>
-	<div class="row text-center">
+	<div class="row text-center green_text">
         {% for item in filtered_items %}
 		<div class="col-12 col-sm-10 col-md-6 col-lg-4">
 			<div class="card my-2">
 				<div class="card-body">
-                    <div class="row">
-                        <div class="col-6">
-                            <h5 class="card-title text-uppercase">{{item.item_name}}</h5>
-					        <h6 class="card-subtitle mb-3">Category: {{item.item_category}}</h6>
-                            <h6 class="card-subtitle mb-2">Left by: Username</h6>
+                    <div class="row text-left">
+                        <div class="col-8 text-left px-0">
+                            <h4 class="card-title text-uppercase mb-4">{{item.item_name}}</h4>
+					        <h6 class="card-subtitle mb-4"><u>Category</u>: {{item.item_category}}</h6>
+                            <h6 class="card-subtitle mb-2"><u>Left by: Username</u></h6>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
                             <img src="{{item.item_img}}" class="card-img-top" alt="...">
                         </div>
                     </div>
-					<p class="card-text">{{item.item_description}}</p>
-                    <a href="#" class="card-link">Email</a>
-                    <span class="card-subtitle mt-0">{{item.username}}</span>
+                    <div class="row my-3">
+                    <a type='button' class='card-collapse light_text px-0 mx-0'>
+                        <h6 class='text-left'>Find more info about this item...<i class="pl-2 fas fa-chevron-down"></i></h6>
+                    </a>
+                    <p class="card-text collapsed-content text-left px-0 mx-0 lgreen_text">{{item.item_description}}</p>
+                    </div>
+                    <div class="row text-left my-3">
+                        <a href="#" class="card-link">Email...</a>
+                        <span class="card-subtitle mt-0">Username</span>
+                    </div>
+                    
 				</div>
 			</div>
 		</div>
