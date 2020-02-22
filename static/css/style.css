@@ -151,15 +151,11 @@ div a {
     border: none;
 }
 
-.card-collapse:hover {
-    background-color: #47A349
-}
-
 .collapsed-content {
     display: none;
     padding: 0 18px;
     overflow: hidden;
-    background-color: #f1f1f1;
+    transition: max-height 0.2s ease-out;
 }
 
 /* login */
