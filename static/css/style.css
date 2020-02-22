@@ -64,8 +64,9 @@ div a {
     color: #47A349;
 }
 
-.btn .bg-darkgreen:hover {
-    color: 
+.btn:hover {
+    color: #005732;
+    background-color: #47A349;
 }
 
 /* logo */
