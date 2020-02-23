@@ -143,13 +143,7 @@ div a {
     flex-grow: 2;
 }
 
-.card-item {
-    border: 1px solid #153415;
-    width: 18rem;
-}
-
 .card-img-contain {
-    width: 100%;
     position: relative;
     overflow: hidden;
     padding-bottom: 100%;

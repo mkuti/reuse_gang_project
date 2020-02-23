@@ -15,7 +15,8 @@ sess = Session()  # create session object
 
 # add configuration to Flask app
 MONGO_URI = os.environ["MONGODB_URI"]
-SECRET_KEY = os.environ["SECRET_KEY"]
+app.secret_key = os.urandom(24)
+SECRET_KEY = os.urandom(24)
 sess.init_app(app)
 app.config["MONGODB_NAME"] = "reuse-gang"
 app.config["MONGO_URI"] = MONGO_URI
@@ -31,14 +32,28 @@ def home():
                            users=mongo.db.users.find(), title="Re-Use Gang")
 
 
-@app.route('/login')
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == "POST":
+        users = mongo.db.users
+        used_name = users.find_one({'username': request.form["username"]})
+
+        if used_name is None:
+            user_pwd = generate_password_hash(request.form["password"])
+            users.insert_one({"username": request.form["username"], "password": user_pwd})
+            session['username'] = request.form["username"]
+            flash("Welcome to the Gang, session['username']!")
+            return redirect(url_for('home'))
+        else:
+            flash("This username already exists, please choose another one")
+            return render_template('/components/register.html')
+
+    return render_template('/components/register.html')
+
+
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     return render_template('/components/login.html')
-
-
-@app.route('/register')
-def register():
-    return render_template('/components/register.html')
 
 
 @app.route('/add_item')
