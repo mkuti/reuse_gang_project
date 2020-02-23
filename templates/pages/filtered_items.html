@@ -5,10 +5,10 @@
 {% include 'components/searchbar.html' %}
 
 <section class='container-fluid mx-auto'>
-	<div class="row text-center green_text">
+	<div class="row text-center justify-content-center green_text">
         {% for item in filtered_items %}
-		<div class="col-12 col-sm-6 col-md-4">
-			<div class="card my-2 text-center">
+		<div class="col-10 col-sm-6 col-md-4 col-lg-3">
+			<div class="card my-2">
 				<div class="card-body p-0">
                         <div class="card-img-contain mb-3 text-left">
                             <img src="{{item.item_img}}" class="card-img-top card-img image-fluid" alt="Item Image">
