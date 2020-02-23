@@ -148,10 +148,21 @@ div a {
     width: 18rem;
 }
 
-.card-img-top {
-    height: 100px;
-    width: 100px;
+.card-img-contain {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100%;
 }
+
+.card-img-contain img {
+    position: absolute;
+}
+
+.card-img {
+    height: 100%;
+}
+
 
 .card-collapse {
     cursor: pointer;
