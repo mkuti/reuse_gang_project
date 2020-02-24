@@ -65,8 +65,8 @@ def add_item():
     return render_template('/pages/additem.html')
 
 
-@app.route('/items/find', methods=["POST", "GET"])
-def find_items():
+@app.route('/items/filter', methods=["POST", "GET"])
+def filter_items():
     items = mongo.db.items
     category = request.form["item_category"].capitalize()
     filtered_items = items.find({'item_category': category})
