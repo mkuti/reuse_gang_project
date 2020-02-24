@@ -56,6 +56,15 @@ def login():
     return render_template('/components/login.html')
 
 
+@app.route('/items/filter', methods=["POST", "GET"])
+def filter_items():
+    items = mongo.db.items
+    category = request.form["item_category"].capitalize()
+    filtered_items = items.find({'item_category': category})
+    return render_template('/pages/filtered_items.html', 
+                           filtered_items=filtered_items)
+
+
 @app.route('/items/add', methods=["POST", "GET"])
 def add_item():
     if request.method == "POST":
@@ -65,13 +74,14 @@ def add_item():
     return render_template('/pages/additem.html')
 
 
-@app.route('/items/filter', methods=["POST", "GET"])
-def filter_items():
-    items = mongo.db.items
-    category = request.form["item_category"].capitalize()
-    filtered_items = items.find({'item_category': category})
-    return render_template('/pages/filtered_items.html', 
-                           filtered_items=filtered_items)
+@app.route('/items/update/<item_id>', methods=["POST", "GET"])
+def update_item(item_id):
+    if request.method == "GET":
+        clicked_item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
+        return render_template('/pages/updateitem.html')
+    else:
+        clicked_item.update(request.form.to_dict())
+        return redirect(url_for('home'))
 
 
 if __name__ == "__main__":
