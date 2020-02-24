@@ -1,0 +1,55 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+<section class="container-fluid mt-5">
+	<div class="row text-center">
+		<div class="col-11 col-lg-9 mx-auto card">
+            <h3 class='green_text my-4'>Need to make some changes? ... Or need to mark item as taken?</h3>
+            <h5 class='green_text mb-3'>Change any fields below so we can then advertise your items for other users.</h5>
+			<form class='text-left' method="POST">
+				<div class="form-group mb-3">
+                    <h5 class='lgreen_text'>Item Name</h5>
+                    <input type="text" class="form-control" id="item_name" name="item_name" aria-describedby="name">
+                </div>
+                <div class="form-group mb-3">
+                    <h5 class='lgreen_text'>Item Category</h5>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="item_category" id="category1" value="kids">
+						<p class="form-check-label green-text">Kids</p>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="item_category" id="category2" value="Outdoor">
+						<p class="form-check-label green-text">Outdoor</p>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="item_category" id="category3" value="Household">
+						<p class="form-check-label green-text">HouseHold</p>
+					</div>
+                    <div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="item_category" id="category4" value="Other">
+						<p class="form-check-label green-text">Other</p>
+					</div>
+                </div>
+				<div class="form-group mb-3">
+                    <h5 class='lgreen_text'>Item Description</h5>
+                    <p class='green_text'>Make sure to add a brief description about the item's appearance and state so other users know what to expect.</p>
+                    <textarea class="form-control" id="textarea" name="item_description" rows="auto"></textarea>
+                </div>
+                <div class="form-group mb-1">
+                    <h5 class='lgreen_text'>Item Image</h5>
+                    <p class='green_text'>You can upload the photo for your item to a free image website
+                                (<a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>) and paste its
+                                direct url for it here.</p>
+                    <input type="text" class="form-control" id="item_img" name="item_img" aria-describedby="image" placeholder="https://...">
+                </div>
+                <div class="row text-center">
+                    <div class="col-12 mb-3">
+                        <button type="submit" class="btn bg-darkgreen light_text mt-5 text-uppercase">Add</button>
+                    </div>
+                </div>
+			</form>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

@@ -30,7 +30,8 @@
                             <span class="card-subtitle mt-0">  ... Username</span>
                         </div>
                         <div class="col-4">
-                            <a href="{{url_for('update_item')}}" class="btn bg-darkgreen light_text">Edit</a>
+                        <!--url_for('python_function_name', any other function argument)-->
+                            <a href="{{url_for('update_item', item_id=item._id)}}" class="btn bg-darkgreen light_text">Edit</a>
                         </div>
                     </div>
 				</div>
