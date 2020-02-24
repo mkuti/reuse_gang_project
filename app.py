@@ -56,19 +56,16 @@ def login():
     return render_template('/components/login.html')
 
 
-@app.route('/add_item')
+@app.route('/items/add', methods=["POST", "GET"])
 def add_item():
+    if request.method == "POST":
+        items = mongo.db.items
+        items.insert_one(request.form.to_dict())
+        return redirect(url_for('home'))
     return render_template('/pages/additem.html')
 
 
-@app.route('/create_item', methods=["POST"])
-def create_item():
-    items = mongo.db.items
-    items.insert_one(request.form.to_dict())
-    return redirect('/pages/home.html')
-
-
-@app.route('/find_items', methods=["POST", "GET"])
+@app.route('/items/find', methods=["POST", "GET"])
 def find_items():
     items = mongo.db.items
     category = request.form["item_category"].capitalize()
