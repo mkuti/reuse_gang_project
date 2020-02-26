@@ -9,8 +9,8 @@
             <h5 class='green_text mb-3'>Change any fields below to any new information.</h5>
 			<form class='text-left' method="POST">
 				<div class="form-group mb-3">
-                    <h5 class='lgreen_text'>Current Name: {{item.item_name}}</h5>
-                    <input type="text" class="form-control" id="item_name" name="item_name" aria-describedby="name">
+                    <h5 class='lgreen_text'>Name:</h5>
+                    <input type="text" class="form-control" id="item_name" name="item_name" aria-describedby="name" value="{{item.item_name}}">
                 </div>
                 <div class="form-group mb-3">
                     <h5 class='lgreen_text'>Current Category: {{item.item_category}}</h5>
@@ -32,9 +32,8 @@
 					</div>
                 </div>
 				<div class="form-group mb-3">
-                    <h5 class='lgreen_text'>Current Description: {{item.item_description}}</h5>
-                    <p class='green_text'>Change its description if needed or add a deadline for collection...</p>
-                    <textarea class="form-control" id="textarea" name="item_description" rows="auto"></textarea>
+                    <h5 class='lgreen_text'>Change its description if needed or add a deadline for collection...</h5>
+                    <textarea class="form-control" id="textarea" name="item_description" rows="auto">{{item.item_description}}</textarea>
                 </div>
                 <div class="custom-control custom-switch ml-1">
                     <input type="checkbox" class="custom-control-input" id="customSwitch1" name='taken'>
