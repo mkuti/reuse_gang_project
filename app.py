@@ -70,7 +70,6 @@ def add_item():
     categories = ["Kids", "Outdoor", "Household", "Other"]
     if request.method == "POST":
         items = mongo.db.items
-        form.choice_field.data
         items.insert_one(request.form.to_dict())
         return redirect(url_for('home'))
     return render_template('/pages/additem.html', categories=categories)
@@ -84,6 +83,7 @@ def update_item(item_id):
         return render_template('/pages/updateitem.html', item=clicked_item)
     # if method to call function is POST which post data from front-end to back-end, we update database with form result and redirect user to home
     else:
+        clicked_item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
         clicked_item.update(request.form.to_dict())
         return redirect(url_for('home'))
 
