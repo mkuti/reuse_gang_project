@@ -77,15 +77,21 @@ def add_item():
 
 @app.route('/items/update/<item_id>', methods=["POST", "GET"])
 def update_item(item_id):
+    #if method to call function is POST which post data from front-end to back-end, we update database with form result and redirect user to home
+    if request.method == "POST":
+        items = mongo.db.items
+        items.update({'_id': ObjectId(item_id)},
+                     {
+            'item_name': request.form.get('item_name'),
+            'item_category': request.form.get('item_category'),
+            'item_description': request.form.get('item_description')
+            })
+        return redirect(url_for('home'))
     # if the method to call function is GET which is default, we find item matching clicked item on any card and return template where user can edit item
-    if request.method == "GET":
-        clicked_item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
-        return render_template('/pages/updateitem.html', item=clicked_item)
-    # if method to call function is POST which post data from front-end to back-end, we update database with form result and redirect user to home
     else:
         clicked_item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
-        clicked_item.update(request.form.to_dict())
-        return redirect(url_for('home'))
+        return render_template('/pages/updateitem.html', item=clicked_item)
+        
 
 
 if __name__ == "__main__":
