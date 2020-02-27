@@ -67,11 +67,13 @@ def filter_items():
 
 @app.route('/items/add', methods=["POST", "GET"])
 def add_item():
+    categories = ["Kids", "Outdoor", "Household", "Other"]
     if request.method == "POST":
         items = mongo.db.items
+        form.choice_field.data
         items.insert_one(request.form.to_dict())
         return redirect(url_for('home'))
-    return render_template('/pages/additem.html')
+    return render_template('/pages/additem.html', categories=categories)
 
 
 @app.route('/items/update/<item_id>', methods=["POST", "GET"])
