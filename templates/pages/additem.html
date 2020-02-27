@@ -9,13 +9,13 @@
 			<form class='text-left' method="POST" action="{{url_for('add_item')}}">
 				<div class="form-group mb-3">
                     <h5 class='lgreen_text'>Item Name</h5>
-                    <input type="text" class="form-control" id="item_name" name="item_name" aria-describedby="name">
+                    <input type="text" class="form-control" id="item_name" name="item_name" aria-describedby="name"required>
                 </div>
                 <div class="form-group mb-3">
                     <h5 class='lgreen_text'>Item Category</h5>
                     {% for category in categories %}
 					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="item_category" id="category1" value="{{category}}">
+						<input class="form-check-input" type="radio" name="item_category" id="category1" value="{{category}}"required>
 						<p class="form-check-label green-text">{{category}}</p>
 					</div>
                     {% endfor %}
@@ -23,7 +23,7 @@
 				<div class="form-group mb-3">
                     <h5 class='lgreen_text'>Item Description</h5>
                     <p class='green_text'>Make sure to add a brief description about the item's appearance and state so other users know what to expect.</p>
-                    <textarea class="form-control" id="textarea" name="item_description" rows="auto"></textarea>
+                    <textarea class="form-control" id="textarea" name="item_description" rows="auto"required></textarea>
                 </div>
                 <div class="form-group mb-1">
                     <h5 class='lgreen_text'>Item Image</h5>
