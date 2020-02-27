@@ -84,7 +84,8 @@ def update_item(item_id):
                      {
             'item_name': request.form.get('item_name'),
             'item_category': request.form.get('item_category'),
-            'item_description': request.form.get('item_description')
+            'item_description': request.form.get('item_description'),
+            'item_img': request.form.get('item_img')
             })
         return redirect(url_for('home'))
     # if the method to call function is GET which is default, we find item matching clicked item on any card and return template where user can edit item

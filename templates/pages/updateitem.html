@@ -34,6 +34,12 @@
                     <h5 class='lgreen_text'>Change its description if needed or add a deadline for collection...</h5>
                     <textarea class="form-control" id="textarea" name="item_description" rows="auto">{{item.item_description}}</textarea>
                 </div>
+                <div class="form-group mb-1">
+                    <h5 class='lgreen_text'>Item Image</h5>
+                    <p class='green_text'>If needed, replace with a new photo for your item via 
+                                <a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>.</p>
+                    <input type="text" class="form-control" id="item_img" name="item_img" aria-describedby="image" placeholder="{{item.item_img}}">
+                </div>
                 <div class="custom-control custom-switch ml-1">
                     <input type="checkbox" class="custom-control-input" id="customSwitch1" name='taken'>
                     <label class="custom-control-label lgreen_text" for="customSwitch1">Mark this item as taken will remove it from the database!</label>
