@@ -39,7 +39,8 @@ def register():
         if used_name is None:
             user_pwd = generate_password_hash(request.form["password"])
             users.insert_one({
-                "username": request.form["username"], 
+                "username": request.form["username"],
+                "email": request.form["email"], 
                 "password": user_pwd
                 })
             session['username'] = request.form["username"]
