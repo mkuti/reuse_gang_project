@@ -14,12 +14,10 @@ app = Flask(__name__)  # create instance of flask
 sess = Session()  # create session object
 
 # add configuration to Flask app
-MONGO_URI = os.environ["MONGODB_URI"]
-app.secret_key = os.urandom(24)
-SECRET_KEY = os.urandom(24)
+app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 sess.init_app(app)
 app.config["MONGODB_NAME"] = "reuse-gang"
-app.config["MONGO_URI"] = MONGO_URI
+app.config["MONGO_URI"] = os.environ["MONGODB_URI"]
 
 # create an instance of Pymongo with app object being pushed as argument
 mongo = PyMongo(app)
@@ -40,7 +38,10 @@ def register():
 
         if used_name is None:
             user_pwd = generate_password_hash(request.form["password"])
-            users.insert_one({"username": request.form["username"], "password": user_pwd})
+            users.insert_one({
+                "username": request.form["username"], 
+                "password": user_pwd
+                })
             session['username'] = request.form["username"]
             flash("Welcome to the Gang, session['username']!")
             return redirect(url_for('home'))
