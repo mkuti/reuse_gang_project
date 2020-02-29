@@ -1,4 +1,4 @@
-import os, json
+import os
 from flask import Flask, render_template, redirect, request, url_for, jsonify, flash, session
 from flask_session import Session
 from flask_pymongo import PyMongo
@@ -11,11 +11,9 @@ if path.exists("env.py"):
     import env
 
 app = Flask(__name__)  # create instance of flask
-sess = Session()  # create session object
-sess.init_app(app)
 
 # add configuration to Flask app
-app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
+app.secret_key = os.getenv("SECRET_KEY")
 app.config["MONGODB_NAME"] = "reuse-gang"
 app.config["MONGO_URI"] = os.environ["MONGODB_URI"]
 
@@ -48,7 +46,7 @@ def register():
             return redirect(url_for('home'))
         else:
             flash("This username already exists, please choose another one")
-            return render_template('/components/register.html')
+            return redirect(url_for('register'))
 
     return render_template('/components/register.html')
 
@@ -93,8 +91,7 @@ def update_item(item_id):
     # if the method to call function is GET which is default, we find item matching clicked item on any card and return template where user can edit item
     else:
         clicked_item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
-        return render_template('/pages/updateitem.html', item=clicked_item)
-        
+        return render_template('/pages/updateitem.html', item=clicked_item)     
 
 
 if __name__ == "__main__":

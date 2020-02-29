@@ -12,4 +12,6 @@ cardCollapse.forEach(card => {
 
 selectCat.onchange = function () {
     cat = selectCat.value;
+
+    
 }
