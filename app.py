@@ -71,6 +71,7 @@ def add_item():
     if request.method == "POST":
         items = mongo.db.items
         items.insert_one(request.form.to_dict())
+        flash("Your free stuff will be shared immediately with the gang")
         return redirect(url_for('home'))
     return render_template('/pages/additem.html', categories=categories)
 
