@@ -1,4 +1,5 @@
 const cardCollapse = Array.from(document.getElementsByClassName("card-collapse"));
+const selectCat = document.getElementById("search_category");
 
 cardCollapse.forEach(card => {
     card.addEventListener("click", function(){
@@ -8,3 +9,7 @@ cardCollapse.forEach(card => {
     } else collapsedContent.style.display = "block"
 })
 })
+
+selectCat.onchange = function () {
+    cat = selectCat.value;
+}

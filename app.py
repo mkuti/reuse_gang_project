@@ -12,10 +12,10 @@ if path.exists("env.py"):
 
 app = Flask(__name__)  # create instance of flask
 sess = Session()  # create session object
+sess.init_app(app)
 
 # add configuration to Flask app
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
-sess.init_app(app)
 app.config["MONGODB_NAME"] = "reuse-gang"
 app.config["MONGO_URI"] = os.environ["MONGODB_URI"]
 
