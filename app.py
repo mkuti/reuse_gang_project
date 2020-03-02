@@ -70,9 +70,11 @@ def login():
     return render_template('/components/login.html')
 
 
-@app.route('/logout', methods=['POST', 'GET'])
+@app.route('/logout')
 def logout():
-    return render_template('/components/logout.html')
+    # remove the username from the session if it's there
+    session.pop('username', None)
+    return redirect(url_for('home'))
 
 
 @app.route('/items/filter', methods=["POST", "GET"])
