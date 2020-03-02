@@ -1,8 +1,9 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, jsonify, flash, session
+from flask import Flask, render_template, redirect, request, url_for, jsonify, flash, session, Response
 from flask_session import Session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from bson.json_util import dumps
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from os import path
@@ -13,7 +14,7 @@ if path.exists("env.py"):
 app = Flask(__name__)  # create instance of flask
 
 # add configuration to Flask app
-app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
+app.config["SECRET_KEY"] = os.urandom(24)
 app.config["MONGODB_NAME"] = "reuse-gang"
 app.config["MONGO_URI"] = os.environ["MONGODB_URI"]
 
@@ -84,16 +85,9 @@ def filter_items():
     cat = request.get_json()
     print(cat)
     found_items = mongo.db.items.find({'item_category': cat})
-    for item in found_items:
-        print(item)
-    if item:
-        item_content = {
-            'itemName': item.item_name,
-            'itemCat': item.item_category,
-            'itemDescription': item.item_description,
-            'itemImg': item.item_img
-        }
-        return item_content
+    print(found_items)
+    if found_items:
+        return dumps(found_items)
     else:
         message = {'No items founds in the ${cat} category'}
         return jsonify(message)
@@ -132,15 +126,15 @@ def update_item(item_id):
 
 @app.route('/items/delete/<item_id>', methods=["POST", "GET"])
 def delete_item(item_id):
-    # if method to call function is POST which post data from front-end to back-end, we update database with form result and redirect user to home
+    # if method to call function is POST which post data from front-end to back-end, we delete item
     if request.method == "POST":
         items = mongo.db.items
         items.delete({'_id': ObjectId(item_id)})
         return redirect(url_for('home'))
-    # if the method to call function is GET which is default, we find item matching clicked item on any card and return template where user can edit item
+    # if the method to call function is GET which is default, we find item matching clicked item on any card and return template where user can delete item
     else:
         clicked_item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
-        return render_template('/pages/deleteitem.html', item=clicked_item) 
+        return render_template('/pages/delete.html', item=clicked_item)
 
 
 if __name__ == "__main__":

@@ -24,12 +24,13 @@ selectCat.onchange = function() {
         })
     })
     .then(function(response) {
+        console.log(response)
         if (response.status !== 200) {
             console.log(`Response status was not 200: ${response.status}`);
             return;
         }
         response.json().then(function(data){
-            Swal.fire('data')
+            console.log(data)
         })
     })
     .catch(err => console.log(err));
