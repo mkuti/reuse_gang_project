@@ -1,6 +1,6 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, jsonify, \
-     flash, session
+from flask import Flask, render_template, redirect, request, url_for, jsonify, flash, session
+from flask_session import Session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -59,7 +59,6 @@ def login():
     if request.method == "POST":
         users = mongo.db.users
         matched_user = users.find_one({'email': request.form["email"]})
-        print(matched_user["password"])
         
         if matched_user:
             if check_password_hash(matched_user["password"], request.form["password"]):
@@ -72,10 +71,10 @@ def login():
     return render_template('/components/login.html')
 
 
-@app.route('/logout')
+@app.route('/logout', methods=['POST', 'GET'])
 def logout():
     # remove the username from the session if it's there
-    session.pop('username', None)
+    session.clear()
     flash('You have successfully logged out!')
     return redirect(url_for('home'))
 
@@ -103,13 +102,6 @@ def filter_items():
 @app.route('/items/add', methods=["POST", "GET"])
 def add_item():
     categories = ["Kids", "Outdoor", "Household", "Other"]
-    loggedUser = True if 'user' in session else False
-
-    if not loggedUser:
-        flash('Please log in to be able to add new stuff to share')
-        return redirect(url_for('login'))
-    else:
-        currentUser = mongo.db.users.find_one({'username': session['user']})
 
     if request.method == "POST":
         items = mongo.db.items
