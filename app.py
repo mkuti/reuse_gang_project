@@ -1,7 +1,6 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for, jsonify, \
      flash, session
-from flask_session import Session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -20,7 +19,6 @@ app.config["MONGO_URI"] = os.environ["MONGODB_URI"]
 
 # create an instance of Pymongo with app object being pushed as argument
 mongo = PyMongo(app)
-
 
 @app.route('/')
 @app.route('/home')
@@ -137,7 +135,20 @@ def update_item(item_id):
     # if the method to call function is GET which is default, we find item matching clicked item on any card and return template where user can edit item
     else:
         clicked_item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
-        return render_template('/pages/updateitem.html', item=clicked_item)     
+        return render_template('/pages/updateitem.html', item=clicked_item)    
+
+
+@app.route('/items/delete/<item_id>', methods=["POST", "GET"])
+def delete_item(item_id):
+    # if method to call function is POST which post data from front-end to back-end, we update database with form result and redirect user to home
+    if request.method == "POST":
+        items = mongo.db.items
+        items.delete({'_id': ObjectId(item_id)})
+        return redirect(url_for('home'))
+    # if the method to call function is GET which is default, we find item matching clicked item on any card and return template where user can edit item
+    else:
+        clicked_item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
+        return render_template('/pages/deleteitem.html', item=clicked_item) 
 
 
 if __name__ == "__main__":
