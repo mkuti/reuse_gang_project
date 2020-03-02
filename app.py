@@ -70,6 +70,11 @@ def login():
     return render_template('/components/login.html')
 
 
+@app.route('/logout', methods=['POST', 'GET'])
+def logout():
+    return render_template('/components/logout.html')
+
+
 @app.route('/items/filter', methods=["POST", "GET"])
 def filter_items():
     cat = request.get_json()
