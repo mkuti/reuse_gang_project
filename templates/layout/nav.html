@@ -24,6 +24,11 @@
                 <a class="nav-link nav-font" href="#">Account</a>
                 {% endif %}-->
 			</li>
+            {% if "username in session %}
+            <li class="nav-item mr-3">
+				<a class="nav-link nav-font green_text" href="{{url_for('logout')}}">Log Out</a>
+			</li>
+            {% endif %}
 		</ul>
 		<span class="navbar-text mt-2 mr-3 nav-font d-none d-md-block green-text">
             Recycle,reduce,reuse…close the loop!
