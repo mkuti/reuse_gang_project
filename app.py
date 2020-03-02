@@ -71,13 +71,22 @@ def login():
 
 @app.route('/items/filter', methods=["POST", "GET"])
 def filter_items():
-    items = mongo.db.items
     cat = request.get_json()
     print(cat)
-    filtered_items = items.find({'item_category': cat})
-    for item in filtered_items:
+    found_items = mongo.db.items.find({'item_category': cat})
+    for item in found_items:
         print(item)
-    return render_template('/pages/filtered_items.html', items=filtered_items)
+    if item:
+        item_content = {
+            'itemName': item.item_name,
+            'itemCat': item.item_category,
+            'itemDescription': item.item_description,
+            'itemImg': item.item_img
+        }
+        return item_content
+    else:
+        message = {'No items founds in the ${cat} category'}
+        return jsonify(message)
 
 
 @app.route('/items/add', methods=["POST", "GET"])
