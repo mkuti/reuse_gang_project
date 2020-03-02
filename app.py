@@ -60,11 +60,11 @@ def login():
     if request.method == "POST":
         users = mongo.db.users
         matched_user = users.find_one({'email': request.form["email"]})
+        print(matched_user["password"])
         
         if matched_user:
-            pw = check_password_hash(matched_user.password)
-            if pw == request.form["password"]:
-                flash("Welcome back" + matched_user.username)
+            if check_password_hash(matched_user["password"], request.form["password"]):
+                flash("Welcome back " + matched_user["username"])
                     
     return render_template('/components/login.html')
 
