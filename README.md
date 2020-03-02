@@ -237,10 +237,8 @@ TODO:Will add user stories here
 ##### As a general user, I am expecting:
 * 
 
-##### As a user aged between 6 and 10 years old, I am expecting:
 * 
 
-##### As a parent of child user, I am expecting:
 * 
 
 ##### As a developer, I want:
@@ -421,6 +419,9 @@ I also tested the game on Safari via an iMac with a very big screen and an iPod 
 - [jQuery](https://jquery.com/) and [Popper.js](https://popper.js.org/) - The website uses __jQuery__ and __Popper.js__ to bring in Javascript which makes the navbar responsive
 - __Javascript__ functioning language is used to fetch external data and add interactivity on the website so the game functions based on user's actions
 - [jQuery](https://jquery.com/) - I used jQuery to avoid repeating same actions on the DOM when buttons were clicked
+- __Python__ 
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) - I used Flask, Jinja templates and Werkzeug to 
+Python werkzeug.check_password_hash()
 - [FontAwesome](https://kit.fontawesome.com/f7e192f540.js) - The website is using __Font Awesome__ to display the social media icons in my footer
 - [Google Fonts](https://fonts.google.com/)- The website uses __1 Google font__- Url imported in CSS
 - [AutoPrefixer](https://autoprefixer.github.io/) - I have used __AutoPrefixer__ to make sure the css code worked on all browsers
