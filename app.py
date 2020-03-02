@@ -107,11 +107,11 @@ def add_item():
     categories = ["Kids", "Outdoor", "Household", "Other"]
     loggedUser = True if 'user' in session else False
 
-    if loggedUser:
-        currentUser = mongo.db.users.find_one({'username': session['user']})
-    else:
+    if not loggedUser:
         flash('Please log in to be able to add new stuff to share')
         return redirect(url_for('login'))
+    else:
+        currentUser = mongo.db.users.find_one({'username': session['user']})
 
     if request.method == "POST":
         items = mongo.db.items
@@ -119,7 +119,6 @@ def add_item():
         flash("Thanks!Your free stuff will be shared immediately with the gang.")
         return redirect(url_for('home'))
     return render_template('/pages/additem.html', categories=categories)
-    
 
 
 @app.route('/items/update/<item_id>', methods=["POST", "GET"])
