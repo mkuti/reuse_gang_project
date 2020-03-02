@@ -10,8 +10,17 @@ cardCollapse.forEach(card => {
 })
 })
 
-selectCat.onchange = function () {
+selectCat.onchange = function() {
     cat = selectCat.value;
+    alert(cat)
 
-    
+    fetch(`${window.origin}/items/filter`, {
+        method: "POST",
+        credentials: 'include',
+        body: JSON.stringify(cat),
+        cache: 'no-cache',
+        headers: new Headers({
+            "content-type": "application/json"
+        })
+    })
 }

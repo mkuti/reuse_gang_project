@@ -28,6 +28,9 @@ def home():
                            users=mongo.db.users.find(), title="Re-Use Gang")
 
 
+
+
+
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     if request.method == "POST":
@@ -46,7 +49,7 @@ def register():
             flash("Welcome to the Gang, session['username']!")
             return redirect(url_for('home'))
         elif used_email is not None:
-            flash("This email address has already been used, do you want to log in?")
+            flash("This email address is already registered, would you like to log in instead?")
             return redirect(url_for('login'))
         else:
             flash("This username already exists, please choose another one")
@@ -56,17 +59,18 @@ def register():
 
 
 @app.route('/login', methods=['POST', 'GET'])
-def login():        
+def login():    
     return render_template('/components/login.html')
 
 
 @app.route('/items/filter', methods=["POST", "GET"])
 def filter_items():
     items = mongo.db.items
-    category = request.form["item_category"].capitalize()
-    filtered_items = items.find({'item_category': category})
-    return render_template('/pages/filtered_items.html', 
-                           filtered_items=filtered_items)
+    cat = request.get_json().lower()
+    print(cat)
+    filtered_items = items.find({'item_category': json.dumps(cat)})
+    print(filtered_items)
+    return render_template('/pages/filtered_items.html', filtered_items=filtered_items)
 
 
 @app.route('/items/add', methods=["POST", "GET"])
@@ -75,7 +79,7 @@ def add_item():
     if request.method == "POST":
         items = mongo.db.items
         items.insert_one(request.form.to_dict())
-        flash("Your free stuff will be shared immediately with the gang")
+        flash("Thanks!Your free stuff will be shared immediately with the gang.")
         return redirect(url_for('home'))
     return render_template('/pages/additem.html', categories=categories)
 
