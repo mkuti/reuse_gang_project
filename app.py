@@ -65,6 +65,7 @@ def login():
         if matched_user:
             if check_password_hash(matched_user["password"], request.form["password"]):
                 flash("Welcome back " + matched_user["username"])
+                return redirect(url_for('home'))
                     
     return render_template('/components/login.html')
 
