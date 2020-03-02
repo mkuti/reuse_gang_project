@@ -13,7 +13,7 @@ if path.exists("env.py"):
 app = Flask(__name__)  # create instance of flask
 
 # add configuration to Flask app
-app.secret_key = os.getenv("SECRET_KEY")
+app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 app.config["MONGODB_NAME"] = "reuse-gang"
 app.config["MONGO_URI"] = os.environ["MONGODB_URI"]
 
@@ -26,9 +26,6 @@ mongo = PyMongo(app)
 def home():
     return render_template('/pages/home.html', items=mongo.db.items.find(),
                            users=mongo.db.users.find(), title="Re-Use Gang")
-
-
-
 
 
 @app.route('/register', methods=['POST', 'GET'])
@@ -75,11 +72,12 @@ def login():
 @app.route('/items/filter', methods=["POST", "GET"])
 def filter_items():
     items = mongo.db.items
-    cat = request.get_json().lower()
+    cat = request.get_json()
     print(cat)
-    filtered_items = items.find({'item_category': json.dumps(cat)})
-    print(filtered_items)
-    return render_template('/pages/filtered_items.html', filtered_items=filtered_items)
+    filtered_items = items.find({'item_category': cat})
+    for item in filtered_items:
+        print(item)
+    return render_template('/pages/filtered_items.html', items=filtered_items)
 
 
 @app.route('/items/add', methods=["POST", "GET"])
