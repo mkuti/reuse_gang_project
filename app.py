@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, jsonify, flash, session
+from flask import Flask, render_template, redirect, request, url_for, jsonify, \
+     flash, session
 from flask_session import Session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -66,6 +67,9 @@ def login():
             if check_password_hash(matched_user["password"], request.form["password"]):
                 flash("Welcome back " + matched_user["username"])
                 return redirect(url_for('home'))
+            else:
+                flash("You've entered the wrong password")
+                return redirect(url_for('login'))
                     
     return render_template('/components/login.html')
 
@@ -101,17 +105,26 @@ def filter_items():
 @app.route('/items/add', methods=["POST", "GET"])
 def add_item():
     categories = ["Kids", "Outdoor", "Household", "Other"]
+    loggedUser = True if 'user' in session else False
+
+    if loggedUser:
+        currentUser = mongo.db.users.find_one({'username': session['user']})
+    else:
+        flash('Please log in to be able to add new stuff to share')
+        return redirect(url_for('login'))
+
     if request.method == "POST":
         items = mongo.db.items
         items.insert_one(request.form.to_dict())
         flash("Thanks!Your free stuff will be shared immediately with the gang.")
         return redirect(url_for('home'))
     return render_template('/pages/additem.html', categories=categories)
+    
 
 
 @app.route('/items/update/<item_id>', methods=["POST", "GET"])
 def update_item(item_id):
-    #if method to call function is POST which post data from front-end to back-end, we update database with form result and redirect user to home
+    # if method to call function is POST which post data from front-end to back-end, we update database with form result and redirect user to home
     if request.method == "POST":
         items = mongo.db.items
         items.update({'_id': ObjectId(item_id)},
