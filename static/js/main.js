@@ -48,9 +48,11 @@ selectCat.onchange = function() {
 function loopItems(data) {
     let cardContent = '';
     data.forEach(item => {
+        /**
+ * Adding $oid behind _id to remove id hex number from object and construct url for editing item
+ */
         item_id = item._id.$oid
         cardContent += injectCard(item)
-        console.log(cardContent)
     })
     $("#card_item").html(cardContent);
 }
@@ -94,3 +96,21 @@ function injectCard(item) {
         `;
         return cardHtml;
 }
+
+/*
+=================================
+           DELETE MODAL
+=================================
+*/
+
+/*
+=================================
+        REGISTER AND LOGIN
+=================================
+*/
+
+/*
+=================================
+           LOADER
+=================================
+*/
