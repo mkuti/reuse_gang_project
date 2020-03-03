@@ -129,11 +129,7 @@ def delete_item(item_id):
         items = mongo.db.items
         items.delete({'_id': ObjectId(item_id)})
         return redirect(url_for('home'))
-    # if the method to call function is GET which is default, we find item matching clicked item on any card and return template where user can delete item
-    else:
-        clicked_item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
-        return render_template('/pages/delete.html', item=clicked_item)
-
+            
 
 if __name__ == "__main__":
     app.run(host=os.getenv("IP", "0.0.0.0"),

@@ -14,7 +14,7 @@
                 </div>
                 <div class="form-group mb-3">
 					<div class="form-check form-check-inline">
-						<input class="form-check-input" type="radio" name="item_category" id="category1" value="kids" {% if item.item_category == 'Kids' %}checked{% endif %}>
+						<input class="form-check-input" type="radio" name="item_category" id="category1" value="Kids" {% if item.item_category == 'Kids' %}checked{% endif %}>
 						<p class="form-check-label green-text">Kids</p>
 					</div>
 					<div class="form-check form-check-inline">
@@ -38,7 +38,7 @@
                     <h5 class='lgreen_text'>Item Image</h5>
                     <p class='green_text'>If needed, replace with a new photo for your item via 
                                 <a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>.</p>
-                    <input type="text" class="form-control" id="item_img" name="item_img" aria-describedby="image" placeholder="{{item.item_img}}">
+                    <input type="text" class="form-control" id="item_img" name="item_img" aria-describedby="image" value="{{item.item_img}}">
                 </div>
                 <div class="row text-center">
                      <h5 class='lgreen_text'>Someone picked up my stuff, I want to remove it.</h5>
@@ -58,6 +58,24 @@
 </section>
 
 <!-- modal confirmRemove -->
-{% include 'pages/delete.html' %}
+<div class="modal fade" id="confirm_remove" tabindex="-1" role="dialog" aria-labelledby="confirm_removeTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title green-text">{{modalTitle}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title green_text">Once you confirm the stuff has been taken, we will remove the item from the database</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn bg-darkgreen light_text" data-dismiss="modal">Cancel & keep item</button>
+        <a href="{{url_for('delete_item', item_id=item._id)}}" type="button" class="btn bg-darkgreen light_text">Remove it!</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
