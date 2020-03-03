@@ -1,5 +1,10 @@
+/*
+=================================
+   COLLAPSING ITEM DESCRIPTION
+=================================
+*/
+
 const cardCollapse = Array.from(document.getElementsByClassName("card-collapse"));
-const selectCat = document.getElementById("search_category");
 
 cardCollapse.forEach(card => {
     card.addEventListener("click", function(){
@@ -9,6 +14,15 @@ cardCollapse.forEach(card => {
     } else collapsedContent.style.display = "block"
 })
 })
+
+/*
+=================================
+           SEARCH BAR
+=================================
+*/
+
+const selectCat = document.getElementById("search_category");
+
 
 selectCat.onchange = function() {
     cat = selectCat.value;
@@ -24,13 +38,10 @@ selectCat.onchange = function() {
         })
     })
     .then(function(response) {
-        console.log(response)
-        if (response.status !== 200) {
-            console.log(`Response status was not 200: ${response.status}`);
-            return;
-        }
         response.json().then(function(data){
-            console.log(data)
+            data.forEach(item => {
+                console.log(item);
+            })
         })
     })
     .catch(err => console.log(err));
