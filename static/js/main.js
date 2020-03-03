@@ -48,7 +48,7 @@ selectCat.onchange = function() {
 function loopItems(data) {
     let cardContent = '';
     data.forEach(item => {
-        let item_id = item._id;   
+        item_id = item._id.$oid
         cardContent += injectCard(item)
         console.log(cardContent)
     })
@@ -75,11 +75,9 @@ function injectCard(item) {
                             <p class="card-text collapsed-content text-left px-0 mx-0 lgreen_text" id="item_description">${item.item_description}</p>
                         </div>
                     </div>
-                    {% if item.item_img %}
                     <div class="card-img-contain text-left mb-3">
                             <img src="${item.item_img}" class="card-img-top card-img" alt="Item Image" id="item_img">
                     </div>
-                    {% endif %}
                     <div class="row my-3">
                         <div class="col-8">
                             <a href="#" class="card-link">Email</a>
@@ -87,7 +85,7 @@ function injectCard(item) {
                         </div>
                         <div class="col-4">
                         <!--url_for('python_function_name', any other function argument)-->
-                            <a href="{{url_for('update_item', item_id=item._id)}}" class="btn bg-darkgreen light_text">Edit</a>
+                            <a href="/items/update/${item_id}" class="btn bg-darkgreen light_text">Edit</a>
                         </div>
                     </div>
 				</div>
