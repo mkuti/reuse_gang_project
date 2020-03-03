@@ -122,15 +122,16 @@ def update_item(item_id):
         return render_template('/pages/updateitem.html', item=clicked_item)    
 
 
-@app.route('/items/delete/<item_id>', methods=["POST", "GET"])
+@app.route('/items/delete/<item_id>', methods=["POST"])
 def delete_item(item_id):
     # if method to call function is POST which post data from front-end to back-end, we delete item
     if request.method == "POST":
-        clicked_item = mongo.db.items.find({'_id': ObjectId(item_id)})
-        clicked_item.delete()
-        flash("The item ${clicked_item.item_name} has been deleted")
+        item = mongo.db.items.find({'_id': ObjectId(item_id)})
+        for i in item:
+            itemName = i['item_name']
+        mongo.db.items.remove({'_id': ObjectId(item_id)})
+        flash(itemName + "has been deleted")
         return redirect(url_for('home'))
-    return None
 
 
 if __name__ == "__main__":
