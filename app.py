@@ -83,9 +83,7 @@ def logout():
 @app.route('/items/filter', methods=["POST", "GET"])
 def filter_items():
     cat = request.get_json()
-    print(cat)
     found_items = mongo.db.items.find({'item_category': cat})
-    print(found_items)
     if found_items:
         return dumps(found_items)
     else:
