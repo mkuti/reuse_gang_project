@@ -126,10 +126,12 @@ def update_item(item_id):
 def delete_item(item_id):
     # if method to call function is POST which post data from front-end to back-end, we delete item
     if request.method == "POST":
-        items = mongo.db.items
-        items.delete({'_id': ObjectId(item_id)})
+        clicked_item = mongo.db.items.find({'_id': ObjectId(item_id)})
+        clicked_item.delete()
+        flash("The item ${clicked_item.item_name} has been deleted")
         return redirect(url_for('home'))
-            
+    return None
+
 
 if __name__ == "__main__":
     app.run(host=os.getenv("IP", "0.0.0.0"),

@@ -36,23 +36,21 @@
                 </div>
                 <div class="form-group mb-1">
                     <h5 class='lgreen_text'>Item Image</h5>
-                    <p class='green_text'>If needed, replace with a new photo for your item via 
-                                <a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>.</p>
+                    <p class='green_text'>If needed, replace with a new photo for your item via <a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>.</p>
                     <input type="text" class="form-control" id="item_img" name="item_img" aria-describedby="image" value="{{item.item_img}}">
-                </div>
-                <div class="row text-center">
-                     <h5 class='lgreen_text'>Someone picked up my stuff, I want to remove it.</h5>
-                     <div class="col-12 text-left">
-                        <button href="{{url_for('delete_item', item_id=item._id)}}" type="submit" class="btn bg-darkgreen light_text text-uppercase" data-toggle="modal" data-target="#confirm_remove">Remove it</button>
-                    </div>
                 </div>
                 <div class="row text-center">
                     <div class="col-12 mb-3">
                         <button type="submit" class="btn bg-darkgreen light_text mt-5 text-uppercase">Edit</button>
                     </div>
-                    
                 </div>
 			</form>
+            <div class="row text-center">
+                     <h5 class='lgreen_text'>Someone picked up my stuff, I want to remove it.</h5>
+                     <div class="col-12 text-left">
+                        <button class="btn bg-darkgreen light_text text-uppercase" data-toggle="modal" data-target="#confirm_remove">Remove it</button>
+                    </div>
+            </div>
 		</div>
 	</div>
 </section>
@@ -61,17 +59,11 @@
 <div class="modal fade" id="confirm_remove" tabindex="-1" role="dialog" aria-labelledby="confirm_removeTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title green-text">{{modalTitle}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
       <div class="modal-body">
-        <h5 class="modal-title green_text">Once you confirm the stuff has been taken, we will remove the item from the database</h5>
+        <h5 class="modal-title green_text">Once you confirm "{{item.item_name}}" has been taken, we will remove it from the database</h5>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn bg-darkgreen light_text" data-dismiss="modal">Cancel & keep item</button>
+        <button type="button" class="btn bg-darkgreen light_text" data-dismiss="modal">Cancel & keep</button>
         <a href="{{url_for('delete_item', item_id=item._id)}}" type="button" class="btn bg-darkgreen light_text">Remove it!</a>
       </div>
     </div>
