@@ -14,7 +14,7 @@ if path.exists("env.py"):
 app = Flask(__name__)  # create instance of flask
 
 # add configuration to Flask app
-app.config["SECRET_KEY"] = os.urandom(24)
+app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 app.config["MONGODB_NAME"] = "reuse-gang"
 app.config["MONGO_URI"] = os.environ["MONGODB_URI"]
 
@@ -44,6 +44,9 @@ def register():
                 })
             session['username'] = request.form["username"]
             flash("Welcome to the Gang, session['username']!")
+            if 'user' in session:
+                user = session['username']
+                print(user)
             return redirect(url_for('home'))
         elif used_email is not None:
             flash("This email address is already registered, would you like to log in instead?")
@@ -64,6 +67,7 @@ def login():
         if matched_user:
             if check_password_hash(matched_user["password"], request.form["password"]):
                 flash("Welcome back " + matched_user["username"])
+                session['username'] = matched_user["username"]
                 return redirect(url_for('home'))
             else:
                 flash("You've entered the wrong password")
@@ -75,7 +79,7 @@ def login():
 @app.route('/logout', methods=['POST', 'GET'])
 def logout():
     # remove the username from the session if it's there
-    session.clear()
+    [session.pop(key) for key in list(session.keys())]
     flash('You have successfully logged out!')
     return redirect(url_for('home'))
 
@@ -87,8 +91,8 @@ def filter_items():
     if found_items:
         return dumps(found_items)
     else:
-        message = {'No items founds in the ${cat} category'}
-        return jsonify(message)
+        return render_template('/pages/home.html', items=mongo.db.items.find(),
+                           users=mongo.db.users.find(), title="Re-Use Gang")
 
 
 @app.route('/items/add', methods=["POST", "GET"])
