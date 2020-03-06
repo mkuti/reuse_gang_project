@@ -7,9 +7,11 @@
 			<div class="card my-2 text-center">
 				<div class="card-body p-0">
                     <div class="row my-3">
-                        <div class="col px-0">
+                        <div class="col-8 px-0">
                             <h3 class="card-title text-uppercase mb-4" id="item_name">{{item.item_name}}</h4>
-					        <h5 class="card-subtitle mb-2" id="item_category">
+                        </div>
+                        <div class="col-4 mt-2">
+                            <h5 class="card-subtitle mb-2" id="item_category">
                             {% if item.item_category == 'Outdoor' %}<i class="fas fa-cloud-sun"></i>
                             {% elif item.item_category == 'Kids' %}<i class="fas fa-child"></i>
                             {% elif item.item_category == 'Household' %}<i class="fas fa-home"></i>
