@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue:400|Indie+Flower:400|Nanum+Pen+Script:400');
- 
+
+/* general elements styling */
+
 * {
     box-sizing: border-box;
 }
-/* scroll-behavior to add smooth scrolling */
+
 html {
     margin: 0;
     padding: 0;
     line-height: 1.15;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* scroll-behavior to add smooth scrolling */
     font-size: 16px;
 }
 
@@ -61,6 +63,14 @@ div a {
 
 .lgreen_text {
     color: #47A349;
+}
+
+/* buttons */
+
+.btn {
+    width: 10rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
 }
 
 .btn:hover {
