@@ -64,8 +64,17 @@ function injectCard(item) {
                     <div class="row my-3">
                         <div class="col px-0">
                             <h4 class="card-title text-uppercase mb-4">${item.item_name}</h4>
-					        <h5 class="card-subtitle mb-4">Category: ${item.item_category}</h5>
-                            <h5 class="card-subtitle mb-2">Left by: Username</h5>
+                            <h5 class="card-subtitle mb-4">
+                            ${(() => {
+                                if (item.item_category == 'Outdoor') {
+                                    return `<i class="fas fa-cloud-sun"></i>`;
+                                } else if (item.item_category == 'Kids') {
+                                    return `<i class="fas fa-child"></i>`;
+                                } else if (item.item_category == 'Household') {
+                                    return `<i class="fas fa-home"></i>`;
+                                } else {return `<i class="fas fa-random"></i>`}
+                                })()}
+                            </h5>
                         </div>
                     </div>
                     <div class="row my-3">
@@ -96,24 +105,4 @@ function injectCard(item) {
 		</div>
         `;
         return cardHtml;
-}
-
-/*
-=================================
-           DELETE MODAL
-=================================
-
-
-*/
-
-/*
-=================================
-        REGISTER AND LOGIN
-=================================
-*/
-
-/*
-=================================
-           LOADER
-=================================
-*/
+                            }
