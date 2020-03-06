@@ -91,8 +91,10 @@ def filter_items():
     if found_items:
         return dumps(found_items)
     else:
-        return render_template('/pages/home.html', items=mongo.db.items.find(),
-                           users=mongo.db.users.find(), title="Re-Use Gang")
+        return render_template('/pages/home.html', items=mongo.db.items.find(), 
+        users=mongo.db.users.find(), 
+        title="Re-Use Gang"
+        )
 
 
 @app.route('/items/add', methods=["POST", "GET"])
@@ -119,6 +121,7 @@ def update_item(item_id):
             'item_description': request.form.get('item_description'),
             'item_img': request.form.get('item_img')
             })
+        flash("We've successfully updated your stuff.")
         return redirect(url_for('home'))
     # if the method to call function is GET which is default, we find item matching clicked item on any card and return template where user can edit item
     else:
