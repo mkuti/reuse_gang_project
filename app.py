@@ -33,9 +33,11 @@ def register():
     if request.method == "POST":
         users = mongo.db.users
         used_name = users.find_one({'username': request.form["username"]})
+        print(used_name)
         used_email = users.find_one({'email': request.form["email"]})
+        print(used_email)
 
-        if used_name and used_email is None:
+        if (used_email or used_name) is None:
             user_pwd = generate_password_hash(request.form["password"])
             users.insert_one({
                 "username": request.form["username"],
@@ -43,18 +45,15 @@ def register():
                 "password": user_pwd
                 })
             session['username'] = request.form["username"]
-            flash("Welcome to the Gang, session['username']!")
-            if 'user' in session:
-                user = session['username']
-                print(user)
+            flash("Welcome to the Gang, " + session['username'] + "!")
             return redirect(url_for('home'))
-        elif used_email is not None:
-            flash("This email address is already registered, would you like to log in instead?")
-            return redirect(url_for('login'))
-        else:
+        elif used_name is not None:
             flash("This username already exists, please choose another one")
             return redirect(url_for('register'))
-
+        else:
+            flash("This email address is already registered, would you like to log in instead?")
+            return redirect(url_for('login'))
+        
     return render_template('/components/register.html')
 
 
