@@ -33,17 +33,19 @@
                     </div>
                     {% endif %}
                     <div class="row my-3">
-                        <div {% if "username" in session %} class="col-8" {% else %} class="col-12" {% endif %}>
+                        <div class="col-12">
                             <a href="#" class="card-link">Email</a>
-                            <span class="card-subtitle mt-0">  ... Username</span>
+                            <span class="card-subtitle mt-0">Item owner</span>
                         </div>
-                        {% if "username" in session %}
-                        <div class="col-4">
+                    </div>
+                    {% if "username" in session %}
+                    <div class="row my-3">
+                        <div class="col-12 text-center">
                         <!--url_for('python_function_name', any other function argument)-->
                             <a href="{{url_for('update_item', item_id=item._id)}}" class="btn bg-darkgreen light_text">Edit</a>
                         </div>
-                        {% endif %}
                     </div>
+                    {% endif %}
 				</div>
 			</div>
 		</div>
