@@ -126,7 +126,10 @@ def update_item(item_id):
     # if the method to call function is GET which is default, we find item matching clicked item on any card and return template where user can edit item
     else:
         clicked_item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
-        return render_template('/pages/updateitem.html', item=clicked_item)    
+        if "username" not in session:
+            return redirect(url_for('login'))
+        else:
+            return render_template('/pages/updateitem.html', item=clicked_item)
 
 
 @app.route('/items/delete/<item_id>', methods=["POST"])
