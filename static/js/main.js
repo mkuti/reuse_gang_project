@@ -26,7 +26,7 @@ const card = document.getElementById("card_item")
 
 selectCat.onchange = function() {
     cat = selectCat.value;
-    
+            
     fetch(`${window.origin}/items/filter`, {
         method: "POST",
         credentials: 'include',
