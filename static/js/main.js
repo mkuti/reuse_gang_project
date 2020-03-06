@@ -1,22 +1,5 @@
 /*
 =================================
-   COLLAPSING ITEM DESCRIPTION
-=================================
-*/
-
-const cardCollapse = Array.from(document.getElementsByClassName("card-collapse"));
-
-cardCollapse.forEach(card => {
-    card.addEventListener("click", function(){
-    let collapsedContent = card.nextElementSibling;
-    if(collapsedContent.style.display === "block"){
-        collapsedContent.style.display = "none";
-    } else collapsedContent.style.display = "block"
-})
-})
-
-/*
-=================================
            SEARCH BAR
 =================================
 */
@@ -56,14 +39,18 @@ function loopItems(data) {
     $("#card_item").html(cardContent);
 }
 
+// found solution to inject if statement within template literals: https://stackoverflow.com/questions/44488434/inserting-if-statement-inside-es6-template-literal/55913826#55913826
+
 function injectCard(item) {
     cardHtml = `
             <div class="col-10 col-sm-6 col-md-4 col-lg-3">
 			<div class="card my-2 text-center">
 				<div class="card-body p-0">
                     <div class="row my-3">
-                        <div class="col px-0">
+                        <div class="col-10 px-0">
                             <h4 class="card-title text-uppercase mb-4">${item.item_name}</h4>
+                        </div>
+                        <div class="col-2 mt-2">
                             <h5 class="card-subtitle mb-4">
                             ${(() => {
                                 if (item.item_category == 'Outdoor') {
@@ -85,9 +72,13 @@ function injectCard(item) {
                             <p class="card-text collapsed-content text-left px-0 mx-0 lgreen_text">${item.item_description}</p>
                         </div>
                     </div>
-                    <div class="card-img-contain text-left mb-3">
-                            <img src="${item.item_img}" class="card-img-top card-img" alt="Item Image">
-                    </div>
+                    ${(() => {
+                        if (item.item_img){
+                            return `<div class="card-img-contain text-left mb-3">
+                                        <img src="${item.item_img}" class="card-img-top card-img" alt="Item Image">
+                                    </div>`
+                        }
+                    })()}
                     <div class="row my-3">
                         <div class="col-12">>
                             <a href="#" class="card-link">Email</a>
@@ -105,4 +96,23 @@ function injectCard(item) {
 		</div>
         `;
         return cardHtml;
-                            }
+}
+
+
+/*
+=================================
+   COLLAPSING ITEM DESCRIPTION
+=================================
+*/
+
+const cardCollapse = Array.from(document.getElementsByClassName("card-collapse"));
+
+cardCollapse.forEach(card => {
+    card.addEventListener("click", function(){
+    let collapsedContent = card.nextElementSibling;
+    if(collapsedContent.style.display === "block"){
+        collapsedContent.style.display = "none";
+    } else collapsedContent.style.display = "block"
+})
+})
+

@@ -7,10 +7,10 @@
 			<div class="card my-2 text-center">
 				<div class="card-body p-0">
                     <div class="row my-3">
-                        <div class="col-8 px-0">
+                        <div class="col-10 px-0">
                             <h3 class="card-title text-uppercase mb-4" id="item_name">{{item.item_name}}</h4>
                         </div>
-                        <div class="col-4 mt-2">
+                        <div class="col-2 mt-2">
                             <h5 class="card-subtitle mb-2" id="item_category">
                             {% if item.item_category == 'Outdoor' %}<i class="fas fa-cloud-sun"></i>
                             {% elif item.item_category == 'Kids' %}<i class="fas fa-child"></i>
@@ -20,6 +20,7 @@
                             </h5>
                         </div>
                     </div>
+                    
                     <div class="row my-3">
                         <div class="col">
                             <a type='button' class='card-collapse light_text px-0 mx-0'>
