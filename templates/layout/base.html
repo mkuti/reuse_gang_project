@@ -32,14 +32,14 @@
 <!-- Banner image -->
 {% include 'components/bannerimage.html' %}
 
-<!-- Main content 
+<!-- Main content -->
 {% with messages = get_flashed_messages() %}
     {% if messages %}
         {% for message in messages %}
             <h1 class="text-center green_text">{{ message }}</h1>
         {% endfor %}
     {% endif %}
-{% endwith %}-->
+{% endwith %}
 
 {% block content %} {% endblock %}
 
