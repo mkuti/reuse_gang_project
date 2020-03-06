@@ -107,6 +107,7 @@ def add_item():
             'item_name': request.form['item_name'],
             'item_category': request.form['item_category'],
             'item_description': request.form['item_description'],
+            'item_location': request.form['item_location'],
             'item_img': request.form['item_img']
         })
         flash("Thanks!Your free stuff will be shared immediately with the gang.")
@@ -121,9 +122,11 @@ def update_item(item_id):
         items = mongo.db.items
         items.update({'_id': ObjectId(item_id)},
                      {
+            'username': session['username'],
             'item_name': request.form.get('item_name'),
             'item_category': request.form.get('item_category'),
             'item_description': request.form.get('item_description'),
+            'item_location': request.form.get('item_location'),
             'item_img': request.form.get('item_img')
             })
         flash("We've successfully updated your stuff.")
