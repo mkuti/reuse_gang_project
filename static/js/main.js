@@ -80,11 +80,13 @@ function injectCard(item) {
                             <img src="${item.item_img}" class="card-img-top card-img" alt="Item Image" id="item_img">
                     </div>
                     <div class="row my-3">
-                        <div class="col-8">
+                        <div class="col-12">>
                             <a href="#" class="card-link">Email</a>
-                            <span class="card-subtitle mt-0">  ... Username</span>
+                            <span class="card-subtitle mt-0">Item owner</span>
                         </div>
-                        <div class="col-4">
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-12">
                         <!--url_for('python_function_name', any other function argument)-->
                             <a href="/items/update/${item_id}" class="btn bg-darkgreen light_text">Edit</a>
                         </div>
