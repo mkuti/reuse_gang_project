@@ -116,3 +116,13 @@ cardCollapse.forEach(card => {
 })
 })
 
+/*
+=================================
+    LOGO DISAPPEAR ON SCROLL
+=================================
+*/
+
+// courtesy of Simen Daehlin from my first milestone, via https://codepen.io/Eventyret/pen/RXBNaJ
+$(window).scroll(function(){
+    $("#logo-img").css("opacity", 1 - $(window).scrollTop() / 50)
+})
