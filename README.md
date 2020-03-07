@@ -1,7 +1,3 @@
-A platform where people want to give for free, an unwanted item 
-A platform where the free item can be taken by another person that needs it
-A free and user-friendly platform where exchange happens
-
 <h1 align="center">
   <a href="" target="_blank"><img src="" width=100 height=100 alt="logo"/></a>
 </h1>
