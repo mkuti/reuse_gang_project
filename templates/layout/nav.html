@@ -1,15 +1,15 @@
 {% block navbar %}
 
 <!-- navbar and logo -->
-<nav class="navbar bg-nav fixed-top mr-0">
+<nav class="navbar bg-nav fixed-top">
         <a href="{{url_for('home')}}" class='navbar-brand' id="logo">
 		    <img class="bg_light" id="logo-img" src="{{url_for('static', filename='../static/images/logo.png')}}" alt="logo">
          </a>
 	    <div class="bg_light">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-uppercase">
-			    <li class="nav-item mr-3">
+            <ul class="navbar-nav text-uppercase">
+			    <li class="mx-3">
 				{% if 'username' not in session %}
-                    <a class="nav-link nav-font" href="{{url_for('login')}}"><i class="fas fa-sign-in-alt"></i></a>
+                    <a class="nav-link nav-font" href="{{url_for('login')}}"><i class="fas fa-unlock-alt"></i></a>
                 {% else %}
                     <a class="nav-link nav-font" href="#"><i class="fas fa-user-circle"></i></a>
 			    </li>
