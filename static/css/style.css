@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue:400|Indie+Flower:400|Nanum+Pen+Script:400');
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700|Indie+Flower:400|Nanum+Pen+Script:400');
 
 /* general elements styling */
 
@@ -116,7 +116,7 @@ div a {
 
 /* banner image */
 .img-container {
-    min-height: 70vh;
+    min-height: 40vh;
     width: 100%;
 }
 
@@ -130,6 +130,13 @@ div a {
     background-position: 50% 50%;
     position: relative;
     padding-top: 0;
+}
+
+/* welcome */
+
+.welcome-content {
+    border: 5px dotted #153415;
+    font-family: 'Cabin Sketch', sans-serif;
 }
 
 /* cards */
@@ -185,7 +192,10 @@ div a {
     .btn-add {
     width: 10rem;
     font-size: 1.5rem;
-}
+    }
+    .img-container {
+    min-height: 40vh;
+    }
     .attention {
     color: #EFEFDD;
     }

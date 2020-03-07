@@ -97,8 +97,7 @@ def filter_items():
         users=mongo.db.users.find(), 
         title="Re-Use Gang"
         )
-
-
+    
 @app.route('/items/add', methods=["POST", "GET"])
 def add_item():
     categories = ["Kids", "Outdoor", "Household", "Other"]

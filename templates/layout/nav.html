@@ -10,9 +10,8 @@
 			    <li class="mx-3">
 				{% if 'username' not in session %}
                     <a class="nav-link nav-font" href="{{url_for('login')}}"><i class="fas fa-unlock-alt"></i></a>
-                {% else %}
-                    <a class="nav-link nav-font" href="{{url_for('account')}}"><i class="fas fa-user-circle"></i></a>
 			    </li>
+                {% else %}
                 <li class="mx-3">
 				    <a class="nav-link nav-font" href="/logout"><i class="fas fa-sign-out-alt pl-2"></i></a>
 			    </li>
