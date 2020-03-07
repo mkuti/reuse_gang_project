@@ -1,36 +1,24 @@
 {% block navbar %}
 
 <!-- navbar and logo -->
-<nav class="navbar navbar-expand-md navbar-light fixed-top bg-nav mr-0">
-	<a href="{{url_for('home')}}" class='navbar-brand' id="logo">
-		<img class="bg_light" id="logo-img" src="{{url_for('static', filename='../static/images/logo.png')}}" alt="logo">
-    </a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon bg_light"></span>
-    </button>
-	<div class="collapse navbar-collapse bg_light" id="navbarToggler">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-uppercase">
-		    <li class="nav-item mr-3 ml-3">
-				<a class="nav-link nav-font" href="{{url_for('home')}}">Home</a>
-			</li>
-			<li class="nav-item mr-3">
-				<a class="nav-link nav-font green_text" href="#">About</a>
-			</li>
-			<li class="nav-item mr-3">
+<nav class="navbar bg-nav fixed-top mr-0">
+        <a href="{{url_for('home')}}" class='navbar-brand' id="logo">
+		    <img class="bg_light" id="logo-img" src="{{url_for('static', filename='../static/images/logo.png')}}" alt="logo">
+         </a>
+	    <div class="bg_light">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-uppercase">
+			    <li class="nav-item mr-3">
 				{% if 'username' not in session %}
-                <a class="nav-link nav-font" href="{{url_for('login')}}">Login</a>
+                    <a class="nav-link nav-font" href="{{url_for('login')}}"><i class="fas fa-sign-in-alt"></i></a>
                 {% else %}
-                <a class="nav-link nav-font" href="#">Account</a>
-			</li>
-            <li class="nav-item mr-3">
-				<a class="nav-link nav-font green_text" href="/logout">Log Out</a>
-			</li>
-            {% endif %}
-		</ul>
-		<span class="navbar-text mt-2 mr-3 nav-font d-none d-md-block green-text">
-            Recycle,reduce,reuse…close the loop!
-		</span>
-	</div>
+                    <a class="nav-link nav-font" href="#"><i class="fas fa-user-circle"></i></a>
+			    </li>
+                <li class="nav-item mr-3">
+				    <a class="nav-link nav-font green_text" href="/logout"><i class="fas fa-sign-out-alt pl-2"></i></a>
+			    </li>
+                {% endif %}
+		    </ul>
+	    </div>
 </nav>
 
 {% endblock %}
