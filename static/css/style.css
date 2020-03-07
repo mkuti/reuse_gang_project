@@ -134,7 +134,7 @@ div a {
 
 /* banner image */
 .img-container {
-    max-height: 50vh;
+    min-height: 30vh;
 }
 
 .banner-image {
