@@ -73,6 +73,11 @@ div a {
     font-size: 1.25rem;
 }
 
+.btn-add {
+    height: 2.3rem;
+    font-size: 1.1rem;
+}
+
 .btn:hover {
     color: #005732;
     background-color: #47A349;
