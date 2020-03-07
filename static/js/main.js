@@ -126,3 +126,4 @@ cardCollapse.forEach(card => {
 $(window).scroll(function(){
     $("#logo-img").css("opacity", 1 - $(window).scrollTop() / 50)
 })
+

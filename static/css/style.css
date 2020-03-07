@@ -75,6 +75,7 @@ div a {
 
 .btn-add {
     height: 2.3rem;
+    width: 8rem;
     font-size: 1.1rem;
 }
 
@@ -134,13 +135,18 @@ div a {
 
 /* banner image */
 .img-container {
-    min-height: 30vh;
+    min-height: 70vh;
+    width: 100%;
 }
 
 .banner-image {
-    background: url(../images/wine2.jpg);
+    display: block;
+    max-width: 100%;
+    height: auto;
+    background: url(../images/banner2.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center
     position: relative;
     padding-top: 8rem;
 }
@@ -206,9 +212,10 @@ div a {
     .bg-nav {
     background-color: #EFEFDD;
     }
-    .banner-image {
-        opacity: 1;
-    }
+    .btn-add {
+    width: 10rem;
+    font-size: 1.5rem;
+}
     .attention {
     color: #EFEFDD;
     }
