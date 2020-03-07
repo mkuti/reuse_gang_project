@@ -146,7 +146,7 @@ div a {
     background: url(../images/banner2.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center
+    background-position: 50% 50%;
     position: relative;
     padding-top: 8rem;
 }
