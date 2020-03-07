@@ -71,6 +71,9 @@ def login():
             else:
                 flash("You've entered the wrong password")
                 return redirect(url_for('login'))
+        else:
+            flash("This email address is unknown to our records.")
+            return redirect(url_for('login'))
                     
     return render_template('/components/login.html')
 
