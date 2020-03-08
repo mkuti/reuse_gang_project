@@ -46,7 +46,7 @@ function loopItems(data) {
 
 function injectCard(item) {
     cardHtml = `
-            <div class="col-10 col-sm-6 col-md-4 col-lg-3">
+            <div class="col-12 col-sm-6 col-lg-4">
 			<div class="card my-2 text-center">
 				<div class="card-body p-0">
                     <div class="row my-3">
