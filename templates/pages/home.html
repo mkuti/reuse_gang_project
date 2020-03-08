@@ -1,8 +1,10 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
+{% if 'username' not in session %}
 <!-- Welcome banner -->
 {% include 'components/welcome.html' %}
+{% endif %}
 
 <!-- Search bar and add button-->
 {% include 'components/searchbar.html' %}
