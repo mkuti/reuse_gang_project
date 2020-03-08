@@ -103,8 +103,10 @@ def add_item():
 
     if request.method == "POST":
         items = mongo.db.items
+        item_owner = mongo.db.users.find_one({'username': session['username']})
         items.insert_one({
             'username': session['username'],
+            'item_contact': item_owner['email'],
             'item_name': request.form['item_name'],
             'item_category': request.form['item_category'],
             'item_description': request.form['item_description'],
@@ -121,10 +123,12 @@ def update_item(item_id):
     # if method to call function is POST which post data from front-end to back-end, we update database with form result and redirect user to home
     if request.method == "POST":
         items = mongo.db.items
+        item_owner = mongo.db.users.find_one({'username': session['username']})
         items.update({'_id': ObjectId(item_id)},
                      {
             'username': session['username'],
             'item_name': request.form.get('item_name'),
+            'item_contact': item_owner['email'],
             'item_category': request.form.get('item_category'),
             'item_description': request.form.get('item_description'),
             'item_location': request.form.get('item_location'),
