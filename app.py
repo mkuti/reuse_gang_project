@@ -36,7 +36,7 @@ def register():
         print(used_name)
         used_email = users.find_one({'email': request.form["email"]})
         print(used_email)
-
+        # trick found here to write if statement https://stackoverflow.com/questions/19400115/python-difference-between-x-is-not-none-and-y-is-not-none-and-x-and-y-is-n
         if (used_email or used_name) is None:
             user_pwd = generate_password_hash(request.form["password"])
             users.insert_one({
@@ -89,15 +89,11 @@ def logout():
 @app.route('/items/filter', methods=["POST", "GET"])
 def filter_items():
     cat = request.get_json()
+    all_items = mongo.db.items.find()
     found_items = mongo.db.items.find({'item_category': cat})
-    if found_items:
-        return dumps(found_items)
-    else:
-        return render_template('/pages/home.html', items=mongo.db.items.find(), 
-        users=mongo.db.users.find(), 
-        title="Re-Use Gang"
-        )
-    
+    return dumps(found_items)
+
+
 @app.route('/items/add', methods=["POST", "GET"])
 def add_item():
     categories = ["Kids", "Outdoor", "Household", "Other"]

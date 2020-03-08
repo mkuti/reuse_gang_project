@@ -7,8 +7,9 @@
 const selectCat = document.getElementById("search_category");
 const card = document.getElementById("card_item")
 
-selectCat.onchange = function() {
+selectCat.onchange = function postResults() {
     cat = selectCat.value;
+    console.log(selectCat.value)
             
     fetch(`${window.origin}/items/filter`, {
         method: "POST",
@@ -21,7 +22,12 @@ selectCat.onchange = function() {
     })
     .then(function(response) {
         response.json().then(function(data){
-            loopItems(data)
+            console.log(data)
+            if (data){
+                loopItems(data)
+            }
+            else return postResults();
+            
         })
     })
     .catch(err => console.log(err));
@@ -37,6 +43,7 @@ function loopItems(data) {
         cardContent += injectCard(item)
     })
     $("#card_item").html(cardContent);
+    collapsingCards()
 }
 
 // found solution to inject if statement within template literals: https://stackoverflow.com/questions/44488434/inserting-if-statement-inside-es6-template-literal/55913826#55913826
@@ -97,6 +104,8 @@ function injectCard(item) {
         `;
         return cardHtml;
 }
+   
+
 
 
 /*
@@ -105,16 +114,22 @@ function injectCard(item) {
 =================================
 */
 
-const cardCollapse = Array.from(document.getElementsByClassName("card-collapse"));
+function collapsingCards(){
+    let cardCollapse = Array.from(document.getElementsByClassName("card-collapse"));
 
 cardCollapse.forEach(card => {
     card.addEventListener("click", function(){
+        console.log(card)
     let collapsedContent = card.nextElementSibling;
     if(collapsedContent.style.display === "block"){
         collapsedContent.style.display = "none";
     } else collapsedContent.style.display = "block"
 })
 })
+}
+
+collapsingCards()
+
 
 /*
 =================================
