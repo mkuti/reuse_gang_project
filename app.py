@@ -89,9 +89,12 @@ def logout():
 @app.route('/items/filter', methods=["POST", "GET"])
 def filter_items():
     cat = request.get_json()
-    all_items = mongo.db.items.find()
-    found_items = mongo.db.items.find({'item_category': cat})
-    return dumps(found_items)
+    if cat == 'default':
+        all_items = mongo.db.items.find()
+        return dumps(all_items)
+    else:
+        found_items = mongo.db.items.find({'item_category': cat})
+        return dumps(found_items)
 
 
 @app.route('/items/add', methods=["POST", "GET"])

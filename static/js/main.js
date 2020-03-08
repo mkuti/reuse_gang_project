@@ -3,11 +3,10 @@
            SEARCH BAR
 =================================
 */
+    const selectCat = document.getElementById("search_category");
+    const card = document.getElementById("card_item")
 
-const selectCat = document.getElementById("search_category");
-const card = document.getElementById("card_item")
-
-selectCat.onchange = function postResults() {
+selectCat.onchange = function() {
     cat = selectCat.value;
     console.log(selectCat.value)
             
@@ -23,15 +22,12 @@ selectCat.onchange = function postResults() {
     .then(function(response) {
         response.json().then(function(data){
             console.log(data)
-            if (data){
-                loopItems(data)
-            }
-            else return postResults();
-            
+            loopItems(data)
         })
     })
     .catch(err => console.log(err));
 }
+
 
 function loopItems(data) {
     let cardContent = '';
@@ -104,7 +100,6 @@ function injectCard(item) {
         `;
         return cardHtml;
 }
-   
 
 
 
