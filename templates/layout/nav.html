@@ -6,14 +6,14 @@
 		    <img class="bg_light" id="logo-img" src="{{url_for('static', filename='../static/images/logo.png')}}" alt="logo">
          </a>
 	    <div class="bg_light">
-            <ul class="navbar-nav text-uppercase">
+            <ul class="navbar-nav">
 			    <li class="mx-3">
 				{% if 'username' not in session %}
                     <a class="nav-link nav-font" href="{{url_for('login')}}"><i class="fas fa-user"></i></a>
 			    </li>
                 {% else %}
                 <li class="mx-3">
-				    <a class="nav-link nav-font" href="/logout"><i class="fas fa-sign-out-alt pl-2"></i></a>
+				    <a class="nav-link nav-font" href="/logout"><i class="fas fa-sign-out-alt"></i></a>
 			    </li>
                 {% endif %}
 		    </ul>
