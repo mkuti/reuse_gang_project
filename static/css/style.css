@@ -119,6 +119,7 @@ div a {
     width: 100%;
 }
 
+/* little trick for background position https://css-tricks.com/almanac/properties/b/background-position/ */
 .banner-image {
     display: block;
     max-width: 100%;
@@ -193,7 +194,7 @@ div a {
     font-size: 1.5rem;
     }
     .img-container {
-    min-height: 40vh;
+    min-height: 60vh;
     }
     .attention {
     color: #EFEFDD;
