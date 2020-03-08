@@ -44,17 +44,17 @@
                     <input type="text" class="form-control" id="item_img" name="item_img" aria-describedby="image" value="{{item.item_img}}">
                 </div>
                 <div class="row text-center">
-                    <div class="col-12 mb-3">
-                        <button type="submit" class="btn bg-darkgreen light_text mt-5 text-uppercase">Edit</button>
-                    </div>
-                </div>
-			</form>
-            <div class="row text-center">
                      <h5 class='lgreen_text'>Someone picked up my stuff, I want to remove it.</h5>
                      <div class="col-12 text-left">
                         <button class="btn bg-darkgreen light_text text-uppercase" data-toggle="modal" data-target="#confirm_remove">Remove it</button>
                     </div>
-            </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12 mb-3">
+                        <button type="submit" class="btn bg-darkgreen light_text mt-5 text-uppercase">Confirm update</button>
+                    </div>
+                </div>
+			</form>
 		</div>
 	</div>
 </section>
@@ -69,7 +69,7 @@
       <div class="modal-footer">
         <button type="button" class="btn bg-darkgreen light_text" data-dismiss="modal">Cancel & keep</button>
         <form method="POST" action="{{url_for('delete_item', item_id=item._id)}}">
-            <button type="submit" class="btn bg-darkgreen light_text">Remove it!</button>
+            <button type="submit" class="btn bg-darkgreen light_text"><i class="fas fa-thumbs-up"></i>Remove it!</button>
         </form>
       </div>
     </div>
