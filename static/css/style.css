@@ -50,7 +50,7 @@ div a {
 }
 
 .bg-othergreen {
-    background-color: #005732;
+    background-color: #47A349;
 }
 
 .light_text {
@@ -77,6 +77,10 @@ div a {
     height: 2.3rem;
     width: 8rem;
     font-size: 1.1rem;
+}
+
+.btn-reg {
+    width: 20rem;
 }
 
 .btn:hover {
