@@ -38,14 +38,12 @@
                             <img src="{{item.item_img}}" class="card-img-top card-img" alt="Item Image" id="item_img">
                     </div>
                     {% endif %}
-                    {% if 'username' in session %}
                     <div class="row my-3">
                         <div class="col-12">
-                            <a href="" class="card-link">Contact</a>
+                            <a href="mailto:{{item.item_contact}}" class="card-link">Contact</a>
                             <span class="card-subtitle mt-0">{{item.username}}</span>
                         </div>
                     </div>
-                    {% endif %}
                     {% if session["username"] == item.username %}
                     <div class="row my-3">
                         <div class="col-12 text-center">
