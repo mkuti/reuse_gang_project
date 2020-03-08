@@ -89,7 +89,7 @@ function injectCard(item) {
                     })()}
                     <div class="row my-3">
                         <div class="col-12">>
-                            <a href="#" class="card-link">Email</a>
+                            <a href="mailto:${item.item_contact}" class="card-link">Contact</a>
                             <span class="card-subtitle mt-0">${item.username}</span>
                         </div>
                     </div>
