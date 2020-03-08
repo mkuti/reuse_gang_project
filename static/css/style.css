@@ -87,6 +87,12 @@ div a {
     background-color: #47A349;
 }
 
+/* icons */
+
+.icon, .fas {
+    font-size: 0.8rem;
+}
+
 /* logo */
 
 #logo {
