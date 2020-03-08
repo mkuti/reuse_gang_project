@@ -75,6 +75,11 @@ function injectCard(item) {
                             <p class="card-text collapsed-content text-left px-0 mx-0 lgreen_text">${item.item_description}</p>
                         </div>
                     </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <h6>Can be collected in ${item.item_location}</h6>
+                        </div>
+                    </div>
                     ${(() => {
                         if (item.item_img){
                             return `<div class="card-img-contain text-left mb-3">
@@ -85,7 +90,7 @@ function injectCard(item) {
                     <div class="row my-3">
                         <div class="col-12">>
                             <a href="#" class="card-link">Email</a>
-                            <span class="card-subtitle mt-0">Item owner</span>
+                            <span class="card-subtitle mt-0">${item.username}</span>
                         </div>
                     </div>
                     <div class="row my-3">
