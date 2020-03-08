@@ -8,7 +8,6 @@
 
 selectCat.onchange = function() {
     cat = selectCat.value;
-    console.log(selectCat.value)
             
     fetch(`${window.origin}/items/filter`, {
         method: "POST",
@@ -21,7 +20,6 @@ selectCat.onchange = function() {
     })
     .then(function(response) {
         response.json().then(function(data){
-            console.log(data)
             loopItems(data)
         })
     })
@@ -119,7 +117,6 @@ function collapsingCards(){
 
 cardCollapse.forEach(card => {
     card.addEventListener("click", function(){
-        console.log(card)
     let collapsedContent = card.nextElementSibling;
     if(collapsedContent.style.display === "block"){
         collapsedContent.style.display = "none";
