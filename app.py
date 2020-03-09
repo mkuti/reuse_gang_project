@@ -160,8 +160,19 @@ def delete_item(item_id):
         flash(itemName + "has been deleted")
         return redirect(url_for('home'))
 
+# https://www.geeksforgeeks.org/python-404-error-handling-in-flask/
+@app.errorhandler(404)
+# inbuilt function which takes error as parameter
+def not_found(e):
+    return render_template("404.html")
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    return "500 error"
+
 
 if __name__ == "__main__":
     app.run(host=os.getenv("IP", "0.0.0.0"),
             port=int(os.getenv("PORT", "5000")),
-            debug=True)
+            debug=False)

@@ -8,7 +8,9 @@
 
 selectCat.onchange = function() {
     cat = selectCat.value;
-            
+
+    loader()
+    
     fetch(`${window.origin}/items/filter`, {
         method: "POST",
         credentials: 'include',
@@ -37,6 +39,7 @@ function loopItems(data) {
         cardContent += injectCard(item)
     })
     $("#card_item").html(cardContent);
+    stopLoader()
     collapsingCards()
 }
 
@@ -139,3 +142,16 @@ $(window).scroll(function(){
     $("#logo-img").css("opacity", 1 - $(window).scrollTop() / 50)
 })
 
+/*
+=================================
+            LOADER
+=================================
+
+
+function loader(){
+    $('#spinner').css("visibility", "visible");
+}
+
+function stopLoader(){
+    document.getElementById('spinner').css.visibility = "hidden";
+}*/

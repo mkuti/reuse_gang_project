@@ -231,10 +231,10 @@ TODO: will import table
 TODO:Will add user stories here
 ### 8. User stories
 ##### As a general user, I am expecting:
-* To have a welcome section where I can understand what the website is about
-* To have a logo on top left corner where I can click and find home page
-* To have all items available displayed on the home page
-* To have a search bar where I can locate specific items depending of a category or common factors (user, location)
+* A welcome section where I can understand what the website is about
+* A logo on top left corner where I can click and go back to home page
+* All items available displayed on the home page when I first land
+* A search bar to filter specific items depending of a category or other common factors (user, location)
 * To scroll down easily to see all items
 * To view quickly what is the item and an image and if needed to get more details
 * To email item owner if I need item
@@ -300,6 +300,7 @@ Regular use of pop up modals so user does not have to go from one page to anothe
 * Feature 1 - 
 
 ### 2. Features Left to Implement:
+* Using Javascript to handle register, log in and log out
 * 
 
 [Back to Top](#table-of-contents) 
@@ -435,18 +436,28 @@ Python werkzeug.check_password_hash()
 - [Sweetalert2](https://sweetalert2.github.io/)
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB)
 - [Lunapic](https://www2.lunapic.com/editor/) - to make the logo transparent
+- [Spinkit](https://tobiasahlin.com/spinkit/) - for the loader css and html
 
 [Back to Top](#table-of-contents) 
 
 # Media and Content origin
-- Taglines: [BrandonGaille](https://brandongaille.com/list-45-catchy-recycling-slogans-and-great-taglines/)
-- Photos:
-- Photo by Kevin Jarrett on Unsplash
-- Photo by Susanne Jutzeler from Pexels
-- Photo by Afta Putta Gunawan from Pexels
-- Photo by Jon Watkins from FreeImages
-- Photo by Griszka Niewiadomski from FreeImages
-- Photo by Alaa Hassan from FreeImages
+1. Taglines: [BrandonGaille](https://brandongaille.com/list-45-catchy-recycling-slogans-and-great-taglines/)
+2. Main banner image designed by myself
+3. Different photos from Pinterest used on the banner image:
+- [Recycled Magazine Wrapped Eco Friendly Bangle Bracelet](https://www.pinterest.fr/pin/795237246688861796/)
+- [Umbrellas in old tire](https://www.pinterest.fr/pin/338473728235537572/)
+- [Bin made of plastic bottles top](https://www.pinterest.fr/pin/725924033668005178/)
+- [Tire lamps](https://www.pinterest.fr/pin/142918988163028795/)
+- [Plant in a jean](https://www.pinterest.fr/pin/226939268695686354/)
+- [Plant in a jean](https://www.pinterest.fr/pin/543528248781468379/)
+4. Photos used for test items
+- [Photo of printer by Fernando Arcos from Pexels](https://www.pexels.com/photo/black-sd-card-adapter-on-white-device-193057/)
+- [Photo of garden tools by Nastya Kvokka on Unsplash](https://unsplash.com/photos/vdD1rcsdL3E)
+- [Image of pink bike by Isa KARAKUS from Pixabay](https://pixabay.com/photos/bicycle-child-baby-kids-bike-1713165/)
+- [Photo of baby clothes by Chloe Amaya from Pexels](https://www.pexels.com/photo/white-and-blue-textiles-2252000/)
+- [Image of slide by nlachmund from Pixabay](https://pixabay.com/photos/slide-play-kids-playground-1016832/)
+- [Image of glass jar by Devanath from Pixabay ](https://pixabay.com/photos/glass-containers-glass-empty-clean-1205611/)
+- [Image by Susanne Jutzeler, suju-foto from Pixabay](https://pixabay.com/photos/bike-child-children-cycling-wheel-2895424/) 
 
 #### Other Resources:
 
