@@ -235,13 +235,17 @@ TODO:Will add user stories here
 * A logo on top left corner where I can click and go back to home page
 * All items available displayed on the home page when I first land
 * A search bar to filter specific items depending of a category or other common factors (user, location)
-* To scroll down easily to see all items
-* To view quickly what is the item and an image and if needed to get more details
+* A quick view about the item with an image
+* The location of the item so I know if close enough to me
+* An option to see more details with only one click
 * To email item owner if I need item
-* To find an add button if I want to offer an item myself
-* If I have to login to add item but I am not a member, I expect a register button
-* To have message informing I am successfully logged in
-* To have a button where I can log out, once logged in
+* Add button to offer an item
+* An edit button to update any details
+* A place where I can delete the item to show it has been taken
+* A register button if I am not a member
+* An error message if my username or email address is already in database
+* A message to confirm I am successfully logged in or if password is wrong
+* A button to log out
 * 
 
 ##### As a developer, I want:
@@ -301,6 +305,7 @@ Regular use of pop up modals so user does not have to go from one page to anothe
 
 ### 2. Features Left to Implement:
 * Using Javascript to handle register, log in and log out
+* A full 'about' section to have more information about a registered charity or organisation which would be manage the gang locally
 * 
 
 [Back to Top](#table-of-contents) 
