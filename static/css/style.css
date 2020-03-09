@@ -124,7 +124,7 @@ div a {
 
 /* banner image */
 .img-container {
-    min-height: 90vh;
+    min-height: 80vh;
     width: 100%;
 }
 
@@ -142,12 +142,12 @@ div a {
 }
 
 .attention {
-    width: 90%;
+    width: 100%;
     color: #153415;
     font-family: 'Cabin Sketch', sans-serif;
     font-size: 3rem;
     padding-left: 5px;
-    padding-top: 10rem;
+    padding-top: 13rem;
 }
 
 /* cards */
@@ -320,7 +320,7 @@ div a {
 
 /* media queries */
 
-@media (min-width: 768px){
+@media (min-width: 576px){
     .btn-add {
     width: 10rem;
     font-size: 1.5rem;
@@ -329,8 +329,17 @@ div a {
     min-height: 90vh;
     }
     .attention{
-        width: 50%;
+        width: 70%;
         font-size: 3.5rem;
-        padding-top: 400px;
+        padding-left: 1.5rem;
+        padding-top: 30rem;
     }
+}
+
+@media (min-width: 925px){
+    .attention{
+        width: 60%;
+        padding-top: 40rem;
+    }
+    
 }
