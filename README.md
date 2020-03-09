@@ -238,7 +238,11 @@ TODO:Will add user stories here
 * To scroll down easily to see all items
 * To view quickly what is the item and an image and if needed to get more details
 * To email item owner if I need item
-* To add item I have to offer
+* To find an add button if I want to offer an item myself
+* If I have to login to add item but I am not a member, I expect a register button
+* To have message informing I am successfully logged in
+* To have a button where I can log out, once logged in
+* 
 
 ##### As a developer, I want:
 * 
