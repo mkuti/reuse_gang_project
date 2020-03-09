@@ -115,7 +115,11 @@ def add_item():
         })
         flash("Thanks!Your free stuff will be shared immediately with the gang.")
         return redirect(url_for('home'))
-    return render_template('/pages/additem.html', categories=categories)
+    else:
+        if "username" not in session:
+            return redirect(url_for('login'))
+        else:
+            return render_template('/pages/additem.html', categories=categories)
 
 
 @app.route('/items/update/<item_id>', methods=["POST", "GET"])

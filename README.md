@@ -231,11 +231,14 @@ TODO: will import table
 TODO:Will add user stories here
 ### 8. User stories
 ##### As a general user, I am expecting:
-* 
-
-* 
-
-* 
+* To have a welcome section where I can understand what the website is about
+* To have a logo on top left corner where I can click and find home page
+* To have all items available displayed on the home page
+* To have a search bar where I can locate specific items depending of a category or common factors (user, location)
+* To scroll down easily to see all items
+* To view quickly what is the item and an image and if needed to get more details
+* To email item owner if I need item
+* To add item I have to offer
 
 ##### As a developer, I want:
 * 

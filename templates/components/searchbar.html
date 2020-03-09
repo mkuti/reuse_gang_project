@@ -2,7 +2,7 @@
 
 <section class="container-fluid">
     <div class="row text-center">
-        <div {% if 'username' in session %} class="col-6 dropdown my-3" {% else %} class="col-12 dropdown my-3" {% endif %}>
+        <div class="col-6 dropdown my-3">
             <form>
                 <div class="input-group mb-3">
                     <select class="custom-select" id="search_category" name="item_category">
@@ -15,9 +15,7 @@
                 </div>
             </form>
         </div>
-        {% if 'username' in session %}
         {% include 'components/addbutton.html' %}
-        {% endif %}
     </div>
 </section>
 
