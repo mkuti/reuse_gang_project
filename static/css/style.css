@@ -195,18 +195,31 @@ div a {
     padding: 1.25rem;
 }
 
+/* add items */
+
+.underline {
+    text-decoration: underline;
+    cursor: pointer; 
+}
+
+.underline:hover{
+    color: #47A349;
+}
+
+/* update or delete items */
+
 .remove {
     border: 0.5rem solid #153415;
     padding: 0.5rem;
 }
 
-.highlight {
+.remove-highlight {
     text-decoration: underline;
     cursor: pointer; 
     font-size: 1.5rem;
 }
 
-.highlight:hover {
+.remove-highlight:hover {
     text-decoration: line-through;
     color: #47A349;
 }
