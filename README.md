@@ -468,6 +468,7 @@ Python werkzeug.check_password_hash()
 
 # Media and Content origin
 1. Taglines: [BrandonGaille](https://brandongaille.com/list-45-catchy-recycling-slogans-and-great-taglines/)
+2. [Home background by Min An from Pexels](https://www.pexels.com/photo/green-leafed-plants-1650035/)
 2. Main banner image designed by myself
 3. Different photos from Pinterest used on the banner image:
 - [Recycled Magazine Wrapped Eco Friendly Bangle Bracelet](https://www.pinterest.fr/pin/795237246688861796/)
@@ -524,6 +525,7 @@ When I submitted this Milestone project, I confirmed that the Development Branch
 [Back to Top](#table-of-contents) 
 
 ### Credits
+* [404 error handling](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/)
 
 
 # Special thanks

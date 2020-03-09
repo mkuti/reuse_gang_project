@@ -102,8 +102,8 @@ div a {
 }
 
 #logo img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 
 /* nav */
@@ -124,7 +124,7 @@ div a {
 
 /* banner image */
 .img-container {
-    min-height: 40vh;
+    min-height: 90vh;
     width: 100%;
 }
 
@@ -133,7 +133,7 @@ div a {
     display: block;
     max-width: 100%;
     height: auto;
-    background: url(../images/banner.png);
+    background: url(../images/home.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -141,11 +141,13 @@ div a {
     padding-top: 0;
 }
 
-/* welcome */
-
-.welcome-content {
-    border: 5px dotted #153415;
+.attention {
+    width: 90%;
+    color: #153415;
     font-family: 'Cabin Sketch', sans-serif;
+    font-size: 3.5rem;
+    padding-left: 15px;
+    padding-top: 400px;
 }
 
 /* cards */
@@ -324,9 +326,9 @@ div a {
     font-size: 1.5rem;
     }
     .img-container {
-    min-height: 60vh;
+    min-height: 90vh;
     }
-    .attention {
-    color: #EFEFDD;
+    .attention{
+        width: 50%;
     }
 }

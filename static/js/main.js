@@ -13,7 +13,6 @@ selectCat.onchange = function() {
     
     fetch(`${window.origin}/items/filter`, {
         method: "POST",
-        credentials: 'include',
         body: JSON.stringify(cat),
         cache: 'no-cache',
         headers: new Headers({
@@ -35,7 +34,7 @@ function loopItems(data) {
         /**
  * Adding $oid behind _id to remove id hex number from object and construct url for editing item
  */
-        item_id = item._id.$oid
+        itemId = item._id.$oid
         cardContent += injectCard(item)
     })
     $("#card_item").html(cardContent);
@@ -109,11 +108,7 @@ function injectCard(item) {
 
 
 
-/*
-=================================
-   COLLAPSING ITEM DESCRIPTION
-=================================
-*/
+
 
 function collapsingCards(){
     let cardCollapse = Array.from(document.getElementsByClassName("card-collapse"));
