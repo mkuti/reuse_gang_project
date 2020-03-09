@@ -49,7 +49,7 @@ function injectCard(item) {
 				<div class="card-body p-0">
                     <div class="row my-3">
                         <div class="col-10 px-0">
-                            <h4 class="card-title text-uppercase mb-4">${item.item_name}</h4>
+                            <h3 class="card-title text-uppercase mb-4">${item.item_name}</h3>
                         </div>
                         <div class="col-2 mt-2">
                             <h5 class="card-subtitle mb-4">
