@@ -246,10 +246,12 @@ TODO:Will add user stories here
 * An error message if my username or email address is already in database
 * A message to confirm I am successfully logged in or if password is wrong
 * A button to log out
-* 
+* A footer where I can find links to the associated organisation and to the developer's professional pages
 
 ##### As a developer, I want:
-* 
+* Design and develop a webiste to show my knowledge of Flask, Python and MongoDB
+* Match up my interest of environment-friendly, zero waste with my coding skills
+* Make contact with local organisations to offer my skills and maybe get more practice with other projects, free at the beginning, then paid
 
 [Back to Top](#table-of-contents) 
 
@@ -301,12 +303,23 @@ Regular use of pop up modals so user does not have to go from one page to anothe
 
 ## Features
 ### 1. Existing Features:
-* Feature 1 - 
+* Feature 1 - List of items showing as cards
+* Feature 2 - Search option with categories
+* Feature 3 - Simple register/login feature for users
+* Feature 4 - User can add an item to give away by filling a form (CREATE) with name, description, image, location, category of items
+(Kids, clothes, home, books, others)
+* Feature 5 - User can edit an item card by updating its details (UPDATE)
+* Feature 6 - User can remove an item by marking it as taken (DELETE)
+* Feature 7 - Logo on the top left linking to home container at any moment which would reload the whole page
+* Feature 8 - 
 
 ### 2. Features Left to Implement:
 * Using Javascript to handle register, log in and log out
 * A full 'about' section to have more information about a registered charity or organisation which would be manage the gang locally
-* 
+* A form modal to send email to item owner directly from the website
+* For the purpose of milestone project, I have functionality of deleting item but for user experience, it would be better to have taken items saved in an archive section of the website
+confirm it’s still available after a certain time (UPDATE)
+Users can view all items being available at a certain time (RETRIEVE/READ)
 
 [Back to Top](#table-of-contents) 
 
@@ -325,13 +338,21 @@ TODO: will import table
 	
 ## Skeleton plane: Presentation and navigation? 
 ### 1. Wireframes
-TODO: add wireframes
 
 I used Balsamiq tool for the wireframes and attached them to the directory in assets. 
-I spent a considerable amount of time doing wireframes in details as I had no clue of design before and wanted to have a clear idea of how the website looked like.
 
-- [Home]()
-- 
+- [Home page on desktop](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-desktop.png)
+- [Home page on mobile](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-mobile.png)
+- [Home page on tablet](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-tablet.png)
+- [Login modal on desktop](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-login-desktop.png)
+- [Login modal on tablet](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-login-tablet.png)
+- [Login modal on mobile](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-login-mobile.png)
+- [User page on desktop](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-desktop.png)
+- [User page on tablet](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-tablet.png)
+- [User page on mobile](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-mobile.png)
+- [Edit post on desktop](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-editpost-desktop.png)
+- [Edit post on tablet](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-editpost-tablet.png)
+- [Edit post on mobile](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-editpost-mobile.png)
 
 The skeleton plane: 
 - How will our information be represented, and how will the user navigate to the information and the features?
