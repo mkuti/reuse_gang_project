@@ -32,9 +32,7 @@ def register():
     if request.method == "POST":
         users = mongo.db.users
         used_name = users.find_one({'username': request.form["username"]})
-        print(used_name)
         used_email = users.find_one({'email': request.form["email"]})
-        print(used_email)
         # trick found here to write if statement https://stackoverflow.com/questions/19400115/python-difference-between-x-is-not-none-and-y-is-not-none-and-x-and-y-is-n
         if (used_email or used_name) is None:
             user_pwd = generate_password_hash(request.form["password"])
