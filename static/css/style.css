@@ -122,9 +122,12 @@ div a {
     color: #47A349;
 }
 
-/* burger */
+/* spinner icon */
 
-
+.fa-spinner {
+    font-size: 3rem;
+    color: #153415;
+}
 
 /* home image */
 .img-container {
