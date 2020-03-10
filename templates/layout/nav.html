@@ -5,15 +5,21 @@
         <a href="{{url_for('home')}}" class='navbar-brand' id="logo">
 		    <img id="logo-img" src="{{url_for('static', filename='../static/images/logo.png')}}" alt="logo">
          </a>
-	    <div class="bg_light">
-            <ul class="navbar-nav">
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#burger" aria-controls="burger" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse bg_light" id="burger">
+            <ul class="navbar-nav mr-auto text-uppercase">
+                <li class="mx-3">
+				    <a class="nav-link nav-font" href="#card-item">Available Items</a>
+			    </li>
 			    <li class="mx-3">
 				{% if 'username' not in session %}
                     <a class="nav-link nav-font" href="{{url_for('login')}}"><i class="fas fa-user"></i></a>
 			    </li>
                 {% else %}
                 <li class="mx-3">
-				    <a class="nav-link nav-font" href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+				    <a class="nav-link nav-font" href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt"></i></a>
 			    </li>
                 {% endif %}
 		    </ul>
