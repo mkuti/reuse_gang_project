@@ -356,6 +356,12 @@ div a {
 }
 
 /* media queries */
+@media (min-width: 375px){
+    .attention{
+        padding-top: 22rem;
+    }
+}
+
 
 @media (min-width: 576px){
     .btn-add {
