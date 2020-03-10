@@ -125,7 +125,8 @@ function collapsingCards(){
     let cardCollapse = Array.from(document.getElementsByClassName("card-collapse"));
 
 cardCollapse.forEach(card => {
-    card.addEventListener("click", function(){
+    card.addEventListener("click", function(e){
+    e.preventDefault()
     let collapsedContent = card.nextElementSibling;
     if(collapsedContent.style.display === "block"){
         collapsedContent.style.display = "none";
