@@ -85,6 +85,12 @@ def logout():
     return redirect(url_for('home'))
 
 
+@app.route('/account', methods=["POST", "GET"])
+def account():
+    user_items = mongo.db.items.find({'username': session['username']})
+    return render_template('/pages/account.html', items=user_items)
+
+
 @app.route('/items/filter', methods=["POST", "GET"])
 def filter_items():
     cat = request.get_json()

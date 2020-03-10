@@ -11,13 +11,15 @@
         <div class="collapse navbar-collapse bg_light" id="burger">
             <ul class="navbar-nav mr-auto text-uppercase">
                 <li class="mx-3">
-				    <a class="nav-link nav-font" href="{{url_for('home')}}">Available Items</a>
+				    <a class="nav-link nav-font" href="{{url_for('home')}}">Home</a>
 			    </li>
 			    <li class="mx-3">
 				{% if 'username' not in session %}
                     <a class="nav-link nav-font" href="{{url_for('login')}}"><i class="fas fa-user"></i></a>
+                    {% else %}
+                    <a class="nav-link nav-font" href="{{url_for('account')}}">Account</a>
 			    </li>
-                {% else %}
+                
                 <li class="mx-3">
 				    <a class="nav-link nav-font" href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt"></i></a>
 			    </li>
