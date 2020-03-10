@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-<a href="http://reuse-gang.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/4ZfmYSJ/logo-2.png" target="_blank" alt="Reuse Gang logo"></a>
+<a href="http://reuse-gang.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/4ZfmYSJ/logo-2.png" width='200' height='150'target="_blank" alt="Reuse Gang logo"></a>
 </div>
 
 ## Table of Contents
