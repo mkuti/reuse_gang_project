@@ -34,9 +34,30 @@ function loopItems(data) {
     collapsingCards()
 }
 
+function whichCat(item){
+    let itemCat = item.item_category;
+    switch(itemCat) {
+        case 'Outdoor':
+            return 'fa-cloud-sun';
+            break;
+        case 'Kids':
+            return 'fa-child';
+            break;
+        case 'Household':
+            return 'fa-home';
+            break;
+        case 'Other':
+            return 'fa-random';
+            break;
+        default:
+            return;
+    }
+}
+
 // found solution to inject if statement within template literals: https://stackoverflow.com/questions/44488434/inserting-if-statement-inside-es6-template-literal/55913826#55913826
 
 function injectCard(item) {
+    whichCat(item)
     cardHtml = `
             <div class="col-12 col-sm-6 col-lg-4">
 			<div class="card my-2 text-center">
@@ -47,15 +68,7 @@ function injectCard(item) {
                         </div>
                         <div class="col-2 mt-2">
                             <h5 class="card-subtitle mb-4">
-                            ${(() => {
-                                if (item.item_category == 'Outdoor') {
-                                    return `<i class="fas fa-cloud-sun"></i>`;
-                                } else if (item.item_category == 'Kids') {
-                                    return `<i class="fas fa-child"></i>`;
-                                } else if (item.item_category == 'Household') {
-                                    return `<i class="fas fa-home"></i>`;
-                                } else {return `<i class="fas fa-random"></i>`}
-                                })()}
+                                <i class="fas ${whichCat(item)}"></i>
                             </h5>
                         </div>
                     </div>
@@ -99,9 +112,6 @@ function injectCard(item) {
 }
 
 
-
-
-
 function collapsingCards(){
     let cardCollapse = Array.from(document.getElementsByClassName("card-collapse"));
 
@@ -128,19 +138,3 @@ collapsingCards()
 $(window).scroll(function(){
     $("#logo-img").css("opacity", 1 - $(window).scrollTop() / 50)
 })
-
-/*
-=================================
-    REMOVE NAVBAR ON CLICK
-=================================
-
-
-const navLink = $('.nav-link')
-const navLinks = Array.from(navLink)
-
-navLinks.forEach(link => {
-    console.log(link)
-    link.click(function(){
-    $('#burger').toggle();
-})
-})*/
