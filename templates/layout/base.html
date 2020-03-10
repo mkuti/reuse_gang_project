@@ -32,7 +32,7 @@
 <!-- Home or banner image -->
 {% if active == "home" %}
 {% include 'components/homeimage.html' %}
-{% elif active == "login" %}
+{% else %}
 {% include 'components/bannerimage.html' %}
 {% endif %}
 
