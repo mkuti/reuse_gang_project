@@ -460,6 +460,7 @@ Python werkzeug.check_password_hash()
 - [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB)
 - [Lunapic](https://www2.lunapic.com/editor/) - to make the logo transparent
 - [Spinkit](https://tobiasahlin.com/spinkit/) - for the loader css and html
+- [Techsini Multi-Mockup](https://techsini.com/multi-mockup/index.php)
 
 [Back to Top](#table-of-contents) 
 
