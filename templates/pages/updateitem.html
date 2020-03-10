@@ -44,8 +44,7 @@
                     <input type="text" class="form-control" id="item_img" name="item_img" aria-describedby="image" value="{{item.item_img}}">
                 </div>
                 <div class="row mt-3">
-                     <h5 class='lgreen_text'>Mark Item as taken</h5>
-                     <h6 class='lgreen_text text-center remove'>Someone picked up my stuff, I want to <a href='' class='remove-highlight' data-toggle="modal" data-target="#confirm_remove">remove</a> it.</h6>
+                     <h5 class='lgreen_text text-center remove'>Someone picked up my stuff, I want to mark it as <a href='' class='remove-highlight' data-toggle="modal" data-target="#confirm_remove">taken.</a></h5>
                 </div>
                 <div class="row text-center">
                     <div class="col-12 mb-3">
@@ -62,12 +61,12 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <h5 class="modal-title green_text">If "{{item.item_name}}" has been taken, we will remove it from the database</h5>
+        <h5 class="modal-title green_text">Are you sure you want to archive "{{item.item_name}}"?</h5>
       </div>
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn bg-darkgreen light_text" data-dismiss="modal"><i class="icon fas fa-window-close"></i> Keep it</button>
         <form method="POST" action="{{url_for('delete_item', item_id=item._id)}}">
-            <button type="submit" class="btn bg-darkgreen light_text"><i class="icon fas fa-thumbs-up"></i> Remove!</button>
+            <button type="submit" class="btn bg-darkgreen light_text"><i class="icon fas fa-thumbs-up"></i> Archive!</button>
         </form>
       </div>
     </div>
