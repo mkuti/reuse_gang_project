@@ -3,10 +3,7 @@
 </h1>
 
 <div align="center">
-
-# Re-Use Gang
-</div>
-<div align="center">
+<a href="http://reuse-gang.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/4ZfmYSJ/logo-2.png" target="_blank" alt="Reuse Gang logo"></a>
 </div>
 
 ## Table of Contents
