@@ -1,23 +1,33 @@
-const selectCat = document.getElementById("search-category");
-const card = document.getElementById("card-item")
+$(document).ready(function(){
+    filterResult()
+})
 
-selectCat.onchange = function() {
-    cat = selectCat.value;
+
+function filterResult(){
+    const selectCat = document.getElementById("search-category");
+    const card = document.getElementById("card-item")
+
+    selectCat.onchange = function() {
+        cat = selectCat.value;
     
-    fetch(`${window.origin}/items/filter`, {
-        method: "POST",
-        body: JSON.stringify(cat),
-        cache: 'no-cache',
-        headers: new Headers({
-            "content-type": "application/json"
+        fetch(`${window.origin}/items/filter`, {
+            method: "POST",
+            body: JSON.stringify(cat),
+            cache: 'no-cache',
+            headers: new Headers({
+                "content-type": "application/json"
+            })
         })
-    })
-    .then(function(response) {
-        response.json().then(function(data){
-            loopItems(data)
+        .then(function(response) {
+            response.json().then(function(data){
+                loopItems(data)
+            })
         })
-    })
-    .catch(err => console.log(err));
+        .catch(function(err){
+            console.log(err);
+            alert(`Error: ${err}. To return to the main page, go to ${location.hostname}`);
+        });
+    }
 }
 
 
