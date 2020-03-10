@@ -123,7 +123,6 @@ def add_item():
 
 @app.route('/items/update/<item_id>', methods=["POST", "GET"])
 def update_item(item_id):
-    # if method to call function is POST which post data from front-end to back-end, we update database with form result and redirect user to home
     if request.method == "POST":
         items = mongo.db.items
         item_owner = mongo.db.users.find_one({'username': session['username']})
@@ -139,7 +138,6 @@ def update_item(item_id):
             })
         flash("We've successfully updated your stuff.")
         return redirect(url_for('home'))
-    # if the method to call function is GET which is default, we find item matching clicked item on any card and return template where user can edit item
     else:
         clicked_item = mongo.db.items.find_one({'_id': ObjectId(item_id)})
         if "username" not in session:
@@ -150,7 +148,6 @@ def update_item(item_id):
 
 @app.route('/items/delete/<item_id>', methods=["POST"])
 def delete_item(item_id):
-    # if method to call function is POST which post data from front-end to back-end, we delete item
     if request.method == "POST":
         item = mongo.db.items.find({'_id': ObjectId(item_id)})
         for i in item:
@@ -166,9 +163,8 @@ def internal_error(e):
 
 
 @app.errorhandler(404)
-# inbuilt function which takes error as parameter
-def not_found(e):
-    return render_template("404.html")
+def not_found(error):
+    return render_template("/pages/404.html")
 
 
 if __name__ == "__main__":

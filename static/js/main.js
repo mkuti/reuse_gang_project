@@ -1,15 +1,8 @@
-/*
-=================================
-           SEARCH BAR
-=================================
-*/
-    const selectCat = document.getElementById("search_category");
-    const card = document.getElementById("card_item")
+    const selectCat = document.getElementById("search-category");
+    const card = document.getElementById("card-item")
 
 selectCat.onchange = function() {
     cat = selectCat.value;
-
-    loader()
     
     fetch(`${window.origin}/items/filter`, {
         method: "POST",
@@ -37,8 +30,7 @@ function loopItems(data) {
         itemId = item._id.$oid
         cardContent += injectCard(item)
     })
-    $("#card_item").html(cardContent);
-    stopLoader()
+    $("#card-item").html(cardContent);
     collapsingCards()
 }
 
@@ -96,7 +88,7 @@ function injectCard(item) {
                     <div class="row my-3">
                         <div class="col-12">
                         <!--url_for('python_function_name', any other function argument)-->
-                            <a href="/items/update/${item_id}" class="btn bg-darkgreen light_text">Edit</a>
+                            <a href="/items/update/${itemId}" class="btn bg-darkgreen light_text">Edit</a>
                         </div>
                     </div>
 				</div>
@@ -139,14 +131,16 @@ $(window).scroll(function(){
 
 /*
 =================================
-            LOADER
+    REMOVE NAVBAR ON CLICK
 =================================
 
 
-function loader(){
-    $('#spinner').css("visibility", "visible");
-}
+const navLink = $('.nav-link')
+const navLinks = Array.from(navLink)
 
-function stopLoader(){
-    document.getElementById('spinner').css.visibility = "hidden";
-}*/
+navLinks.forEach(link => {
+    console.log(link)
+    link.click(function(){
+    $('#burger').toggle();
+})
+})*/
