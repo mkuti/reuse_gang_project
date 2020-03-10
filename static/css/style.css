@@ -126,14 +126,43 @@ div a {
 
 
 
-/* banner image */
+/* home image */
 .img-container {
     min-height: 80vh;
     width: 100%;
 }
 
 /* little trick for background position https://css-tricks.com/almanac/properties/b/background-position/ */
-.banner-image {
+.home-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    background: url(../images/home.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative;
+    padding-top: 0;
+}
+
+.attention {
+    width: 100%;
+    color: #153415;
+    font-family: 'Cabin Sketch', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    padding-left: 5px;
+    padding-top: 13rem;
+}
+
+/* banner image */
+.image-container {
+    min-height: 30vh;
+    width: 100%;
+}
+
+/* little trick for background position https://css-tricks.com/almanac/properties/b/background-position/ */
+.home-image {
     display: block;
     max-width: 100%;
     height: auto;
@@ -347,4 +376,8 @@ div a {
         padding-top: 40rem;
     }
     
+}
+
+.toast-contain {
+    min-height: 200px;
 }

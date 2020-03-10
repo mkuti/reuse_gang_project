@@ -1,5 +1,5 @@
-    const selectCat = document.getElementById("search-category");
-    const card = document.getElementById("card-item")
+const selectCat = document.getElementById("search-category");
+const card = document.getElementById("card-item")
 
 selectCat.onchange = function() {
     cat = selectCat.value;
@@ -54,7 +54,6 @@ function whichCat(item){
     }
 }
 
-// found solution to inject if statement within template literals: https://stackoverflow.com/questions/44488434/inserting-if-statement-inside-es6-template-literal/55913826#55913826
 
 function injectCard(item) {
     whichCat(item)

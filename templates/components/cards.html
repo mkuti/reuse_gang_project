@@ -44,7 +44,7 @@
                             <span class="card-subtitle mt-0">{{item.username}}</span>
                         </div>
                     </div>
-                    {% if session["username"] == item.username %}
+                    {% if active == 'account' %}
                     <div class="row my-3">
                         <div class="col-12 text-center">
                         <!--url_for('python_function_name', any other function argument)-->

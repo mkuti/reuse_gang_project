@@ -23,8 +23,12 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def home():
-    return render_template('/pages/home.html', items=mongo.db.items.find(),
-                           users=mongo.db.users.find(), title="Re-Use Gang")
+    return render_template(
+        '/pages/home.html', 
+        items=mongo.db.items.find(),
+        users=mongo.db.users.find(), 
+        active='home',
+        title="Re-Use Gang")
 
 
 @app.route('/register', methods=['POST', 'GET'])
@@ -51,7 +55,10 @@ def register():
             flash("This email address is already registered, would you like to log in instead?")
             return redirect(url_for('login'))
         
-    return render_template('/components/register.html')
+    return render_template(
+        '/components/register.html',
+        active='register'
+        )
 
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -72,7 +79,10 @@ def login():
             flash("This email address is unknown to our records.")
             return redirect(url_for('login'))
                     
-    return render_template('/components/login.html')
+    return render_template(
+        '/components/login.html',
+        active='login'
+        )
 
 
 @app.route('/logout', methods=['POST', 'GET'])
@@ -86,7 +96,11 @@ def logout():
 @app.route('/account', methods=["POST", "GET"])
 def account():
     user_items = mongo.db.items.find({'username': session['username']})
-    return render_template('/pages/account.html', items=user_items)
+    return render_template(
+        '/pages/account.html', 
+        items=user_items,
+        active='account'
+        )
 
 
 @app.route('/items/filter', methods=["POST", "GET"])
@@ -122,7 +136,11 @@ def add_item():
         if "username" not in session:
             return redirect(url_for('login'))
         else:
-            return render_template('/pages/additem.html', categories=categories)
+            return render_template(
+                '/pages/additem.html', 
+                categories=categories,
+                active='additem'
+                )
 
 
 @app.route('/items/update/<item_id>', methods=["POST", "GET"])
@@ -147,7 +165,11 @@ def update_item(item_id):
         if "username" not in session:
             return redirect(url_for('login'))
         else:
-            return render_template('/pages/updateitem.html', item=clicked_item)
+            return render_template(
+                '/pages/updateitem.html', 
+                item=clicked_item,
+                active='edit'
+                )
 
 
 @app.route('/items/delete/<item_id>', methods=["POST"])

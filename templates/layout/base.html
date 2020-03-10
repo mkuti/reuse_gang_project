@@ -29,6 +29,13 @@
 <!-- Navbar -->
 {% include 'layout/nav.html' %}
 
+<!-- Home or banner image -->
+{% if active == "home" %}
+{% include 'components/homeimage.html' %}
+{% elif active == "login" %}
+{% include 'components/bannerimage.html' %}
+{% endif %}
+
 <!-- Main content -->
 
 <!-- Flash messages -->
