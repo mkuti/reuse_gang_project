@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="" target="_blank"><img src="wireframes/multi-device-photo.png" width=100 height=100 alt="Multi Device Mockup"/></a>
+  <a href="" target="_blank"><img src="wireframes/multi-device-photo.png" width=400 height=300 alt="Multi Device Mockup"/></a>
 </h1>
 
 <div align="center">
