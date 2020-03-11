@@ -315,54 +315,7 @@ It took me a long time to find the perfect image which compliment the logo, the 
 
 # Testing
 
-## Final and official testing:
-  * [W3 MarkUp validation](https://validator.w3.org)
-  * [W3 CSS validation](https://jigsaw.w3.org/css-validator/)
-
-I checked the validity of my code at different times and received few errors on HTML markup which I worked on correcting. I did not get any errors with my CSS.
-
-
-## General testing:
-As I did not have a lot of time and I was not really expert in Jasmine or any automating testing, I decided to do all the testing manually via the browser and Chrome Developer tools.
-My strategy is very simple: as soon as I write a line of code, I open the page in my browser to test it, make sure it works until I am fully happy with what I see and how it functions. 
-
-For each feature I was working on, I tried to preview it in Chrome Dev tools to understand quickly which HTML element, CSS styling or Bootstrap class would cause a certain effect and correct it as soon as possible. 
-This also allowed me to fully comprehend the languages, to work by small tasks and push to GitHub only after I made the whole feature was working well.
-
-Once I was quite happy with the design and the site responsiveness, I moved to Javascript and performed the same manual tests as above. 
-
-
-## Testing in different browsers:
-I used Google Chrome as my primary browser and constantly tested it on my mobile phone also using the same browser. 
-I also tested the game on Safari via an iMac with a very big screen and an iPod touch with probably the smallest screen regularly and never found any specific issue. 
-
-## General testing and learning experiences for the code itself:
-
-### 1. 
-* __Goal__: 
-
-* __Result__: 
-
-### 2. :
-* __Goal__: 
-* __Implementation__: 
-
-* __Issue and new implementation__: 
-* __Issue and new implementation__:
-    
-* __Result__:
-    
-
-## Issues found and solved
-
-### 1. 
-* __Issue__: 
-* __Fix__: 
-    
-* __Verdict__: 
-
-
-
+I created a separate document for Testing writeup which can be found [here](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/test.md)
 
 [Back to Top](#table-of-contents) 
 
@@ -405,8 +358,6 @@ Python werkzeug.check_password_hash()
 - [Image by Susanne Jutzeler, suju-foto from Pixabay](https://pixabay.com/photos/bike-child-children-cycling-wheel-2895424/) 
 - [Image by Attraction Magazine from Pixabay](https://pixabay.com/photos/beads-lilac-fashion-design-jewels-809385/)
 
-#### Other Resources:
-
 [Back to Top](#table-of-contents) 
 
 # Deployment
@@ -417,34 +368,81 @@ I went to Code Institute [full template repository](https://github.com/Code-Inst
 
 From that point, I could add, commit any update of my code and push it to the remote repository so it could be regularly backed up and accessed by others.
 
-## Enabling GitHub Pages to publish site from master as a publishing source
+### GitHub
+All versions and branches of the code are stored in github:
+https://github.com/mkuti/reuse_gang_project
 
-* Opened up GitHub in the browser.
-* Signed in using username and password.
-* Selected my repositories.
-* Navigated to [FlagGame repository](https://github.com/mkuti/FlagGame_milestone_2).
-* In the top navigation clicked 'settings'.
-* Scrolled down to the GitHub Pages area.
-* Selected 'Master Branch' from the 'Source' dropdown menu.
-* Clicked to confirm my selection.
-* Your site is published [https://mkuti.github.io/FlagGame_milestone_2/](https://mkuti.github.io/FlagGame_milestone_2/)
+## How to run this project locally
 
-When I submitted this Milestone project, I confirmed that the Development Branch and Master Branch are identical.
+To run this project on your own IDE follow the instructions below:
 
-## How to run code locally
+Ensure you have the following tools: 
+- An IDE such as [GitPod](https://gitpod.io/)
 
-1. On GitHub, navigate to the main page of the repository
-2. Under the repository name, click Clone or download
-3. In the Clone with HTTPs section, click to copy the clone URL for the repository
-4. Using favorite IDE, open Terminal
-5. Change the current working directory to the desired file location
-6. Type git clone, and then paste the URL you copied in Step 2 when git clone: [https://github.com/YOUR-USERNAME/YOUR-REPOSITORY ](https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
-7. Press Enter > Your local clone will be created.
+The following **must be installed** on your machine:
+- [PIP](https://pip.pypa.io/en/stable/installing/)
+- [Python 3](https://www.python.org/downloads/)
+- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
+- If you use Code Institute template, all the above will be already installed
+- An account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or MongoDB running locally on your machine. 
+    - How to set up your Mongo Atlas account [here](https://docs.atlas.mongodb.com/).
+
+### Instructions
+1. Install all required modules with the command 
+```pip3 freeze -r requirements.txt```
+
+2. In your local IDE create a file called `env.py`
+
+3. Inside the env.py file, create a SECRET_KEY variable and a MONGO_URI to link to your own database. Please make sure to call your database `reuse gang`, with 2 collections called `users` and `items`.
+
+4. Make sure to add env.py to a .gitignore file so it's not pushed to the repository
+
+4. You can now run the application with the command
+```python app.py```
+
+9. You can visit the website at `https://8080-fbbe19f1-c9cd-4b0b-9a9e-2d36c0dd3c88.ws-eu01.gitpod.io/`
+
+## Heroku Deployment
+
+To deploy Reuse Gang to heroku, you would need to follow the following steps:
+
+1. Create a `requirements.txt` file using the terminal command `pip freeze > requirements.txt`.
+
+2. Create a `Procfile` with the terminal command `echo web: python app.py > Procfile`.
+
+3. `git add` and `git commit` the new requirements and Procfile and then `git push` the project to GitHub.
+
+3. Create a new app on the [Heroku website](https://dashboard.heroku.com/apps) by clicking the "New" button in your dashboard. Give it a name and set the region to Europe.
+
+4. From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+5. Confirm the linking of the heroku app to the correct GitHub repository.
+
+6. In the heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
+
+7. Set the following config vars:
+
+| Key | Value |
+ --- | ---
+DEBUG | FALSE
+IP | 0.0.0.0
+MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`
+PORT | 5000
+SECRET_KEY | `<your_secret_key>`
+
+- To get you MONGO_URI read the MongoDB Atlas documentation [here](https://docs.atlas.mongodb.com/)
+
+8. In the heroku dashboard, click "Deploy".
+
+9. In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
+
+10. The site is now successfully deployed.
 
 [Back to Top](#table-of-contents) 
 
 ### Credits
-* [404 error handling](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/)
+* Code for the 404 error handling was taken from [Geeks for Geeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/)
+
 
 
 # Special thanks

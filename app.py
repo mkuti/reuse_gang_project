@@ -21,6 +21,7 @@ app.config["MONGO_URI"] = os.environ["MONGODB_URI"]
 # create an instance of Pymongo with app object being pushed as argument
 mongo = PyMongo(app)
 
+
 @app.route('/')
 def home():
     return render_template(
@@ -54,7 +55,6 @@ def register():
         else:
             flash("This email address is already registered, would you like to log in instead?")
             return redirect(url_for('login'))
-        
     return render_template(
         '/components/register.html',
         active='register'
@@ -66,7 +66,6 @@ def login():
     if request.method == "POST":
         users = mongo.db.users
         matched_user = users.find_one({'email': request.form["email"]})
-        
         if matched_user:
             if check_password_hash(matched_user["password"], request.form["password"]):
                 flash("Welcome back " + matched_user["username"])
@@ -78,7 +77,6 @@ def login():
         else:
             flash("This email address is unknown to our records.")
             return redirect(url_for('login'))
-                    
     return render_template(
         '/components/login.html',
         active='login'
