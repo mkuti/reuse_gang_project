@@ -40,7 +40,7 @@ div a {
     background-color: transparent;
 }
 
-.bg-light {
+.bg-glight {
     background-color: #EFEFDD;
 }
 
@@ -252,12 +252,11 @@ div a {
 
 /* css code for social media icon is copied and slightly changed from Resume Mini-Project */
 .social-icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: center;
-    color: rgb(177, 206, 184);
     vertical-align: middle;
     display: table-cell;
     transition: all 0.35s ease-in-out;
