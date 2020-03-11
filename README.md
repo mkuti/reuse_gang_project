@@ -189,7 +189,15 @@ Using database with clear collections and categories
 [Back to Top](#table-of-contents) 
 
 #### Importance and feasibility table:
-TODO: will import table
+| Goals and features wanted                                        | Importance | Feasibility |
+|------------------------------------------------------------------|------------|-------------|
+| Page about concept behind website                                | 4          | 5           |
+| User login allows all CRUD                                       | 5          | 3           |
+| List of items showing as cards                                   | 5          | 5           |
+| Search option with categories                                    | 5          | 4           |
+| Non-Liability disclaimer, Rules                                  | 4          | 2           |
+| Map showing item’s location (once network grows)                 | 3          | 3           |
+| Links to organisation website and Facebook page for more contact | 3          | 5           |
 
 TODO:Will add user stories here
 ### 8. User stories
