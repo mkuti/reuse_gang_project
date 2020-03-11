@@ -212,6 +212,10 @@ div a {
     border: none;
 }
 
+.card-collapse:hover{
+    color:#47A349
+}
+
 .collapsed-content {
     display: none;
     padding: 0 18px;
