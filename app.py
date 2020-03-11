@@ -95,12 +95,15 @@ def logout():
 
 @app.route('/account', methods=["POST", "GET"])
 def account():
-    user_items = mongo.db.items.find({'username': session['username']})
-    return render_template(
-        '/pages/account.html', 
-        items=user_items,
-        active='account'
-        )
+    if "username" not in session:
+        return redirect(url_for('login'))
+    else:
+        user_items = mongo.db.items.find({'username': session['username']})
+        return render_template(
+            '/pages/account.html', 
+            items=user_items,
+            active='account'
+            )
 
 
 @app.route('/items/filter', methods=["POST", "GET"])
