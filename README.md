@@ -37,23 +37,7 @@
     * [Special Thanks & Acknowledgements](#special-thanks--acknowledgements)
 
 # Presentation of the project
-A platform where people want to give for free, an unwanted item 
-
-A platform where the free item can be taken by another person that needs it
-
-A free and user-friendly platform where exchange happens
-
-# How?
-- Simple login feature for users
-- User can add an item to give away by filling a form (CREATE)
-- Categories for an item to give: name, description, image, location, is urgent to dispose of, category of items
-(Kids, clothes, home, books, others)
-- User can remove an item by marking it as taken (DELETE)
-- User can edit an item card by updating its description or confirm it’s still available after a certain time (UPDATE)
-- Users can view all items being available at a certain time (RETRIEVE/READ)
-- Users can search items by location or category (RETRIEVE/READ)
-- Will have two collections of data: users and items
-- All activities of CRUD can be performed by the user on their own records
+I am very engaged with a local zero waste group and have been part of a freecycle network. So I felt drawn to build a platform where people want to give for free, an unwanted item. A platform where the free item can be taken by another person that needs it. A free and user-friendly platform where exchange happens.
 
 [Back to Top](#table-of-contents) 
 
@@ -168,15 +152,6 @@ Using database with clear collections and categories
 
 [Back to Top](#table-of-contents) 
 
-#### User expectations
-1. List of available items showing before even logging in
-2. Taken items to be removed from the list
-3. Search option to find available items quicker depending of the category
-4. Simple user login system not asking for much information or action of user
-5. An easy to navigate website with accessible, updated and informative brief description
-6. Links to take user if need to learn more
-7. Rules of the network, liability information
-
 #### Why are we so special? What additional value will it add to what is existing?
 - Belongs to a specific local community vs global
 - Run by a local organisation already engaged in the community
@@ -199,9 +174,9 @@ Using database with clear collections and categories
 | Map showing item’s location (once network grows)                 | 3          | 3           |
 | Links to organisation website and Facebook page for more contact | 3          | 5           |
 
-TODO:Will add user stories here
 ### 8. User stories
-##### As a user, I am expecting:
+
+#### As a user, I am expecting:
 * A welcome or about section so I can understand what the website is about
 * A logo on top left corner where I can click and go back to home page
 * All items available displayed on the home page when I first land
@@ -221,7 +196,7 @@ TODO:Will add user stories here
 * A button to log out
 * A footer where I can find links to the associated organisation and to the developer's professional pages
 
-##### As a developer, I want:
+#### As a developer, I want:
 * Design and develop a webiste to show my knowledge of Flask, Python and MongoDB
 * Match up my interest of environment-friendly, zero waste with my coding skills
 * Make contact with local organisations to offer my skills and maybe get more practice with other projects, free at the beginning, then paid
@@ -269,32 +244,11 @@ a) One main page: find quick and useful information, log in and contact others
 
 b) User page: separated to avoid too much information on the same page and mixing different information
 - User does not need to visit his user page at each visit, might only be for updating details or items given
-- User can update his email address or location
 - User can update or remove given items
 
-c) Third page about concept, zero-waste organisation, rules of the group, non-liability disclaimer
-
 [Back to Top](#table-of-contents) 
 
-### 2. Consistency of elements and relationships?
-Regular use of pop up modals so user does not have to go from one page to another and get lost in the navigation
-
-### 3. Is it learnable and intuitive for the user
-- Can the user understand and easily navigate through the system when using it for the first time?
-- Intuitive/learnable: Follow website convention with a top navbar, a footer, hyperlinked buttons for user to navigate quickly around
-- Consistent: navbar is the same on all pages, color theme and font will follow along, icons and categories will be the same for each item given
-- Visible: navigation will be large enough so quickly visible to any user and easy to click on
-- Feedback for user: Buttons change colors when hovered, loader while data is loading during a search, error message pop up if form not correctly filled
-
-[Back to Top](#table-of-contents) 
-
-### 4. Information architecture
-- Information architecture
-- Linear flow from one page to another 
-- Non-linear flow where user can do different tasks via pop up modals
-- Navbar and hyperlinks available on each page to keep user alerted
-
-### 5. Data structure
+### 2. Data structure
 Data model with two collections where User Name creates relationship between collections
 
 #### Users
@@ -336,37 +290,26 @@ I used Balsamiq tool for the wireframes and attached them to the directory in as
 - [Edit post on tablet](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-editpost-tablet.png)
 - [Edit post on mobile](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-editpost-mobile.png)
 
-The skeleton plane: 
-- How will our information be represented, and how will the user navigate to the information and the features?
-- how the information should be implemented?
-- How will the user navigate through the information and the features?
-- How will the content relate to each other? What relationships will the content have?
-- What has priority? What has top priority? What has lower priority?
-- And based on those priorities, where do we position the content?
-- How do we navigate to those higher and lower priorities?
-
 [Back to Top](#table-of-contents) 
 
 ## Surface plane: How does it look like?
-- What colors?
-- What typography are we going to put in place?
-- What images? What design elements?
-- What animations, if any? What transitions?
-- What other effects are going to be in place?
-
-[Back to Top](#table-of-contents) 
-
-## Design
 ### 1. Color scheme
+As the platform is about less waste. recycle, planet-friendly, it was natural for me to have the main color represented by green. From there, I use Color Scheme to find complementary colors which are different shades of green to a very light one for the text and the body background color. Also used a dark grey for text in other parts in order to contrast with the darker green color.
 
 ### 2. Font
-Special Elite, Nanum Pen script, Cabin sketch(opposite of permanent), Chewy
+#### Cabin Sketch
+- I have decided to use Cabin sketch font as it represented the opposite of permanent, which could mean the writing could be rubbed and written again. This thematic of non-permanent, flowing, ephemere, to me fitted particularly well with the website thematic of re-use. It also gives a look of chalk written which is planet-friendly material.
+- Cabin sketch became my primary font as it is used for the logo and for the attention text of the home page so it gives an atmosphere of the website to the user on first visit.
 
-Kaushan Script
-Bangers
-Indie Flower
+#### Indie Flower
+- I chose Indie Flower font as I am very attracted to cursive writing and again, it represents the simple gesture of hand-writing, which is the opposite of permanent. It is easy to read and gives a friendly atmosphere of exchange. Is also consistent and complimentary of the other font chosen.
+- It is used as main font for the body.
 
 ### 3. Logo
+I wanted the logo to be simple and effective, showing the thematic and atmosphere of the website to the user. Used my primary font of chalk style and removed background so it falls nicely on the home image.
+
+### 4. Image
+It took me a long time to find the perfect image which compliment the logo, the colors and the fonts and does not take too much from the rest of the website content. It matches perfecly the colors thematic and gives a friendly welcome to the website users.
 
 [Back to Top](#table-of-contents) 
 
