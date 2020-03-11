@@ -34,6 +34,14 @@ div a {
     color: inherit;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
+li {
+    list-style-type: none;
+}
+
 /* colors */
 
 .bg-nav {
@@ -197,15 +205,9 @@ div a {
     padding: 1.25rem;
 }
 
-/* account */ 
-
-.welcome {
-    text-decoration: underline;
-}
-
 /* Hyperlink inside add items */
 
-.underline {
+.hyperlink {
     text-decoration: underline;
     cursor: pointer; 
 }
@@ -230,6 +232,13 @@ div a {
 .remove-highlight:hover {
     text-decoration: line-through;
     color: #47A349;
+}
+
+/* about */
+
+.statement-item {
+    margin-top: .5rem;
+    line-height: 1.2rem;
 }
 
 /* footer */
