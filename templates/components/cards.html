@@ -1,7 +1,7 @@
 {% block cards %}
 
 <section class='container-fluid mx-auto'>
-	<div class="row text-center justify-content-center green_text" id="card-item">
+	<div class="row text-center justify-content-center green-text" id="card-item">
         {% for item in items %}
 		<div class="col-12 col-sm-6 col-lg-4">
 			<div class="card my-2 text-center">
@@ -26,7 +26,7 @@
                                 Find more details...
                                 <i class="pl-2 fas fa-chevron-down"></i>
                             </a>
-                            <p class="card-text collapsed-content text-left px-0 mx-0 lgreen_text" id="item_description">{{item.item_description}}</p>
+                            <p class="card-text collapsed-content text-left px-0 mx-0 lgreen-text" id="item_description">{{item.item_description}}</p>
                         </div>
                     </div>
                     <div class="row my-3">
@@ -49,7 +49,7 @@
                     <div class="row my-3">
                         <div class="col-12 text-center">
                         <!--url_for('python_function_name', any other function argument)-->
-                            <a href="{{url_for('update_item', item_id=item._id)}}" class="btn bg-darkgreen light_text">Edit</a>
+                            <a href="{{url_for('update_item', item_id=item._id)}}" class="btn bg-darkgreen light-text">Edit</a>
                         </div>
                     </div>
                     {% endif %}

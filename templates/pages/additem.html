@@ -4,15 +4,15 @@
 <section class="container-fluid mt-5">
 	<div class="row text-center">
 		<div class="col-11 col-lg-9 mx-auto card">
-            <h3 class='green_text my-4'>Well done for taking the first step of our exchange!</h3>
-            <h5 class='green_text mb-3'>Fill the fields below so we can then advertise your items for other users.</h5>
+            <h3 class='green-text my-4'>Well done for taking the first step of our exchange!</h3>
+            <h5 class='green-text mb-3'>Fill the fields below so we can then advertise your items for other users.</h5>
 			<form class='text-left' method="POST" action="{{url_for('add_item')}}">
 				<div class="form-group mb-3">
-                    <h5 class='lgreen_text'>Item Name</h5>
+                    <h5 class='lgreen-text'>Item Name</h5>
                     <input type="text" class="form-control" id="item_name" name="item_name" aria-describedby="name" maxlength="15" required>
                 </div>
                 <div class="form-group mb-3">
-                    <h5 class='lgreen_text'>Item Category (required)</h5>
+                    <h5 class='lgreen-text'>Item Category (required)</h5>
                     {% for category in categories %}
 					<div class="form-check form-check-inline">
 						<input class="form-check-input" type="radio" name="item_category" id="category1" value="{{category}}"required>
@@ -21,24 +21,24 @@
                     {% endfor %}
                 </div>
 				<div class="form-group mb-3">
-                    <h5 class='lgreen_text'>Item Description</h5>
-                    <p class='green_text'>Make sure to add a brief description about the item's appearance and state so other users know what to expect.</p>
+                    <h5 class='lgreen-text'>Item Description</h5>
+                    <p class='green-text'>Make sure to add a brief description about the item's appearance and state so other users know what to expect.</p>
                     <textarea class="form-control" id="textarea" name="item_description" rows="auto" maxlength="150" placeholder="Enter your description within 150 characters"required></textarea>
                 </div>
                 <div class="form-group mb-3">
-                    <h5 class='lgreen_text'>Where can it be collected?</h5>
+                    <h5 class='lgreen-text'>Where can it be collected?</h5>
                     <input type="text" class="form-control" id="item_location" name="item_location" aria-describedby="name" maxlength="18" placeholder="Enter your location within 20 characters" required>
                 </div>
                 <div class="form-group mb-1">
-                    <h5 class='lgreen_text'>Item Image</h5>
-                    <p class='green_text'>You can upload the photo for your item to a free image website
+                    <h5 class='lgreen-text'>Item Image</h5>
+                    <p class='green-text'>You can upload the photo for your item to a free image website
                                 (<a href="https://imgbb.com/" target="_blank" aria-label="ImgBB" class='underline'>ImgBB</a>) and paste its
                                 direct url for it here.</p>
                     <input type="text" class="form-control" id="item_img" name="item_img" aria-describedby="image" placeholder="https://...">
                 </div>
                 <div class="row justify-content-between">
-                    <a href="{{url_for('home')}}" class="btn bg-darkgreen light_text mt-5 text-uppercase mb-3"><i class="icon fas fa-window-close"></i> Cancel</a>
-                    <button type="submit" class="btn bg-darkgreen light_text mt-5 text-uppercase mb-3"><i class="fas fa-plus"></i> Add</button>
+                    <a href="{{url_for('home')}}" class="btn bg-darkgreen light-text mt-5 text-uppercase mb-3"><i class="icon fas fa-window-close"></i> Cancel</a>
+                    <button type="submit" class="btn bg-darkgreen light-text mt-5 text-uppercase mb-3"><i class="fas fa-plus"></i> Add</button>
                 </div>
 			</form>
 		</div>

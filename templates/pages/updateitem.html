@@ -5,11 +5,11 @@
 	<div class="row text-center">
 
 		<div class="col-11 col-lg-9 mx-auto card">
-            <h3 class='green_text my-4'>Need to make some changes? ... Or need to mark item as taken?</h3>
-            <h5 class='green_text mb-3'>Change any fields below to any new information.</h5>
+            <h3 class='green-text my-4'>Need to make some changes? ... Or need to mark item as taken?</h3>
+            <h5 class='green-text mb-3'>Change any fields below to any new information.</h5>
 			<form class='text-left' method="POST" action="{{url_for('update_item', item_id=item._id)}}">
 				<div class="form-group mb-3">
-                    <h5 class='lgreen_text'>Name:</h5>
+                    <h5 class='lgreen-text'>Name:</h5>
                     <input type="text" class="form-control" id="item_name" name="item_name" aria-describedby="name" value="{{item.item_name}}">
                 </div>
                 <div class="form-group mb-3">
@@ -31,24 +31,24 @@
 					</div>
                 </div>
 				<div class="form-group mb-3">
-                    <h5 class='lgreen_text'>Change its description if needed or add a deadline for collection...</h5>
+                    <h5 class='lgreen-text'>Change its description if needed or add a deadline for collection...</h5>
                     <textarea class="form-control" id="textarea" name="item_description" rows="auto">{{item.item_description}}</textarea>
                 </div>
                 <div class="form-group mb-3">
-                    <h5 class='lgreen_text'>Where can it be collected?</h5>
+                    <h5 class='lgreen-text'>Where can it be collected?</h5>
                     <input type="text" class="form-control" id="item_location" name="item_location" value="{{item.item_location}}"required>
                 </div>
                 <div class="form-group mb-1">
-                    <h5 class='lgreen_text'>Item Image</h5>
-                    <p class='green_text'>If needed, replace with a new photo for your item via <a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>.</p>
+                    <h5 class='lgreen-text'>Item Image</h5>
+                    <p class='green-text'>If needed, replace with a new photo for your item via <a href="https://imgbb.com/" target="_blank" aria-label="ImgBB">ImgBB</a>.</p>
                     <input type="text" class="form-control" id="item_img" name="item_img" aria-describedby="image" value="{{item.item_img}}">
                 </div>
                 <div class="row mt-3">
-                     <h5 class='lgreen_text text-center remove'>Someone picked up my stuff, I want to mark it as <a href='' class='remove-highlight' data-toggle="modal" data-target="#confirm_remove">taken.</a></h5>
+                     <h5 class='lgreen-text text-center remove'>Someone picked up my stuff, I want to mark it as <a href='' class='remove-highlight' data-toggle="modal" data-target="#confirm_remove">taken.</a></h5>
                 </div>
                 <div class="row text-center">
                     <div class="col-12 mb-3">
-                        <button type="submit" class="btn bg-darkgreen light_text mt-5 text-uppercase">Confirm update</button>
+                        <button type="submit" class="btn bg-darkgreen light-text mt-5 text-uppercase">Confirm update</button>
                     </div>
                 </div>
 			</form>
@@ -61,12 +61,12 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <h5 class="modal-title green_text">Are you sure you want to archive "{{item.item_name}}"?</h5>
+        <h5 class="modal-title green-text">Are you sure you want to archive "{{item.item_name}}"?</h5>
       </div>
       <div class="modal-footer justify-content-between">
-        <button type="button" class="btn bg-darkgreen light_text" data-dismiss="modal"><i class="icon fas fa-window-close"></i> Keep it</button>
+        <button type="button" class="btn bg-darkgreen light-text" data-dismiss="modal"><i class="icon fas fa-window-close"></i> Keep it</button>
         <form method="POST" action="{{url_for('delete_item', item_id=item._id)}}">
-            <button type="submit" class="btn bg-darkgreen light_text"><i class="icon fas fa-thumbs-up"></i> Archive!</button>
+            <button type="submit" class="btn bg-darkgreen light-text"><i class="icon fas fa-thumbs-up"></i> Archive!</button>
         </form>
       </div>
     </div>
