@@ -187,13 +187,13 @@ def delete_item(item_id):
 
 
 @app.errorhandler(500)
-def internal_error(e):
-    return "500 error"
+def internal_error(error):
+    return render_template("/pages/500.html", error=error)
 
 
 @app.errorhandler(404)
 def not_found(error):
-    return render_template("/pages/404.html")
+    return render_template("/pages/404.html", error=error)
 
 
 if __name__ == "__main__":

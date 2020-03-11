@@ -30,13 +30,12 @@ function filterResult(){
     }
 }
 
-
+/**
+ * Adding $oid behind _id to remove id hex number from object and construct url for editing item
+ */
 function loopItems(data) {
     let cardContent = '';
     data.forEach(item => {
-        /**
- * Adding $oid behind _id to remove id hex number from object and construct url for editing item
- */
         itemId = item._id.$oid
         cardContent += injectCard(item)
     })
@@ -83,10 +82,10 @@ function injectCard(item) {
                     </div>
                     <div class="row my-3">
                         <div class="col">
-                            <a type='button' class='card-collapse light_text px-0 mx-0'>
+                            <a type='button' class='card-collapse light-text px-0 mx-0'>
                                 <h6>Find more info about this item...<i class="pl-2 fas fa-chevron-down"></i></h6>
                             </a>
-                            <p class="card-text collapsed-content text-left px-0 mx-0 lgreen_text">${item.item_description}</p>
+                            <p class="card-text collapsed-content text-left px-0 mx-0 lgreen-text">${item.item_description}</p>
                         </div>
                     </div>
                     <div class="row my-3">
@@ -109,8 +108,7 @@ function injectCard(item) {
                     </div>
                     <div class="row my-3">
                         <div class="col-12">
-                        <!--url_for('python_function_name', any other function argument)-->
-                            <a href="/items/update/${itemId}" class="btn bg-darkgreen light_text">Edit</a>
+                            <a href="/items/update/${itemId}" class="btn bg-darkgreen light-text">Edit</a>
                         </div>
                     </div>
 				</div>
