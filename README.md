@@ -201,16 +201,18 @@ Using database with clear collections and categories
 
 TODO:Will add user stories here
 ### 8. User stories
-##### As a general user, I am expecting:
-* A welcome section where I can understand what the website is about
+##### As a user, I am expecting:
+* A welcome or about section so I can understand what the website is about
 * A logo on top left corner where I can click and go back to home page
 * All items available displayed on the home page when I first land
+* A special page where I can find my own items
 * A search bar to filter specific items depending of a category or other common factors (user, location)
 * A quick view about the item with an image
-* The location of the item so I know if close enough to me
+* The location of the item so I know if close enough to where I am located
 * An option to see more details with only one click
 * To email item owner if I need item
-* Add button to offer an item
+* Add button to offer an item on the home page
+* If not logged in, expecting to be sent to log in form when I want to add an item
 * An edit button to update any details
 * A place where I can delete the item to show it has been taken
 * A register button if I am not a member
@@ -228,18 +230,30 @@ TODO:Will add user stories here
 
 ## Scope plane: How?
 
-### 1. Which features?
+### 1. Existing Features:
+* Feature 1 - List of items showing as cards
+* Feature 2 - Search option with categories
+* Feature 3 - Simple register/login feature for users
+* Feature 4 - User can add an item to give away by filling a form (CREATE) with name, description, image, location, category of items
+(Kids, clothes, home, books, others)
+* Feature 5 - User can edit an item card by updating its details (UPDATE)
+* Feature 6 - User can remove an item by marking it as taken (DELETE)
+* Feature 7 - Logo on the top left linking to home container at any moment which would reload the whole page
+* Feature 8 - 
 
+### 2. Features Left to Implement:
+* Using Javascript to handle register, log in and log out
+* A full 'about' section to have more information about a registered charity or organisation which would be manage the gang locally
+* A form modal to send email to item owner directly from the website
+* For the purpose of milestone project, I have functionality of deleting item but for user experience, it would be better to have taken items saved in an archive section of the website
+confirm it’s still available after a certain time (UPDATE)
+Users can view all items being available at a certain time (RETRIEVE/READ)
 1. List of items showing as cards
 2. Search option with categories
 3. User login allowing all CRUD
 4. Page about concept behind website
 5. Non-Liability disclaimer, Rules
 6. Links to organisation website and Facebook page for more contact
-
-### 2. Content requirements
-- Input form for adding, editing and deleting items to pass on MongoDB - with two collections: users and items
-- CRUD activities
 
 [Back to Top](#table-of-contents) 
 
@@ -272,26 +286,6 @@ Regular use of pop up modals so user does not have to go from one page to anothe
 - Visible: navigation will be large enough so quickly visible to any user and easy to click on
 - Feedback for user: Buttons change colors when hovered, loader while data is loading during a search, error message pop up if form not correctly filled
 
-## Features
-### 1. Existing Features:
-* Feature 1 - List of items showing as cards
-* Feature 2 - Search option with categories
-* Feature 3 - Simple register/login feature for users
-* Feature 4 - User can add an item to give away by filling a form (CREATE) with name, description, image, location, category of items
-(Kids, clothes, home, books, others)
-* Feature 5 - User can edit an item card by updating its details (UPDATE)
-* Feature 6 - User can remove an item by marking it as taken (DELETE)
-* Feature 7 - Logo on the top left linking to home container at any moment which would reload the whole page
-* Feature 8 - 
-
-### 2. Features Left to Implement:
-* Using Javascript to handle register, log in and log out
-* A full 'about' section to have more information about a registered charity or organisation which would be manage the gang locally
-* A form modal to send email to item owner directly from the website
-* For the purpose of milestone project, I have functionality of deleting item but for user experience, it would be better to have taken items saved in an archive section of the website
-confirm it’s still available after a certain time (UPDATE)
-Users can view all items being available at a certain time (RETRIEVE/READ)
-
 [Back to Top](#table-of-contents) 
 
 ### 4. Information architecture
@@ -303,7 +297,24 @@ Users can view all items being available at a certain time (RETRIEVE/READ)
 ### 5. Data structure
 Data model with two collections where User Name creates relationship between collections
 
-TODO: will import table
+#### Users
+| Title         | Form Identifier key | Type     | Form collection   |
+|---------------|---------------------|----------|-------------------|
+| User ID       | _id                 | ObjectId | automatic         |
+| User Name     | user_name           | string   | input             |
+| User Email    | user_email          | string   | input             |
+| User Password | user_pwd            | string   | input and hashing |
+
+#### items
+
+| Title            | Form Identifier key | Type     | Form collection |
+|------------------|---------------------|----------|-----------------|
+| Item ID          | _id                 | ObjectId | automatic       |
+| Username         | username            | string   | input           |
+| Item Name        | item_name           | string   | input           |
+| Item Description | item_description    | string   | input           |
+| Item Image       | item_img            | string   | input           |
+| Item Category    | item_category       | string   | input           |
 
 [Back to Top](#table-of-contents) 
 	
