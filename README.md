@@ -8,8 +8,7 @@
 
 ## Table of Contents
 
-* [What?](#what)
-* [Why?](#why)
+* [Introduction](#introduction)
 * [How?](#how)
 * [UX](#ux)
     * [Strategy: Why and what?](#why-and-what)
@@ -37,9 +36,7 @@
 * [Credits](#credits)
     * [Special Thanks & Acknowledgements](#special-thanks--acknowledgements)
 
-# What?
-“Give...Reuse” OR “Re-Use Gang” OR “Recycling Rocks!”
-
+# Presentation of the project
 A platform where people want to give for free, an unwanted item 
 
 A platform where the free item can be taken by another person that needs it
@@ -103,10 +100,10 @@ A local town or community where people can exchange easily their items. The proj
 ### 6. Research
 
 #### Who else is building this?
-- https://freecycle.net/: Information page about Freecycle concept
-- https://www.freecycle.org/: Global and main website where free exchange happens
-- https://www.freetradeireland.ie/: Local free exchange website
-- http://www.freeuse.org/
+- [Information page about Freecycle concept](https://freecycle.net/)
+- [Global and main website where free exchange happens](https://www.freecycle.org/)
+- [Local free exchange website](https://www.freetradeireland.ie/)
+- [FreeUse website](http://www.freeuse.org/)
 - Any Facebook page that offer this type of free items exchange: people who want to give away send a Facebook post on the page. Since no record of available items anywhere, other users would need to scroll down on Facebook page to find old posted items
 
 #### How are they doing it?
