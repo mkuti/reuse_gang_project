@@ -49,8 +49,7 @@
 
 {% block content %} {% endblock %}
 
-<!-- Quick About -->
-{% include 'components/about.html' %}
+
 
 <!-- Footer -->
 {% include 'layout/footer.html' %}
@@ -62,5 +61,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <!-- link to my js file comes after other scripts to make sure does not slow down webpage  -->
 <script src="{{url_for('static', filename='js/main.js')}}"></script>
+{% if active == 'home' %}
+<script src="{{url_for('static', filename='js/filter.js')}}"></script>
+{% endif %}
 </body>
 </html>
