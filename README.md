@@ -46,37 +46,6 @@ A platform where the free item can be taken by another person that needs it
 
 A free and user-friendly platform where exchange happens
 
-# Why?
-
-Because our society has become so monetarised
-
-Because we all use so many items for a certain time only
-
-Because all of us need to declutter our houses sometimes
-
-Because we would not be able to sell many used items
-
-Because so many of us already give to charities their used items
-
-Because charities are already cluttered with used items, cannot and refuse often to take more
-
-Because we do not always need to buy new items which will only be used for a certain time
-
-Because many of us would not mind re-using a used item for a certain time also (child bike)
-
-Because so many of us already buy used items in charity shops
-
-Because an item can be re-used for long before being considered completely useless
-
-Because the small parts of a used and broken item can be useful for some people to make or fix another item
-
-Because we, humans, consume and throw away too much
-
-Because our planet does not have more space for thrown away items and should throw them back at us
-
-Because so many of us love exchanging with other people
-
-
 # How?
 - Simple login feature for users
 - User can add an item to give away by filling a form (CREATE)
@@ -467,15 +436,7 @@ Python werkzeug.check_password_hash()
 # Media and Content origin
 1. Taglines: [BrandonGaille](https://brandongaille.com/list-45-catchy-recycling-slogans-and-great-taglines/)
 2. [Home background by Min An from Pexels](https://www.pexels.com/photo/green-leafed-plants-1650035/)
-2. Main banner image designed by myself
-3. Different photos from Pinterest used on the banner image:
-- [Recycled Magazine Wrapped Eco Friendly Bangle Bracelet](https://www.pinterest.fr/pin/795237246688861796/)
-- [Umbrellas in old tire](https://www.pinterest.fr/pin/338473728235537572/)
-- [Bin made of plastic bottles top](https://www.pinterest.fr/pin/725924033668005178/)
-- [Tire lamps](https://www.pinterest.fr/pin/142918988163028795/)
-- [Plant in a jean](https://www.pinterest.fr/pin/226939268695686354/)
-- [Plant in a jean](https://www.pinterest.fr/pin/543528248781468379/)
-4. Photos used for test items
+3. Photos used for test items
 - [Photo of printer by Fernando Arcos from Pexels](https://www.pexels.com/photo/black-sd-card-adapter-on-white-device-193057/)
 - [Photo of garden tools by Nastya Kvokka on Unsplash](https://unsplash.com/photos/vdD1rcsdL3E)
 - [Image of pink bike by Isa KARAKUS from Pixabay](https://pixabay.com/photos/bicycle-child-baby-kids-bike-1713165/)
@@ -483,6 +444,7 @@ Python werkzeug.check_password_hash()
 - [Image of slide by nlachmund from Pixabay](https://pixabay.com/photos/slide-play-kids-playground-1016832/)
 - [Image of glass jar by Devanath from Pixabay ](https://pixabay.com/photos/glass-containers-glass-empty-clean-1205611/)
 - [Image by Susanne Jutzeler, suju-foto from Pixabay](https://pixabay.com/photos/bike-child-children-cycling-wheel-2895424/) 
+- [Image by Attraction Magazine from Pixabay](https://pixabay.com/photos/beads-lilac-fashion-design-jewels-809385/)
 
 #### Other Resources:
 
