@@ -2,7 +2,13 @@ $(document).ready(function(){
     filterResult()
 })
 
-
+/**
+ * @event onchange
+ * Fetching category selected in dropdown bar in html
+ * Sending selection to Python for query backend database
+ * Receiving filtered data back and calling function to loop through
+ * @callback <loopItems>
+ */
 function filterResult(){
     const selectCat = document.getElementById("search-category");
     const card = document.getElementById("card-item")
@@ -31,10 +37,14 @@ function filterResult(){
 }
 
 /**
- * Adding $oid behind _id to remove id hex number from object and construct url for editing item
+ * Looping through @param {array} Array of filtered items
+ * Removing id hex number from object to construct url for editing item inside template literal
+ * @callback <injectCard> to append html template to an empty variable
+ * Injecting ID element with new html
+ * @callback <collapsingCards> so new filtered template can also collapse
  */
 function loopItems(data) {
-    let cardContent = '';
+     cardContent = '';
     data.forEach(item => {
         itemId = item._id.$oid
         cardContent += injectCard(item)
@@ -43,6 +53,10 @@ function loopItems(data) {
     collapsingCards()
 }
 
+/**
+ * Switch function to return specific icon classes depending of item category
+ * @param {object} Item with keys and values, including category to be used for switch
+ */
 function whichCat(item){
     let itemCat = item.item_category;
     switch(itemCat) {
@@ -63,7 +77,11 @@ function whichCat(item){
     }
 }
 
-
+/**
+ * Function to inject html to a variable using template literals
+ * @callback <whichCat> to have specific icon to add to html depending of category
+ * @param {object} Item to add its keys and values to html
+ */
 function injectCard(item) {
     whichCat(item)
     cardHtml = `
@@ -118,7 +136,12 @@ function injectCard(item) {
         return cardHtml;
 }
 
-
+/**
+ * Function to collapse item description on card
+ * Creating array from all elements with same class
+ * Looping through array
+ * @event click 
+ */
 function collapsingCards(){
     let cardCollapse = Array.from(document.getElementsByClassName("card-collapse"));
 
@@ -136,13 +159,11 @@ cardCollapse.forEach(card => {
 collapsingCards()
 
 
-/*
-=================================
-    LOGO DISAPPEAR ON SCROLL
-=================================
-*/
-
 // courtesy of Simen Daehlin from my first milestone, via https://codepen.io/Eventyret/pen/RXBNaJ
+/**
+ * @event scroll
+ * Logo disappear on window scrolling 
+ */
 $(window).scroll(function(){
     $("#logo-img").css("opacity", 1 - $(window).scrollTop() / 50)
 })
