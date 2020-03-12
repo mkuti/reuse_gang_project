@@ -15,6 +15,7 @@
 ## Final and official testing:
   * [W3 MarkUp validation](https://validator.w3.org)
   * [W3 CSS validation](https://jigsaw.w3.org/css-validator/)
+  * [JS validator](https://jshint.com/)
   * [PEP8 Python Validator](http://pep8online.com)
 
 I checked the validity of my code at different times and received few errors on HTML markup which I worked on correcting. I did not get any errors with my CSS.
