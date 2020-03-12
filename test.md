@@ -18,6 +18,19 @@ Once I was quite happy with the design and the site responsiveness, I moved to J
     <h2>Testing document</h2>
 </div>
 
+## Final and official testing:
+  * [W3 MarkUp validation](https://validator.w3.org)
+  * [W3 CSS validation](https://jigsaw.w3.org/css-validator/)
+  * [PEP8 Python Validator](http://pep8online.com)
+
+I checked the validity of my code at different times and received few errors on HTML markup which I worked on correcting. I did not get any errors with my CSS.
+
+## General testing:
+As I did not have a lot of time and I was not really expert in Jasmine or any automating testing, I decided to do all the testing manually via the browser and Chrome Developer tools.
+My strategy is very simple: as soon as I write a line of code, I open the page in my browser to test it, make sure it works until I am fully happy with what I see and how it functions. 
+
+Through my own testing and with views of others, I have fixed a lot of design flaws and numerous bugs in my Javascript and Python code. Thanks to that, I can present a website which looks professional and is valid.
+
 ## Testing in different browsers:
 I used Google Chrome as my primary browser and constantly tested it on my mobile phone also using the same browser. 
 I also tested the game on Safari via an iMac with a very big screen and an iPod touch with probably the smallest screen regularly and never found any specific issue. 
@@ -46,3 +59,4 @@ I also tested the game on Safari via an iMac with a very big screen and an iPod 
 * __Fix__: 
     
 * __Verdict__: 
+
