@@ -107,7 +107,7 @@ A local town or community where people can exchange easily their items. The proj
 
 [Back to Top](#table-of-contents) 
 
-#### What are the pros of what they are doing?
+#### What are the pros of what they are doing?
 - User login system
 - I like the idea of only showing contact details of item owner when other users are logged in, for privacy reasons.
 - Responding to a post about a given item directly send email to item owner and all further contacts are done privately. Not sure if I can do it using my acquired knowledge so far.
@@ -214,21 +214,22 @@ Using database with clear collections and categories
 * Feature 5 - User can edit an item card by updating its details (UPDATE)
 * Feature 6 - User can remove an item by marking it as taken (DELETE)
 * Feature 7 - Logo on the top left linking to home container at any moment which would reload the whole page
-* Feature 8 - 
+* Feature 8 - Minimalist navigation in the shape of spinner instead of burger, minimalist, which gives 4 options: home, about, member page and login/logout
+* Feature 9 - About section with gang statement above footer which can be accessed via the navigation
 
 ### 2. Features Left to Implement:
 * Using Javascript to handle register, log in and log out
-* A full 'about' section to have more information about a registered charity or organisation which would be manage the gang locally
-* A form modal to send email to item owner directly from the website
-* For the purpose of milestone project, I have functionality of deleting item but for user experience, it would be better to have taken items saved in an archive section of the website
-confirm it’s still available after a certain time (UPDATE)
-Users can view all items being available at a certain time (RETRIEVE/READ)
-1. List of items showing as cards
-2. Search option with categories
-3. User login allowing all CRUD
-4. Page about concept behind website
-5. Non-Liability disclaimer, Rules
-6. Links to organisation website and Facebook page for more contact
+* A full 'about' page to have more information about a registered charity or organisation which would be managing the gang locally
+* A form modal to send email to item owner directly from the website and store messages in the database
+Although the website was actually live tested by a person not knowing about educative aspect of project and I receive emails from her regarding the items. So mailto implementation was tested and work well.
+* For the purpose of milestone project, I have functionality of deleting item but for user experience, it would be better to have taken items saved in an archive section of the website so that members can re-use them later if needed
+* Adding a date generator when item is created and store as key of object
+* A switch button which member can choose to use in order to confirm if item still available after a certain time
+* Adding a filter by location and maybe by date added
+* Non-Liability disclaimer, Rules
+* Network page to offer partnership with schools, charities when they need used items
+* Business page for businesses who also would like to donate items or fund the page to reduce their waste and increase their local visibility
+* A page on upcycling tips which members can share or any upcoming workshops organised locally
 
 [Back to Top](#table-of-contents) 
 
@@ -338,10 +339,12 @@ Python werkzeug.check_password_hash()
 - [Balsamiq](https://balsamiq.cloud) - I have used __Balsamic__ to build the wireframes which I then exported to the IDE
 - [Favicon converter](https://favicon.io/favicon-converter/) - I used Favicon converter to convert the logo into a favicon which I was able to insert in the asset folder and I tested it to be working
 - [Sweetalert2](https://sweetalert2.github.io/)
-- [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB)
+- [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB) Chrome extension to show content structure, margin and paddings and fix any offset
 - [Lunapic](https://www2.lunapic.com/editor/) - to make the logo transparent
 - [Spinkit](https://tobiasahlin.com/spinkit/) - for the loader css and html
-- [Techsini Multi-Mockup](https://techsini.com/multi-mockup/index.php)
+- [Techsini Multi-Mockup](https://techsini.com/multi-mockup/index.php) - to create multi-device photo of README
+- [Tables Generator](https://www.tablesgenerator.com/markdown_tables#) for generating Markdown tables for README
+
 
 [Back to Top](#table-of-contents) 
 
