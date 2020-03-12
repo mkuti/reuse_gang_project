@@ -25,6 +25,7 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def home():
+    '''Show all items stored and found from MongoDB collection items'''
     return render_template(
         '/pages/home.html', 
         items=mongo.db.items.find(),
@@ -35,6 +36,9 @@ def home():
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
+    '''Render register modal if method is get and after form is submitted by user,
+    this function will check if username or email address are already used and if not,
+    will hash password before sending all new user data to db'''
     if request.method == "POST":
         users = mongo.db.users
         used_name = users.find_one({'username': request.form["username"]})
@@ -63,6 +67,9 @@ def register():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
+    '''Render login modal if method is get and after form is submitted by user,
+    this function will find user associated with email address, compare password
+    submitted with password associated with user. Then will redirect to home'''
     if request.method == "POST":
         users = mongo.db.users
         matched_user = users.find_one({'email': request.form["email"]})
@@ -85,7 +92,7 @@ def login():
 
 @app.route('/logout', methods=['POST', 'GET'])
 def logout():
-'''remove the username from the session if it's there'''
+    '''remove the username from the session if it's there'''
     [session.pop(key) for key in list(session.keys())]
     flash('You have successfully logged out!')
     return redirect(url_for('home'))
@@ -93,6 +100,9 @@ def logout():
 
 @app.route('/account', methods=["POST", "GET"])
 def account():
+    '''If username is not in session, redirect to login.
+    Else function will search all items associated
+    with session username and render account template'''
     if "username" not in session:
         return redirect(url_for('login'))
     else:
@@ -106,6 +116,10 @@ def account():
 
 @app.route('/items/filter', methods=["POST", "GET"])
 def filter_items():
+    '''JS received data from filter drop down menu and send it as json to this route.
+    Function search all items under that category and return them as cursor object.
+    Using dumps method from bson, send back response to JS which handles rendering 
+    filtered data'''
     cat = request.get_json()
     if cat == 'default':
         all_items = mongo.db.items.find()
@@ -117,6 +131,10 @@ def filter_items():
 
 @app.route('/items/add', methods=["POST", "GET"])
 def add_item():
+    '''Create array of categories to display on template and add item form in html
+    If username not in session, redirect to login.
+    Render add item modal if method is get.
+    After form is submitted by user, insert new item in db and redirect to home'''
     categories = ["Kids", "Outdoor", "Household", "Other"]
 
     if request.method == "POST":
@@ -146,6 +164,9 @@ def add_item():
 
 @app.route('/items/update/<item_id>', methods=["POST", "GET"])
 def update_item(item_id):
+    '''If username not in session, redirect to login.
+    Function finds associated item with objectID and render edit item modal if method is get.
+    After form is submitted by user, update clicked_item in db and redirect to home'''
     if request.method == "POST":
         items = mongo.db.items
         item_owner = mongo.db.users.find_one({'username': session['username']})
@@ -175,12 +196,14 @@ def update_item(item_id):
 
 @app.route('/items/delete/<item_id>', methods=["POST"])
 def delete_item(item_id):
+    '''find clicked item, loop through object and find item_name
+    remove item and flash confirmation to user'''
     if request.method == "POST":
         item = mongo.db.items.find({'_id': ObjectId(item_id)})
         for i in item:
-            itemName = i['item_name']
+            item_name = i['item_name']
         mongo.db.items.remove({'_id': ObjectId(item_id)})
-        flash(itemName + "has been deleted")
+        flash(item_name + "has been deleted")
         return redirect(url_for('home'))
 
 
