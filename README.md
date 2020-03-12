@@ -315,7 +315,7 @@ It took me a long time to find the perfect image which compliment the logo, the 
 
 # Testing
 
-I created a separate document for Testing writeup which can be found [here](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/test.md)
+I created a separate document for Testing writeup which can be found [here](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/test.md)
 
 [Back to Top](#table-of-contents) 
 
