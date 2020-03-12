@@ -320,7 +320,7 @@ I created a separate document for Testing writeup which can be found [here](http
 
 [Back to Top](#table-of-contents) 
 
-# Technologies Used
+# Programming languages and technologies Used
 - [GitPod](gitpod.io) - I used __GitPod__ as my IDE for the development of this website.
 - __HTML__ language is used to create the structure of the website and game.
 - __CSS__ language is used to add styling on the structure of the website.
@@ -328,8 +328,8 @@ I created a separate document for Testing writeup which can be found [here](http
 - [jQuery](https://jquery.com/) and [Popper.js](https://popper.js.org/) - The website uses __jQuery__ and __Popper.js__ to bring in Javascript which makes the navbar responsive
 - __Javascript__ functioning language is used to fetch external data and add interactivity on the website so the game functions based on user's actions
 - [jQuery](https://jquery.com/) - I used jQuery to avoid repeating same actions on the DOM when buttons were clicked
-- __Python__ 
-- [Flask](https://flask.palletsprojects.com/en/1.1.x/) - I used Flask, Jinja templates and Werkzeug to 
+- __Python__ Object-oriented programming and structured programming language which allows smooth communication between the backend and frontend. 
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) - I used Flask framework, Jinja templates and Werkzeug to 
 Python werkzeug.check_password_hash()
 - [FontAwesome](https://kit.fontawesome.com/f7e192f540.js) - The website is using __Font Awesome__ to display the social media icons in my footer
 - [Google Fonts](https://fonts.google.com/)- The website uses __1 Google font__- Url imported in CSS
@@ -443,14 +443,23 @@ SECRET_KEY | `<your_secret_key>`
 
 [Back to Top](#table-of-contents) 
 
-### Credits
+# Credits
 * Code for the 404 error handling was taken from [Geeks for Geeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/)
-
-
+* Code provided by Simen Dehlin for the logo disappearing on window scrolling from my first milestone, via [Codepen](https://codepen.io/Eventyret/pen/RXBNaJ)
+* Switch statement for JS function of filtering items so I would avoid adding if statement inside template literals kindly suggested by my mentor [Simen Dehlin](https://github.com/Eventyret)
+* Idea of appending filtered html template from JS to existing component was inspired by [Anna Greaves](https://github.com/AJGreaves) from her milestone 3
+* The solution to send json object from MongoDB to JS via Ajax was suggested by my mentor [Simen Dehlin](https://github.com/Eventyret) who also found the solution to json.dumps not working
+* Code for the trick ```if (used_email or used_name) is None``` found on [Stack Overflow](https://stackoverflow.com/questions/19400115/python-difference-between-x-is-not-none-and-y-is-not-none-and-x-and-y-is-n)
 
 # Special thanks
 
+To my mentor, [Simen Dehlin](https://github.com/Eventyret), for never being tired of my questions or despair when unsure or lost. For his amazing mentoring throughout the building of this project, encouraging, suggesting and pointing me to the right direction, by explaining the Javascript and Python logic but also explaining the professional expectations of a Python and Javascript developer. He encourages but always challenge for extra development which is great. Thank you!
 
+To [Malia Havlicek](https://github.com/maliahavlicek) for testing extensively the website, its functionalities and for providing a very detailed feedback on the website but also the readme and code. It was very helpful to tackle some very important bugs.
+
+To all in the #peer-code-review channel of Slack who were kind enough to provide their feedback and find bugs or provide solution.
+
+To my two sons Léon and Seyi whose time with me is being sacrificed currently, for being patient with me when I am tired after sleepless nights.
 
 ##### Disclaimer:
 The content of the website is for educational purposes only.
