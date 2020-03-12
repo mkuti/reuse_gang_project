@@ -450,6 +450,7 @@ SECRET_KEY | `<your_secret_key>`
 * Idea of appending filtered html template from JS to existing component was inspired by [Anna Greaves](https://github.com/AJGreaves) from her milestone 3
 * The solution to send json object from MongoDB to JS via Ajax was suggested by my mentor [Simen Dehlin](https://github.com/Eventyret) who also found the solution to json.dumps not working
 * Code for the trick ```if (used_email or used_name) is None``` found on [Stack Overflow](https://stackoverflow.com/questions/19400115/python-difference-between-x-is-not-none-and-y-is-not-none-and-x-and-y-is-n)
+* Code for adding attribute active to a page being rendered in Python was followed from [Anna Greaves](https://github.com/AJGreaves) Milestone 3
 
 # Special thanks
 
