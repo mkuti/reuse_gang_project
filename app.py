@@ -11,7 +11,8 @@ from os import path
 if path.exists("env.py"):
     import env
 
-app = Flask(__name__)  # create instance of flask
+# create instance of flask
+app = Flask(__name__)  
 
 # add configuration to Flask app
 app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
@@ -38,7 +39,6 @@ def register():
         users = mongo.db.users
         used_name = users.find_one({'username': request.form["username"]})
         used_email = users.find_one({'email': request.form["email"]})
-        # trick found here to write if statement https://stackoverflow.com/questions/19400115/python-difference-between-x-is-not-none-and-y-is-not-none-and-x-and-y-is-n
         if (used_email or used_name) is None:
             user_pwd = generate_password_hash(request.form["password"])
             users.insert_one({
@@ -85,7 +85,7 @@ def login():
 
 @app.route('/logout', methods=['POST', 'GET'])
 def logout():
-    # remove the username from the session if it's there
+'''remove the username from the session if it's there'''
     [session.pop(key) for key in list(session.keys())]
     flash('You have successfully logged out!')
     return redirect(url_for('home'))
@@ -197,4 +197,4 @@ def not_found(error):
 if __name__ == "__main__":
     app.run(host=os.getenv("IP", "0.0.0.0"),
             port=int(os.getenv("PORT", "5000")),
-            debug=True)
+            debug=False)
