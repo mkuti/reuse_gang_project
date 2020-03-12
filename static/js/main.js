@@ -4,8 +4,8 @@
  * Logo disappear on window scrolling 
  */
 $(window).scroll(function(){
-    $("#logo-img").css("opacity", 1 - $(window).scrollTop() / 50)
-})
+    $("#logo-img").css("opacity", 1 - $(window).scrollTop() / 50);
+});
 
 /**
  * Function to collapse item description on card
@@ -18,13 +18,13 @@ function collapsingCards(){
 
 cardCollapse.forEach(card => {
     card.addEventListener("click", function(e){
-    e.preventDefault()
+    e.preventDefault();
     let collapsedContent = card.nextElementSibling;
     if(collapsedContent.style.display === "block"){
         collapsedContent.style.display = "none";
-    } else collapsedContent.style.display = "block"
-})
-})
+    } else collapsedContent.style.display = "block";
+});
+});
 }
 
-collapsingCards()
+collapsingCards();

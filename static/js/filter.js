@@ -6,7 +6,7 @@
  * @callback <loopItems>
  */
     const selectCat = document.getElementById("search-category");
-    const card = document.getElementById("card-item")
+    const card = document.getElementById("card-item");
 
     selectCat.onchange = function() {
         cat = selectCat.value;
@@ -21,14 +21,14 @@
         })
         .then(function(response) {
             response.json().then(function(data){
-                loopItems(data)
-            })
+                loopItems(data);
+            });
         })
         .catch(function(err){
             console.log(err);
             alert(`Error: ${err}. To return to the main page, go to ${location.hostname}`);
         });
-    }
+    };
 
 /**
  * Looping through @param {array} Array of filtered items
@@ -40,11 +40,11 @@
 function loopItems(data) {
      cardContent = '';
     data.forEach(item => {
-        itemId = item._id.$oid
-        cardContent += injectCard(item)
-    })
+        itemId = item._id.$oid;
+        cardContent += injectCard(item);
+    });
     $("#card-item").html(cardContent);
-    collapsingCards()
+    collapsingCards();
 }
 
 /**
@@ -77,7 +77,7 @@ function whichCat(item){
  * @param {object} Item to add its keys and values to html
  */
 function injectCard(item) {
-    whichCat(item)
+    whichCat(item);
     cardHtml = `
             <div class="col-12 col-sm-6 col-lg-4">
 			<div class="card my-2 text-center">
@@ -109,7 +109,7 @@ function injectCard(item) {
                         if (item.item_img){
                             return `<div class="card-img-contain text-left mb-3">
                                         <img src="${item.item_img}" class="card-img-top card-img" alt="Item Image">
-                                    </div>`
+                                    </div>`;
                         }
                     })()}
                     <div class="row my-3">
