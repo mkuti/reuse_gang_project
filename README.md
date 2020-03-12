@@ -277,18 +277,18 @@ Data model with two collections where User Name creates relationship between col
 
 I used Balsamiq tool for the wireframes and attached them to the directory in assets. 
 
-- [Home page on desktop](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-desktop.png)
-- [Home page on mobile](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-mobile.png)
-- [Home page on tablet](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-tablet.png)
-- [Login modal on desktop](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-login-desktop.png)
-- [Login modal on tablet](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-login-tablet.png)
-- [Login modal on mobile](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/Home-login-mobile.png)
-- [User page on desktop](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-desktop.png)
-- [User page on tablet](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-tablet.png)
-- [User page on mobile](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-mobile.png)
-- [Edit post on desktop](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-editpost-desktop.png)
-- [Edit post on tablet](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-editpost-tablet.png)
-- [Edit post on mobile](https://raw.githubusercontent.com/mkuti/FlagGame_milestone_2/master/wireframes/User-editpost-mobile.png)
+- [Home page on desktop](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/Home-desktop.png)
+- [Home page on mobile](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/Home-mobile.png)
+- [Home page on tablet](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/Home-tablet.png)
+- [Login modal on desktop](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/Home-login-desktop.png)
+- [Login modal on tablet](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/Home-login-tablet.png)
+- [Login modal on mobile](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/Home-login-mobile.png)
+- [User page on desktop](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/User-desktop.png)
+- [User page on tablet](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/User-tablet.png)
+- [User page on mobile](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/User-mobile.png)
+- [Edit post on desktop](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/User-editpost-desktop.png)
+- [Edit post on tablet](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/User-editpost-tablet.png)
+- [Edit post on mobile](https://raw.githubusercontent.com/mkuti/reuse_gang_project/master/wireframes/User-editpost-mobile.png)
 
 [Back to Top](#table-of-contents) 
 
